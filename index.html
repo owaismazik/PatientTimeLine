@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Mazikcare Medic</title>
+
+    <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' type='text/css' href='./src/css/common.css'>
+    <link rel='stylesheet' type='text/css' href='./src/css/timeline.css'>
+    <link rel='stylesheet' type='text/css' href='./src/css/jquery.min.css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src='./src/js/jquery214.js'></script>
+    <script src='./src/js/moment.js'></script>
+    <script src='./src/js/jquery-ui.min.js'></script>
+
+    <style>
+        body {
+            overflow: hidden !important;
+        }
+
+        .searchControl {
+            width: 100% !important;
+        }
+
+        .mzkcontainer {
+            width: 97%;
+        }
+    </style>
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
+         <!--<input type="hidden" value="https://mazikcarewebapicrm.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
+    
+</head>
+<body>
+
+    <!--<input type="hidden" value="https://mazikcarewebapicrm.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
+    <!--<input type="hidden" value="http://localhost:9050/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
+    <input type="hidden" value="https://mazikcaremediccdsapi.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />
+    <input type="hidden" id="CRMpatietid" value="38f500ac-cb74-ea11-a811-000d3a5a1cf8" />
+    <input type="hidden" id="patietid" value="" />
+    <input type="hidden" id="AuthorizationToken" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhsQzBSMTJza3hOWjFXUXdtak9GXzZ0X3RERSIsImtpZCI6IkhsQzBSMTJza3hOWjFXUXdtak9GXzZ0X3RERSJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jYjhkMGY1ZS0yOTVlLTQ0ZjEtOGNhYi0xODRhZTgyN2M4NjQvIiwiaWF0IjoxNTgzOTIwODY3LCJuYmYiOjE1ODM5MjA4NjcsImV4cCI6MTU4MzkyNDc2NywiYWlvIjoiNDJOZ1lOaXdaSG44bHpWL3IvVnd4Szc4L2NKbUdRQT0iLCJhcHBpZCI6IjZmOTBmZDRjLTFhYzItNGE2My1iM2ZiLTRlM2E4YjhlMzY1OCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2NiOGQwZjVlLTI5NWUtNDRmMS04Y2FiLTE4NGFlODI3Yzg2NC8iLCJvaWQiOiJjNTZhOWVhZi0xNGUxLTRiMjctODVkZS0yYjI3MTBkNGI4OTciLCJzdWIiOiJjNTZhOWVhZi0xNGUxLTRiMjctODVkZS0yYjI3MTBkNGI4OTciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiJjYjhkMGY1ZS0yOTVlLTQ0ZjEtOGNhYi0xODRhZTgyN2M4NjQiLCJ1dGkiOiJ4ckJINEtqS0hrcThKM0tjUDc4cEFBIiwidmVyIjoiMS4wIn0.OWbdn_1nW4DTU71m8LuJcCvQibO-tCEiSLsfUdphtD-voJ9XxgP81AdH7nXJfWwD97Uwl6XGzooLtMHDJex9uv_ybj6sa_IkRXftgxKmtQrNeRCq_JuWmDkKhdfyj6dcw7J0o9hJEKqxPvGlagjcxtxqDDEPWcFg0BhSttdxflDl6vvyyZmz--Jgj1iVxf60mulwGV_0EKvcJKBCL2pxs4pp44oCgEErooxg6di-mBFSRxVWfr3G6sMpqvXb9T40UAbaKh5t3kmFGjndpv_OoYk10IWYskCFTlZKuIz3InfU70xBhwP1uHUrj09tYpJJsDGksIZ1Lb654s8RMJIu8Q" />
+
+    <div class="fluid-container mzkcontainer">
+        <div id='errors'>
+        </div>
+        <div id="loading" class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+        <div id='holder' style="background-color:#fff; width:100%; display:none;">
+            <!--<h2>Example-SMART-App</h2>-->
+            <div class="row mzknav">
+                <img src="./src/images/mazik_logo-mazikcare.png" alt='' class="mz-logo" />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="patientdetailheading">
+                        <h1 class="mzkheading">
+                            Patient Detail
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coverbg row">
+                <div class="col-md-4">
+                    <div class="patientdetail">
+                        <table class="mzktable">
+                            <tbody>
+                                <tr>
+                                    <td data-column="First Name"><strong>First Name</strong></td>
+                                    <td id='fname' data-column="First Name">Steve</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Last Name"><strong>Last Name</strong></td>
+                                    <td id='lname' data-column="Last Name">Smith</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Phone"><strong>Phone</strong></td>
+                                    <td id='phone' data-column="Phone">12345678</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Email"><strong>Email</strong></td>
+                                    <td id='email' data-column="Email">stevesmith@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Gender"><strong>Gender</strong></td>
+                                    <td id='gender' data-column="Gender">Male</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Date of Birth"><strong>Date of Birth</strong></td>
+                                    <td id='birthdate' data-column="Date of Birth">03/03/2000</td>
+                                </tr>
+                                <tr>
+                                    <td data-column="Height"><strong>Height</strong></td>
+                                    <td id='height' data-column="Height"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="patietnTimeline">
+                        <div class=" ">
+                            <div class="subSet">
+                                <div class="left searchControl">
+                                    <div class="global">
+                                        <ul>
+                                            <li>
+                                                <!-- event selection control -->
+                                                <div style="cursor:pointer;" id="eventSelect" class="eventSelect" onclick="javascript:showCheckboxOptions()">All Events <span style="text-align: right;">▼</span></div>
+                                                <div id="checkboxEventList" class="checkboxEventList" style="display:none">
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent" value="0" checked="">[All Events]
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="5" name="events" checked=""> Device
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="6" name="events" checked=""> Encounter
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="8" name="events" checked=""> Condition
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="9" name="events" checked=""> Care Plan
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="11" name="events" checked=""> Allergy
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="12" name="events" checked=""> Observation
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="7" name="events" checked=""> Procedure
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="13" name="events" checked=""> Procedure Request
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="10" name="events" checked=""> Goal
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="chkEvent chkEventItem" value="14" name="events" checked=""> RelatedPerson
+                                                    </div>
+                                                </div>
+                                                <!-- end event selection control -->
+                                            </li>
+                                            <li>
+                                                <!-- event selection control -->
+                                                <div style="cursor:pointer;" class="eventSelect" id="yearSelect" onclick="javascript:showyearOptions()">All Years ▼</div>
+                                                <div id="yearEventList" class="checkboxEventList" style="display:none"></div>
+                                                <!-- end event selection control -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timelinecontrolnew" style="display:none">
+                            <div class="scrollbar" id="style-2">
+                                <div class="force-overflow">
+                                    <div class="page">
+                                        <div class="timeline" id="timeline">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+            <div class="  footer">
+                <span>
+                    mazik care
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Required JS files to enable this page to embed within an MPage -->
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
+      <script src='./lib/js/cerner-smart-embeddable-lib-1.0.0.min.js'></script>
+    -->
+    <!-- Application-level javascript-->
+    <script src='./src/js/example-smart-app.js'></script>
+
+    <!-- FHIR Client JS Library -->
+    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
+
+    <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
+    <!-- https://github.com/cerner/fhir-client-cerner-additions -->
+    <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <!-- timeline javascript-->
+    <script src='./src/js/timeline.js'></script>
+    <script>
+        extractData().then(
+            //Display Patient Demographics and Observations if extractData was success
+            function (p) {
+                drawVisualization(p);
+            },
+
+            //Display 'Failed to call FHIR Service' if extractData failed
+            function () {
+                $('#loading').hide();
+                $('#errors').html('<p> Failed to call FHIR Service </p>');
+            }
+        );
+
+        $(document).ready(function () {
+            //timeline();
+        });
+
+        var checkboxesVisible = false;
+        function showCheckboxOptions() {
+            var checkboxes = document.getElementById("checkboxEventList");
+            var eventSelect = document.getElementById("eventSelect");
+            if (!checkboxesVisible) {
+                eventSelect.innerText = eventSelect.innerText.replace("▼", "▲");
+                checkboxes.style.display = '';
+                checkboxesVisible = true;
+            }
+            else {
+                eventSelect.innerText = eventSelect.innerText.replace("▲", "▼");
+                checkboxes.style.display = 'none';
+                checkboxesVisible = false;
+            }
+        }
+
+        var yearVisible = false;
+        function showyearOptions() {
+            var checkboxes = document.getElementById("yearEventList");
+            var eventSelect = document.getElementById("yearSelect");
+            if (!yearVisible) {
+                eventSelect.innerText = eventSelect.innerText.replace("▼", "▲");
+                checkboxes.style.display = '';
+                yearVisible = true;
+            }
+            else {
+                eventSelect.innerText = eventSelect.innerText.replace("▲", "▼");
+                checkboxes.style.display = 'none';
+                yearVisible = false;
+            }
+        }
+
+    </script>
+</body>
+</html>

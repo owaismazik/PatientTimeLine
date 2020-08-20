@@ -133,7 +133,22 @@
                                         if (condition[i] != undefined) {
                                             var title = condition[i].code.coding[0].display;
                                             var recordeddate = condition[i].onsetDateTime;
-                                            CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            var dataSet = data.data.records[i];
+                                            var item = {};
+                        
+                                            if (dataSet.hasOwnProperty('ConditionID')) {
+                                                item.id = dataSet.ConditionID;
+                                            }
+                                            item.name = dataSet.Title;
+                        
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 8;
+                                            item.entity = "Condition";
+                                            list.push(item);
                                         }
                                     }
                                 }

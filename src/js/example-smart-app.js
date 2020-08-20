@@ -76,7 +76,6 @@
                     ret.resolve(p);
 
                     CreatePatient(patient.id);
-                    $("#CRMpatietid").val(patient.id); 
 
                     if (obv != null) {
                         if (obv.length > 0) {
@@ -226,7 +225,7 @@
                     });
 
                     $.when(devi).done(function (device) {
-                        //debugger;
+                        debugger;
                         if (device != null) {
                             if (device.length > 0) {
                                 for (var i = 0; i <= device.length; i++) {
@@ -458,7 +457,6 @@
                 xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
             },
             success: function (data) {
-                debugger;
                 if (data.data.records != null) {
 
                     $("#CRMpatietid").val(data.data.records.patientId);                    
@@ -651,7 +649,6 @@
             },
             success: function (data) {
                 if (data.data.records != null) {
-                    debugger;
 
                     //$("#timeline").show();
 

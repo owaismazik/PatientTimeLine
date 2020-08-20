@@ -75,7 +75,7 @@
 
                     ret.resolve(p);
 
-                    //CreatePatient(patient.id);
+                    CreatePatient(patient.id);
 
                     if (obv != null) {
                         if (obv.length > 0) {
@@ -108,7 +108,7 @@
                                         if (Allergy[i] != undefined) {
                                             var title = Allergy[i].substance.coding[0].display;
                                             var recordeddate = Allergy[i].recordedDate;
-                                            //CreateAllergy(Allergy[i].id, $("#CRMpatietid").val(), "Allergy - " + title, recordeddate);
+                                            CreateAllergy(Allergy[i].id, $("#CRMpatietid").val(), "Allergy - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -132,7 +132,7 @@
                                         if (condition[i] != undefined) {
                                             var title = condition[i].code.coding[0].display;
                                             var recordeddate = condition[i].onsetDateTime;
-                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -163,7 +163,7 @@
                                                 recordeddate = procedure[i].performedPeriod.start;
                                             }
 
-                                            //CreateProcedure(procedure[i].id, $("#CRMpatietid").val(), "Procedure - " + title, recordeddate);
+                                            CreateProcedure(procedure[i].id, $("#CRMpatietid").val(), "Procedure - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -186,7 +186,7 @@
                                         if (procedureRequest[i] != undefined) {
                                             var title = procedureRequest[i].code.coding[0].display;
                                             var recordeddate = procedureRequest[i].scheduledPeriod.start;                                            
-                                            //CreateProcedureRequest(procedureRequest[i].id, $("#CRMpatietid").val(), "procedureRequest - " + title, recordeddate);
+                                            CreateProcedureRequest(procedureRequest[i].id, $("#CRMpatietid").val(), "procedureRequest - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -209,7 +209,7 @@
                                         if (encounter[i] != undefined) {
                                             var title = encounter[i].type[0].text;
                                             var recordeddate = encounter[i].period.start;
-                                            //CreateEncounter(encounter[i].id, $("#CRMpatietid").val(), "Encounter - " + title, recordeddate);
+                                            CreateEncounter(encounter[i].id, $("#CRMpatietid").val(), "Encounter - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -233,7 +233,7 @@
                                         if (device[i] != undefined) {
                                             var title = device[i].type.text;
                                             var recordeddate = device[i].meta.lastUpdated;
-                                            //CreateDevice(device[i].id, $("#CRMpatietid").val(), "Device - " + title, recordeddate);
+                                            CreateDevice(device[i].id, $("#CRMpatietid").val(), "Device - " + title, recordeddate);
                                         }
                                     }
                                 }
@@ -255,7 +255,7 @@
                                 for (var i = 0; i <= 10; i++) {
                                     if (careplan[i] != null) {
                                         if (careplan[i] != undefined) {
-                                            //CreateCarePlan(careplan[i].id, $("#CRMpatietid").val(), fname + " " + lname + " Care Plan", fname + " " + lname + " Care Plan", careplan[i].period.start, careplan[i].period.start);
+                                            CreateCarePlan(careplan[i].id, $("#CRMpatietid").val(), fname + " " + lname + " Care Plan", fname + " " + lname + " Care Plan", careplan[i].period.start, careplan[i].period.start);
                                         }
                                     }
                                 }
@@ -316,7 +316,7 @@
                                         var targetdate = Goal[i].targetDate;
                                         var category = Goal[i].category[0].text;
                                         var description = Goal[i].description;
-                                        //CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
+                                        CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
                                     }
                                 }
                             }
@@ -344,7 +344,7 @@
                                        // var startdate = RelatedPerson[i].identifier[6].period.start;
                                        // var family = RelatedPerson[i].name[2].family[0];
                                        // var given = RelatedPerson[i].name[3].given[0];
-                                        //CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
+                                        CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
                                     }
                                 }
                             }

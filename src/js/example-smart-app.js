@@ -77,6 +77,8 @@
                     ret.resolve(p);
 
                     //CreatePatient(patient.id);
+                    //last code update 20-08-2020 700 PM 
+                    $("#CRMpatietid").val(patient.id); 
 
                     if (obv != null) {
                         if (obv.length > 0) {

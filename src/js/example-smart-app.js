@@ -84,6 +84,7 @@
                             for (var i = 0; i <= 10; i++) {
                                 if (obv[i] != null) {
                                     if (obv[i] != undefined) {
+                                        var patientObservation = {};
                                         var title = obv[i].code.coding[0].display;
                                         var recordeddate = obv[i].issued;
                                         //CreateObservation(obv[i].id, $("#CRMpatietid").val(), "Observation - " + title, recordeddate);

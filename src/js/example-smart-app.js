@@ -1,6 +1,5 @@
 (function (window) {
     var patientConditionGlobal = [];
-    //testing
     var patientObservationGlobal = [];
     window.extractData = function () {
         var ret = $.Deferred();
@@ -1543,7 +1542,7 @@
                     item.type = 12;
                     item.entity = "Observation";
                     list.push(item);
-        
+                };
                 // $.ajax({
                 //     url: $("#hdnPatientChartAPIURL").val() + "getPatientObservationCRM",
                 //     method: "POST",

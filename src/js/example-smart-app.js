@@ -1,6 +1,6 @@
 (function (window) {
     var patientConditionGlobal = [];
-    var patientObservationGlobal = {}
+    var patientObservationGlobal = [];
     window.extractData = function () {
         var ret = $.Deferred();
 

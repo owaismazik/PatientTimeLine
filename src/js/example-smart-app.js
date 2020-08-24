@@ -11,6 +11,7 @@
             if (smart.hasOwnProperty('patient')) {
                 debugger;
                 var patient = smart.patient;
+                var patientConditionGlobal = [];
                 var pt = patient.read();
                 var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -125,7 +126,7 @@ debugger;
                     });
 
                     $.when(cond).done(function (condition) {        
-                        
+           
                         if (condition != null) {
                             if (condition.length > 0) {
                                 for (var i = 0; i <= condition.length; i++) {
@@ -133,7 +134,13 @@ debugger;
                                         if (condition[i] != undefined) {
                                             var title = condition[i].code.coding[0].display;
                                             var recordeddate = condition[i].onsetDateTime;
-                                            CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            var patientCondition = {}
+                                            patientCondition.Externalemrid = condition[i].id;
+                                            patientCondition.Title = "Condition - " + title;
+                                            patientCondition.RecordedDate = recordeddate;
+                                            patientCondition.PatientID = $("#CRMpatietid").val();
+                                            patientConditionGlobal[i] = patientCondition;
                                         }
                                     }
                                 }
@@ -474,433 +481,433 @@ debugger;
 
     }
 
-    function CreateDevice(id, patientid, title, startdate) {
-        var data = {}
-        var patientDevice = {}
-        patientDevice.Externalemrid = id;
-        patientDevice.Title = title;
-        patientDevice.RecordedDate = startdate;
-        patientDevice.PatientID = patientid;
+    // function CreateDevice(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientDevice = {}
+    //     patientDevice.Externalemrid = id;
+    //     patientDevice.Title = title;
+    //     patientDevice.RecordedDate = startdate;
+    //     patientDevice.PatientID = patientid;
 
-        data.patientDevice = patientDevice;
+    //     data.patientDevice = patientDevice;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientDeviceCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientDeviceCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateEncounter(id, patientid, title, startdate) {
-        var data = {}
-        var patientEncounter = {}
-        patientEncounter.Externalemrid = id;
-        patientEncounter.Title = title;
-        patientEncounter.RecordedDate = startdate;
-        patientEncounter.PatientID = patientid;
+    // function CreateEncounter(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientEncounter = {}
+    //     patientEncounter.Externalemrid = id;
+    //     patientEncounter.Title = title;
+    //     patientEncounter.RecordedDate = startdate;
+    //     patientEncounter.PatientID = patientid;
 
-        data.patientEncounter = patientEncounter;
+    //     data.patientEncounter = patientEncounter;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientEncounterCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientEncounterCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateProcedure(id, patientid, title, startdate) {
-        var data = {}
-        var patientProcedure = {}
-        patientProcedure.Externalemrid = id;
-        patientProcedure.Title = title;
-        patientProcedure.RecordedDate = startdate;
-        patientProcedure.PatientID = patientid;
+    // function CreateProcedure(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientProcedure = {}
+    //     patientProcedure.Externalemrid = id;
+    //     patientProcedure.Title = title;
+    //     patientProcedure.RecordedDate = startdate;
+    //     patientProcedure.PatientID = patientid;
 
-        data.patientProcedure = patientProcedure;
+    //     data.patientProcedure = patientProcedure;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientProcedureCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientProcedureCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
                     
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateProcedureRequest(id, patientid, title, startdate) {
-        var data = {}
-        var patientProcedureRequest = {}
-        patientProcedureRequest.Externalemrid = id;
-        patientProcedureRequest.Title = title;
-        patientProcedureRequest.RecordedDate = startdate;
-        patientProcedureRequest.PatientID = patientid;
+    // function CreateProcedureRequest(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientProcedureRequest = {}
+    //     patientProcedureRequest.Externalemrid = id;
+    //     patientProcedureRequest.Title = title;
+    //     patientProcedureRequest.RecordedDate = startdate;
+    //     patientProcedureRequest.PatientID = patientid;
 
-        data.patientProcedureRequest = patientProcedureRequest;
+    //     data.patientProcedureRequest = patientProcedureRequest;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientProcedureRequestCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientProcedureRequestCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateCondition(id, patientid, title, startdate) {
-        var data = {}
-        var patientCondition = {}
-        patientCondition.Externalemrid = id;
-        patientCondition.Title = title;
-        patientCondition.RecordedDate = startdate;
-        patientCondition.PatientID = patientid;
+    // function CreateCondition(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientCondition = {}
+    //     patientCondition.Externalemrid = id;
+    //     patientCondition.Title = title;
+    //     patientCondition.RecordedDate = startdate;
+    //     patientCondition.PatientID = patientid;
 
-        data.patientCondition = patientCondition;
+    //     data.patientCondition = patientCondition;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientConditionCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientConditionCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateCarePlan(id, patientid, title, desc, startdate, enddate) {        
-        var data = {}
-        var patientCarePlan = {}
-        patientCarePlan.Externalemrid = id;
-        patientCarePlan.Title = title;
-        patientCarePlan.Description = desc;
-        patientCarePlan.STartDate = startdate;
-        patientCarePlan.EndDate = enddate;
-        patientCarePlan.PatientID = patientid;
+    // function CreateCarePlan(id, patientid, title, desc, startdate, enddate) {        
+    //     var data = {}
+    //     var patientCarePlan = {}
+    //     patientCarePlan.Externalemrid = id;
+    //     patientCarePlan.Title = title;
+    //     patientCarePlan.Description = desc;
+    //     patientCarePlan.STartDate = startdate;
+    //     patientCarePlan.EndDate = enddate;
+    //     patientCarePlan.PatientID = patientid;
 
-        data.patientCarePlan = patientCarePlan;
+    //     data.patientCarePlan = patientCarePlan;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientCarePlanCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientCarePlanCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateAllergy(id, patientid, title, startdate) {
-        var data = {}
-        var patientAllergy = {}
-        patientAllergy.Externalemrid = id;
-        patientAllergy.name = title;
-        patientAllergy.patientId = patientid;
-        patientAllergy.RecordedDate = startdate;
+    // function CreateAllergy(id, patientid, title, startdate) {
+    //     var data = {}
+    //     var patientAllergy = {}
+    //     patientAllergy.Externalemrid = id;
+    //     patientAllergy.name = title;
+    //     patientAllergy.patientId = patientid;
+    //     patientAllergy.RecordedDate = startdate;
 
-        data.patientAllergy = patientAllergy;
+    //     data.patientAllergy = patientAllergy;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientAllergyCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientAllergyCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateObservation(id, patientid, title, IssuedDate) {
-        var data = {}
-        var patientObservation = {}
-        patientObservation.Externalemrid = id;
-        patientObservation.description = title;
-        patientObservation.patientId = patientid;
-        patientObservation.IssuedDate = IssuedDate;
+    // function CreateObservation(id, patientid, title, IssuedDate) {
+    //     var data = {}
+    //     var patientObservation = {}
+    //     patientObservation.Externalemrid = id;
+    //     patientObservation.description = title;
+    //     patientObservation.patientId = patientid;
+    //     patientObservation.IssuedDate = IssuedDate;
 
-        data.patientObservation = patientObservation;
+    //     data.patientObservation = patientObservation;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientObservationCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientObservationCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateMedicationAdministration() {
-        var data = {}
-        var patientMedicationAdministration = {}
+    // function CreateMedicationAdministration() {
+    //     var data = {}
+    //     var patientMedicationAdministration = {}
 
-        //patientAllergy.Externalemrid = id;
-        //patientAllergy.name = title;
-        //patientAllergy.patientId = patientid;
-        //patientAllergy.RecordedDate = startdate;
+    //     //patientAllergy.Externalemrid = id;
+    //     //patientAllergy.name = title;
+    //     //patientAllergy.patientId = patientid;
+    //     //patientAllergy.RecordedDate = startdate;
 
-        data.patientMedicationAdministration = patientMedicationAdministration;
+    //     data.patientMedicationAdministration = patientMedicationAdministration;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientMedicationAdministrationCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientMedicationAdministrationCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateGoal(id, patientid, startDate, targetDate, category, description) {
-        var data = {}
-        var Goal = {}
+    // function CreateGoal(id, patientid, startDate, targetDate, category, description) {
+    //     var data = {}
+    //     var Goal = {}
 
-        Goal.Externalemrid = id;
-        Goal.Patientid = patientid;
-        Goal.Startdate = startDate;
-        Goal.TargetDate = targetDate;
-        Goal.Category = category;
-        Goal.Description = description;
+    //     Goal.Externalemrid = id;
+    //     Goal.Patientid = patientid;
+    //     Goal.Startdate = startDate;
+    //     Goal.TargetDate = targetDate;
+    //     Goal.Category = category;
+    //     Goal.Description = description;
 
-        //patientAllergy.RecordedDate = startdate;
+    //     //patientAllergy.RecordedDate = startdate;
 
-        data.patientGoal = Goal;
+    //     data.patientGoal = Goal;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientGoalCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientGoalCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
-    function CreateRelatedPerson(id, patientid, startDate, given, family) {
-        var data = {}
-        var RelatedPerson = {}
+    // function CreateRelatedPerson(id, patientid, startDate, given, family) {
+    //     var data = {}
+    //     var RelatedPerson = {}
 
-        RelatedPerson.Externalemrid = id;
-        RelatedPerson.Patientid = patientid;
-        RelatedPerson.Startdate = startDate;
-        RelatedPerson.Firstname = given;
-        RelatedPerson.Lastname = family;
+    //     RelatedPerson.Externalemrid = id;
+    //     RelatedPerson.Patientid = patientid;
+    //     RelatedPerson.Startdate = startDate;
+    //     RelatedPerson.Firstname = given;
+    //     RelatedPerson.Lastname = family;
 
-        data.patientRelatedPerson = RelatedPerson;
+    //     data.patientRelatedPerson = RelatedPerson;
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientRelatedPersonCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientRelatedPersonCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    //$("#timeline").show();
+    //                 //$("#timeline").show();
 
-                    //timeline();
-                }
+    //                 //timeline();
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
+    // }
 
     function timeline() {
         debugger;
@@ -1351,49 +1358,69 @@ debugger;
             //     });
             // }
         
-            function Condition() {       
-                var patient = {}
-                patient.patientId = pid;
-                patient.startDate = currentStartDate;
-                patient.endDate = currentEndDate;
-        
-                $.ajax({
-                    url: $("#hdnPatientChartAPIURL").val() + "getPatientCondition",
-                    method: "POST",
-                    async: false,
-                    dataType: "json",
-                    data: JSON.stringify(patient),
-                    crossDomain: true,
-                    contentType: "application/json; charset=utf-8",
-                    cache: false,
-                    beforeSend: function (xhr) {
-                        /* Authorization header */
-                        xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-                    },
-                    success: function (data) {
-                        for (var i = 0; i < data.data.records.length; i++) {
-                            var dataSet = data.data.records[i];
-                            var item = {};
-        
-                            if (dataSet.hasOwnProperty('ConditionID')) {
-                                item.id = dataSet.ConditionID;
-                            }
-                            item.name = dataSet.Title;
-        
-                            if (dataSet.hasOwnProperty('RecordedDate')) {
-                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                            }
-                            item.type = 8;
-                            item.entity = "Condition";
-                            list.push(item);
-                        };
-                        return Promise.resolve();
-                    },
-                    error: function () {
-                        console.log("error");
+            function Condition() {    
+                
+
+                for (var i = 0; i < patientConditionGlobal.length; i++) {
+                    var dataSet = patientConditionGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('ConditionID')) {
+                        item.id = dataSet.ConditionID;
                     }
-                });
+                    item.name = dataSet.Title;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 8;
+                    item.entity = "Condition";
+                    list.push(item);
+                };
+                //owais
+                // var patient = {}
+                // patient.patientId = pid;
+                // patient.startDate = currentStartDate;
+                // patient.endDate = currentEndDate;
+        
+                // $.ajax({
+                //     url: $("#hdnPatientChartAPIURL").val() + "getPatientCondition",
+                //     method: "POST",
+                //     async: false,
+                //     dataType: "json",
+                //     data: JSON.stringify(patient),
+                //     crossDomain: true,
+                //     contentType: "application/json; charset=utf-8",
+                //     cache: false,
+                //     beforeSend: function (xhr) {
+                //         /* Authorization header */
+                //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+                //     },
+                //     success: function (data) {
+                //         for (var i = 0; i < data.data.records.length; i++) {
+                //             var dataSet = data.data.records[i];
+                //             var item = {};
+        
+                //             if (dataSet.hasOwnProperty('ConditionID')) {
+                //                 item.id = dataSet.ConditionID;
+                //             }
+                //             item.name = dataSet.Title;
+        
+                //             if (dataSet.hasOwnProperty('RecordedDate')) {
+                //                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                //                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                //             }
+                //             item.type = 8;
+                //             item.entity = "Condition";
+                //             list.push(item);
+                //         };
+                //         return Promise.resolve();
+                //     },
+                //     error: function () {
+                //         console.log("error");
+                //     }
+                // });
             }
         
             // function CarePlan() {

@@ -292,22 +292,22 @@
                     }
                 });
 
-                $.when(medicationAdministration).done(function (MedicationAdministration) {
+                // $.when(medicationAdministration).done(function (MedicationAdministration) {
 
-                    if (MedicationAdministration != null) {
-                        if (MedicationAdministration.length > 0) {
-                            for (var i = 0; i <= MedicationAdministration.length; i++) {
-                                if (MedicationAdministration[i] != null) {
-                                    if (MedicationAdministration[i] != undefined) {
-                                        // var title = Slot[i].substance.coding[0].display;
-                                        // var recordeddate = Allergy[i].recordedDate
-                                        //Alert("ABC");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
+                //     if (MedicationAdministration != null) {
+                //         if (MedicationAdministration.length > 0) {
+                //             for (var i = 0; i <= MedicationAdministration.length; i++) {
+                //                 if (MedicationAdministration[i] != null) {
+                //                     if (MedicationAdministration[i] != undefined) {
+                //                         // var title = Slot[i].substance.coding[0].display;
+                //                         // var recordeddate = Allergy[i].recordedDate
+                //                         //Alert("ABC");
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                // });
 
 
                 var goal = smart.patient.api.fetchAll({

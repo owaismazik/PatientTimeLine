@@ -79,19 +79,19 @@
 debugger;
                     CreatePatient(patient.id);
 
-                    if (obv != null) {
-                        if (obv.length > 0) {
-                            for (var i = 0; i <= 10; i++) {
-                                if (obv[i] != null) {
-                                    if (obv[i] != undefined) {
-                                        var title = obv[i].code.coding[0].display;
-                                        var recordeddate = obv[i].issued;
-                                        CreateObservation(obv[i].id, $("#CRMpatietid").val(), "Observation - " + title, recordeddate);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    // if (obv != null) {
+                    //     if (obv.length > 0) {
+                    //         for (var i = 0; i <= 10; i++) {
+                    //             if (obv[i] != null) {
+                    //                 if (obv[i] != undefined) {
+                    //                     var title = obv[i].code.coding[0].display;
+                    //                     var recordeddate = obv[i].issued;
+                    //                     CreateObservation(obv[i].id, $("#CRMpatietid").val(), "Observation - " + title, recordeddate);
+                    //                 }
+                    //             }
+                    //         }
+                    //     }
+                    // }
 
 
                     var alrgy = smart.patient.api.fetchAll({

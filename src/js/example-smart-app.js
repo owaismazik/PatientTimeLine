@@ -1,5 +1,6 @@
 (function (window) {
     var patientConditionGlobal = [];
+    //testing
     var patientObservationGlobal = [];
     window.extractData = function () {
         var ret = $.Deferred();

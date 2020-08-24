@@ -153,12 +153,12 @@
                         }
                     });                    
 
-                    var proc = smart.patient.api.fetchAll({
-                        type: 'Procedure',
-                        query: {
-                            patient: patient.id
-                        }
-                    });
+                    // var proc = smart.patient.api.fetchAll({
+                    //     type: 'Procedure',
+                    //     query: {
+                    //         patient: patient.id
+                    //     }
+                    // });
 
                     // $.when(proc).done(function (procedure) {
                     //     if (procedure != null) {
@@ -184,12 +184,12 @@
                     //     }
                     // });
 
-                    var procReq = smart.patient.api.fetchAll({
-                        type: 'ProcedureRequest',
-                        query: {
-                            patient: patient.id
-                        }
-                    });
+                    // var procReq = smart.patient.api.fetchAll({
+                    //     type: 'ProcedureRequest',
+                    //     query: {
+                    //         patient: patient.id
+                    //     }
+                    // });
 
                     // $.when(procReq).done(function (procedureRequest) {
                     //     if (procedureRequest != null) {
@@ -207,12 +207,12 @@
                     //     }
                     // });
 
-                    var enco = smart.patient.api.fetchAll({
-                        type: 'Encounter',
-                        query: {
-                            patient: patient.id
-                        }
-                    });
+                    // var enco = smart.patient.api.fetchAll({
+                    //     type: 'Encounter',
+                    //     query: {
+                    //         patient: patient.id
+                    //     }
+                    // });
 
                     // $.when(enco).done(function (encounter) {
                     //     if (encounter != null) {
@@ -230,12 +230,12 @@
                     //     }
                     // });
 
-                    var devi = smart.patient.api.fetchAll({
-                        type: 'Device',
-                        query: {
-                            patient: patient.id
-                        }
-                    });
+                    // var devi = smart.patient.api.fetchAll({
+                    //     type: 'Device',
+                    //     query: {
+                    //         patient: patient.id
+                    //     }
+                    // });
 
                     // $.when(devi).done(function (device) {
                     //     debugger;
@@ -254,13 +254,13 @@
                     //     }
                     // });
 
-                    var cp = smart.patient.api.fetchAll({
-                        type: 'CarePlan',
-                        query: {
-                            patient: patient.id
-                            //,category: 'assess-plan'
-                        }
-                    });
+                    // var cp = smart.patient.api.fetchAll({
+                    //     type: 'CarePlan',
+                    //     query: {
+                    //         patient: patient.id
+                    //         //,category: 'assess-plan'
+                    //     }
+                    // });
 
                     // $.when(cp).done(function (careplan) {
                     //     if (careplan != null) {
@@ -285,12 +285,12 @@
 
                 });
 
-                var medicationAdministration = smart.patient.api.fetchAll({
-                    type: 'MedicationAdministration',
-                    query: {
-                        patient: patient.id
-                    }
-                });
+                // var medicationAdministration = smart.patient.api.fetchAll({
+                //     type: 'MedicationAdministration',
+                //     query: {
+                //         patient: patient.id
+                //     }
+                // });
 
                 // $.when(medicationAdministration).done(function (MedicationAdministration) {
 
@@ -310,67 +310,67 @@
                 // });
 
 
-                var goal = smart.patient.api.fetchAll({
-                    type: 'Goal',
-                    query: {
-                        patient: patient.id
-                    }
-                });
+                // var goal = smart.patient.api.fetchAll({
+                //     type: 'Goal',
+                //     query: {
+                //         patient: patient.id
+                //     }
+                // });
 
-                $.when(goal).done(function (Goal) {
+                // $.when(goal).done(function (Goal) {
 
-                    if (Goal != null) {
-                        if (Goal.length > 0) {
-                            for (var i = 0; i <= Goal.length; i++) {
-                                if (Goal[i] != null) {
-                                    if (Goal[i] != undefined) {
+                //     if (Goal != null) {
+                //         if (Goal.length > 0) {
+                //             for (var i = 0; i <= Goal.length; i++) {
+                //                 if (Goal[i] != null) {
+                //                     if (Goal[i] != undefined) {
 
-                                        var externalEmrId = Goal[i].id;
-                                        var startdate = Goal[i].startDate;
-                                        var targetdate = Goal[i].targetDate;
-                                        var category = Goal[i].category[0].text;
-                                        var description = Goal[i].description;
-                                        CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
+                //                         var externalEmrId = Goal[i].id;
+                //                         var startdate = Goal[i].startDate;
+                //                         var targetdate = Goal[i].targetDate;
+                //                         var category = Goal[i].category[0].text;
+                //                         var description = Goal[i].description;
+                //                         CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                // });
 
 
-                var relatedPerson = smart.patient.api.fetchAll({
-                    type: 'RelatedPerson',
-                    query: {
-                        patient: patient.id
-                    }
-                });
+                // var relatedPerson = smart.patient.api.fetchAll({
+                //     type: 'RelatedPerson',
+                //     query: {
+                //         patient: patient.id
+                //     }
+                // });
 
-                $.when(relatedPerson).done(function (RelatedPerson) {
+                // $.when(relatedPerson).done(function (RelatedPerson) {
 
-                    if (RelatedPerson != null) {
-                        if (RelatedPerson.length > 0) {
-                            for (var i = 0; i <= RelatedPerson.length; i++) {
-                                if (RelatedPerson[i] != null) {
-                                    if (RelatedPerson[i] != undefined) {
+                //     if (RelatedPerson != null) {
+                //         if (RelatedPerson.length > 0) {
+                //             for (var i = 0; i <= RelatedPerson.length; i++) {
+                //                 if (RelatedPerson[i] != null) {
+                //                     if (RelatedPerson[i] != undefined) {
 
-                                      //  var externalEmrId = RelatedPerson[i].id;
-                                       // var startdate = RelatedPerson[i].identifier[6].period.start;
-                                       // var family = RelatedPerson[i].name[2].family[0];
-                                       // var given = RelatedPerson[i].name[3].given[0];
-                                        CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    var externalEmrId = 5796399;
-                    var startdate = "2016-11-01T10:00:00.000Z";
-                    var family = "PETERS";
-                    var given = "TIMOTHY";
-                    CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
+                //                       //  var externalEmrId = RelatedPerson[i].id;
+                //                        // var startdate = RelatedPerson[i].identifier[6].period.start;
+                //                        // var family = RelatedPerson[i].name[2].family[0];
+                //                        // var given = RelatedPerson[i].name[3].given[0];
+                //                         CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                //     var externalEmrId = 5796399;
+                //     var startdate = "2016-11-01T10:00:00.000Z";
+                //     var family = "PETERS";
+                //     var given = "TIMOTHY";
+                //     CreateRelatedPerson(externalEmrId, $("#CRMpatietid").val(), startdate, given, family);
                     
-                });
+                // });
 
             } else {
                 onError();
@@ -1521,10 +1521,10 @@
             // }
         
             function Observation() {
-                var patient = {}
-                patient.patientId = pid;
-                patient.startDate = currentStartDate;
-                patient.endDate = currentEndDate;
+                // var patient = {}
+                // patient.patientId = pid;
+                // patient.startDate = currentStartDate;
+                // patient.endDate = currentEndDate;
 
                 for (var i = 0; i < patientObservationGlobal.length; i++) {
                     var dataSet = patientObservationGlobal[i];

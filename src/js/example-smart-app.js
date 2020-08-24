@@ -301,7 +301,7 @@
                                     if (MedicationAdministration[i] != undefined) {
                                         // var title = Slot[i].substance.coding[0].display;
                                         // var recordeddate = Allergy[i].recordedDate
-                                        Alert("ABC");
+                                        //Alert("ABC");
                                     }
                                 }
                             }

@@ -85,8 +85,8 @@
                     p.ldl = getQuantityValueAndUnit(ldl[0]);
 
                     ret.resolve(p);
-                    debugger;
-                    CreatePatient(patient.id);
+
+                    //CreatePatient(patient.id);
 
                     if (obv != null) {
                         if (obv.length > 0) {
@@ -499,49 +499,49 @@
         $('#hdl').html(p.hdl);
     };
 
-    function CreatePatient(patientid) {
-        var data = {}
-        var patient = {}
+    // function CreatePatient(patientid) {
+    //     var data = {}
+    //     var patient = {}
 
-        patient.Externalemrid = patientid;
-        patient.firstName = $("#fname").text();
-        patient.lastName = $("#lname").text();
-        patient.phone = $("#phone").text();
-        patient.email = $("#email").text();
-        patient.dateOfBirth = $("#birthdate").text();
+    //     patient.Externalemrid = patientid;
+    //     patient.firstName = $("#fname").text();
+    //     patient.lastName = $("#lname").text();
+    //     patient.phone = $("#phone").text();
+    //     patient.email = $("#email").text();
+    //     patient.dateOfBirth = $("#birthdate").text();
 
-        data.patient = patient;
+    //     data.patient = patient;
 
-        console.log(data);
+    //     console.log(data);
 
-        $.ajax({
-            url: $("#hdnPatientChartAPIURL").val() + "CreatePatientCRM",
-            method: "POST",
-            async: false,
-            dataType: "json",
-            data: JSON.stringify(data),
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            },
-            success: function (data) {
-                if (data.data.records != null) {
+    //     $.ajax({
+    //         url: $("#hdnPatientChartAPIURL").val() + "CreatePatientCRM",
+    //         method: "POST",
+    //         async: false,
+    //         dataType: "json",
+    //         data: JSON.stringify(data),
+    //         crossDomain: true,
+    //         contentType: "application/json; charset=utf-8",
+    //         cache: false,
+    //         beforeSend: function (xhr) {
+    //             /* Authorization header */
+    //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+    //         },
+    //         success: function (data) {
+    //             if (data.data.records != null) {
 
-                    $("#CRMpatietid").val(data.data.records.patientId);                    
+    //                 $("#CRMpatietid").val(data.data.records.patientId);                    
 
-                }
+    //             }
 
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
+    //         },
+    //         error: function () {
+    //             console.log("error");
+    //         }
+    //     });
 
 
-    }
+    // }
 
     // function CreateDevice(id, patientid, title, startdate) {
     //     var data = {}
@@ -1032,36 +1032,36 @@
                     if (doSync) {
                         //loadUserDateFormat();
                         list = [];
-                        // if (checkedEvents.indexOf('5') > -1) {
-                        //     Device();
-                        // }
-                        // if (checkedEvents.indexOf('6') > -1) {
-                        //     Encounter();
-                        // }                
+                        if (checkedEvents.indexOf('5') > -1) {
+                            Device();
+                        }
+                        if (checkedEvents.indexOf('6') > -1) {
+                            Encounter();
+                        }                
                         if (checkedEvents.indexOf('8') > -1) {
                             Condition();
                         }
-                        // if (checkedEvents.indexOf('9') > -1) {
-                        //     CarePlan();
-                        // }
-                        // if (checkedEvents.indexOf('11') > -1) {
-                        //     Allergy();
-                        // }
+                        if (checkedEvents.indexOf('9') > -1) {
+                            CarePlan();
+                        }
+                        if (checkedEvents.indexOf('11') > -1) {
+                            Allergy();
+                        }
                         if (checkedEvents.indexOf('12') > -1) {
                             Observation();
                         }
-                        // if (checkedEvents.indexOf('7') > -1) {
-                        //     Procedure();
-                        // }
-                        // if (checkedEvents.indexOf('13') > -1) {
-                        //     ProcedureRequest();
-                        // }
-                        // if (checkedEvents.indexOf('10') > -1) {
-                        //     Goal();
-                        // }
-                        // if (checkedEvents.indexOf('14') > -1) {
-                        //     RelatedPerson();
-                        // }
+                        if (checkedEvents.indexOf('7') > -1) {
+                            Procedure();
+                        }
+                        if (checkedEvents.indexOf('13') > -1) {
+                            ProcedureRequest();
+                        }
+                        if (checkedEvents.indexOf('10') > -1) {
+                            Goal();
+                        }
+                        if (checkedEvents.indexOf('14') > -1) {
+                            RelatedPerson();
+                        }
                     }
         
                     //event = $('select').val() == null ? '' : $('select').val();

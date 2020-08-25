@@ -1240,7 +1240,24 @@
                 $("#timelinecontrolnew").show();
             }
         
-            // function Device() {
+            function Device() {
+                for (var i = 0; i < patientDeviceGlobal.length; i++) {
+                    var dataSet = patientDeviceGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('DeviceID')) {
+                        item.id = dataSet.DeviceID;
+                    }
+                    item.name = dataSet.Title;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 5;
+                    item.entity = "Device";
+                    list.push(item);
+                };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1283,9 +1300,26 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
-            // function Encounter() {
+            function Encounter() {
+                for (var i = 0; i < patientEncounterGlobal.length; i++) {
+                    var dataSet = patientEncounterGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('EncounterId')) {
+                        item.id = dataSet.EncounterId;
+                    }
+                    item.name = dataSet.Title;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 6;
+                    item.entity = "Encounter";
+                    list.push(item);
+                };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1328,9 +1362,26 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
-            // function Procedure() {
+            function Procedure() {
+                for (var i = 0; i < patientProcedureGlobal.length; i++) {
+                    var dataSet = patientProcedureGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('ProcedureID')) {
+                        item.id = dataSet.ProcedureID;
+                    }
+                    item.name = dataSet.Title;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 7;
+                    item.entity = "Procedure";
+                    list.push(item);
+                };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1373,9 +1424,26 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
-            // function ProcedureRequest() {
+            function ProcedureRequest() {
+                for (var i = 0; i < patientProcedureRequestGlobal.length; i++) {
+                    var dataSet = patientProcedureRequestGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('ProcedureRequestID')) {
+                        item.id = dataSet.ProcedureRequestID;
+                    }
+                    item.name = dataSet.Title;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 13;
+                    item.entity = "ProcedureRequest";
+                    list.push(item);
+                };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1418,7 +1486,7 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
             function Condition() {    
                 
@@ -1485,7 +1553,24 @@
                 // });
             }
         
-            // function CarePlan() {
+            function CarePlan() {
+                                        for (var i = 0; i < patientCarePlanGlobal.length; i++) {
+                            var dataSet = patientCarePlanGlobal[i];
+                            var item = {};
+        
+                            if (dataSet.hasOwnProperty('CarePlanID')) {
+                                item.id = dataSet.CarePlanID;
+                            }
+                            item.name = dataSet.Title;
+        
+                            if (dataSet.hasOwnProperty('STartDate')) {
+                                item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
+                                item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
+                            }
+                            item.type = 9;
+                            item.entity = "Care Plan";
+                            list.push(item);
+                        };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1528,54 +1613,71 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
-            // function Allergy() {
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            function Allergy() {
+                for (var i = 0; i < patientAllergyGlobal.length; i++) {
+                    var dataSet = patientAllergyGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('Id')) {
+                        item.id = dataSet.Id;
+                    }
+                    item.name = dataSet.name;
+
+                    if (dataSet.hasOwnProperty('RecordedDate')) {
+                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 11;
+                    item.entity = "Allergy Intolerance";
+                    list.push(item);
+                };
+                // var patient = {}
+                // patient.patientId = pid;
+                // patient.startDate = currentStartDate;
+                // patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientAllergiesCRM",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+                // $.ajax({
+                //     url: $("#hdnPatientChartAPIURL").val() + "getPatientAllergiesCRM",
+                //     method: "POST",
+                //     async: false,
+                //     dataType: "json",
+                //     data: JSON.stringify(patient),
+                //     crossDomain: true,
+                //     contentType: "application/json; charset=utf-8",
+                //     cache: false,
+                //     beforeSend: function (xhr) {
+                //         /* Authorization header */
+                //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+                //     },
+                //     success: function (data) {
+                //         for (var i = 0; i < data.data.records.length; i++) {
+                //             var dataSet = data.data.records[i];
+                //             var item = {};
         
-            //                 if (dataSet.hasOwnProperty('Id')) {
-            //                     item.id = dataSet.Id;
-            //                 }
-            //                 item.name = dataSet.name;
+                //             if (dataSet.hasOwnProperty('Id')) {
+                //                 item.id = dataSet.Id;
+                //             }
+                //             item.name = dataSet.name;
         
-            //                 if (dataSet.hasOwnProperty('RecordedDate')) {
-            //                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 11;
-            //                 item.entity = "Allergy Intolerance";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
+                //             if (dataSet.hasOwnProperty('RecordedDate')) {
+                //                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                //                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                //             }
+                //             item.type = 11;
+                //             item.entity = "Allergy Intolerance";
+                //             list.push(item);
+                //         };
+                //         return Promise.resolve();
+                //     },
+                //     error: function () {
+                //         console.log("error");
+                //     }
+                // });
         
         
-            // }
+            }
         
             function Observation() {
                 // var patient = {}
@@ -1642,7 +1744,24 @@
             }
         
         
-            // function Goal() {
+            function Goal() {
+                for (var i = 0; i < patientGoalGlobal.length; i++) {
+                    var dataSet = patientGoalGlobal[i];
+                    var item = {};
+
+                    if (dataSet.hasOwnProperty('GoalId')) {
+                        item.id = dataSet.GoalId;
+                    }
+                    item.name = dataSet.Category;
+
+                    if (dataSet.hasOwnProperty('Startdate')) {
+                        item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
+                        item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+                    }
+                    item.type = 10;
+                    item.entity = "Goal";
+                    list.push(item);
+                };
             //     var patient = {}
             //     patient.patientId = pid;
             //     patient.startDate = currentStartDate;
@@ -1685,7 +1804,7 @@
             //             console.log("error");
             //         }
             //     });
-            // }
+            }
         
             // function RelatedPerson() {
             //     var patient = {}

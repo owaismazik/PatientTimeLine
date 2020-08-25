@@ -98,6 +98,7 @@
                                         var recordeddate = obv[i].issued;
                                         //CreateObservation(obv[i].id, $("#CRMpatietid").val(), "Observation - " + title, recordeddate);
                                         patientObservation.Externalemrid = obv[i].id;
+                                        patientObservation.Description = obv[i].category.text;
                                         patientObservation.description = "Observation - " + title;
                                         patientObservation.patientId = $("#CRMpatietid").val();
                                         patientObservation.IssuedDate = recordeddate;

@@ -156,7 +156,7 @@
                                         if (condition[i] != undefined) {
                                             var title = "";
                                             if(condition[i].code.coding != undefined){
-                                                var title = condition[i].code.coding[0].display;
+                                                title = condition[i].code.coding[0].display;
                                             }
                                             var recordeddate = condition[i].onsetDateTime;
                                             //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
@@ -224,7 +224,7 @@
                                     if (procedureRequest[i] != null) {
                                         if (procedureRequest[i] != undefined) {
                                             var title = procedureRequest[i].code.text;
-                                            var recordeddate = procedureRequest[i].scheduledPeriod.start;                                            
+                                            var recordeddate = procedureRequest[i].scheduledDateTime;                                            
                                             //CreateProcedureRequest(procedureRequest[i].id, $("#CRMpatietid").val(), "procedureRequest - " + title, recordeddate);
                                             var patientProcedure = {}
                                             patientProcedure.Externalemrid = procedureRequest[i].id;
@@ -276,7 +276,6 @@
                     });
 
                     $.when(devi).done(function (device) {
-                        debugger;
                         if (device != null) {
                             if (device.length > 0) {
                                 for (var i = 0; i <= device.length; i++) {
@@ -331,7 +330,6 @@
 
 
                     setTimeout(function () {
-                        debugger;
                         $("#timeline").show();
                         timeline();
                     }, 7000);                   
@@ -976,7 +974,6 @@
     // }
 
     function timeline() {
-        debugger;
             var list = [];
             var YearList = [];
         

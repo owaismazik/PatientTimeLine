@@ -124,7 +124,7 @@
                                 for (var i = 0; i <= Allergy.length; i++) {
                                     if (Allergy[i] != null) {
                                         if (Allergy[i] != undefined) {
-                                            var title = Allergy[i].substance.coding[0].display;
+                                            var title = Allergy[i].substance.text;
                                             var recordeddate = Allergy[i].recordedDate;
                                             //CreateAllergy(Allergy[i].id, $("#CRMpatietid").val(), "Allergy - " + title, recordeddate);
                                             var patientAllergy = {}
@@ -154,7 +154,10 @@
                                 for (var i = 0; i <= condition.length; i++) {
                                     if (condition[i] != null) {
                                         if (condition[i] != undefined) {
-                                            var title = condition[i].code.coding[0].display;
+                                            var title = "";
+                                            if(condition[i].code.coding != undefined){
+                                                var title = condition[i].code.coding[0].display;
+                                            }
                                             var recordeddate = condition[i].onsetDateTime;
                                             //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
                                             var patientCondition = {}
@@ -220,7 +223,7 @@
                                 for (var i = 0; i <= procedureRequest.length; i++) {
                                     if (procedureRequest[i] != null) {
                                         if (procedureRequest[i] != undefined) {
-                                            var title = procedureRequest[i].code.coding[0].display;
+                                            var title = procedureRequest[i].code.text;
                                             var recordeddate = procedureRequest[i].scheduledPeriod.start;                                            
                                             //CreateProcedureRequest(procedureRequest[i].id, $("#CRMpatietid").val(), "procedureRequest - " + title, recordeddate);
                                             var patientProcedure = {}

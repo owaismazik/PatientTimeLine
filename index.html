@@ -41,7 +41,7 @@
     
 </head>
 <body>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!--<input type="hidden" value="https://mazikcarewebapicrm.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
     <!--<input type="hidden" value="http://localhost:9050/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
     <input type="hidden" value="https://mazikcaremediccdsapi.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />
@@ -57,62 +57,63 @@
             <div class="bounce2"></div>
             <div class="bounce3"></div>
         </div>
-        <div id='holder' style="background-color:#fff; width:100%; display:none;">
-            <!--<h2>Example-SMART-App</h2>-->
-            <div class="row mzknav">
-                <img src="./src/images/mazik_logo-mazikcare.png" alt='' class="mz-logo" />
+<div id='holder' style="width:100%; display:block;">
+        <!--<h2>Example-SMART-App</h2>-->
+       <div class="container-fluid">
+        <div class="row mzknav">
+            <img src="./src/images/mazik_logo-mazikcare.png" alt='' class="mz-logo" />
+        </div>
+       </div>
+       <div class="container-fluid">
+        <div class="row MainHeading">
+            <div class="col-md-12">
+             <div class="patientdetailheading">
+                 <h1 class="mzkheading">
+                     Patient Detail
+                 </h1>
+             </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="patientdetailheading">
-                        <h1 class="mzkheading">
-                            Patient Detail
-                        </h1>
-                    </div>
-                </div>
-            </div>
+ 
+         </div>
+       </div>
 
-            <div class="coverbg row">
-                <div class="col-md-4">
-                    <div class="patientdetail">
+               <div class="coverbg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4"><div class="patientdetail">
                         <table class="mzktable">
                             <tbody>
                                 <tr>
-                                    <td data-column="First Name"><strong>First Name</strong></td>
-                                    <td id='fname' data-column="First Name">Steve</td>
+                                    <td data-column="First Name"><strong><i class="fa  fa-user" style="font-size:18px;padding:5px;"></i>First Name</strong></td>
+                                    <td id="fname" data-column="First Name">Steve</td>
                                 </tr>
                                 <tr>
-                                    <td data-column="Last Name"><strong>Last Name</strong></td>
-                                    <td id='lname' data-column="Last Name">Smith</td>
+                                    <td data-column="Last Name"><strong><i class="fa fa-user-plus" style="font-size:18px;padding:5px;"></i>Last Name</strong></td>
+                                    <td id="lname" data-column="Last Name">Smith</td>
                                 </tr>
                                 <tr>
-                                    <td data-column="Phone"><strong>Phone</strong></td>
-                                    <td id='phone' data-column="Phone">12345678</td>
+                                    <td data-column="Phone"><strong><i class="fa fa-phone" style="font-size:18px;padding:5px;"></i>Phone</strong></td>
+                                    <td id="phone" data-column="Phone">12345678</td>
                                 </tr>
                                 <tr>
-                                    <td data-column="Email"><strong>Email</strong></td>
-                                    <td id='email' data-column="Email">stevesmith@gmail.com</td>
+                                    <td data-column="Email"><strong><i class="fa fa-address-card-o " style="font-size:18px;padding:5px;"></i>Email</strong></td>
+                                    <td id="email" data-column="Email">stevesmith@gmail.com</td>
                                 </tr>
                                 <tr>
-                                    <td data-column="Gender"><strong>Gender</strong></td>
-                                    <td id='gender' data-column="Gender">Male</td>
+                                    <td data-column="Gender"><strong><i class="fa fa-transgender-alt" style="font-size:18px;padding:5px;"></i>Gender</strong></td>
+                                    <td id="gender" data-column="Gender">Male</td>
                                 </tr>
                                 <tr>
-                                    <td data-column="Date of Birth"><strong>Date of Birth</strong></td>
-                                    <td id='birthdate' data-column="Date of Birth">03/03/2000</td>
+                                    <td data-column="Date of Birth"><strong><i class="fa fa-calendar-minus-o" style="font-size:18px;padding:5px;"></i>Date of Birth</strong></td>
+                                    <td id="birthdate" data-column="Date of Birth">03/03/2000</td>
                                 </tr>
-                                <tr>
-                                    <td data-column="Height"><strong>Height</strong></td>
-                                    <td id='height' data-column="Height"></td>
-                                </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="patietnTimeline">
-                        <div class=" ">
+                        <div class="row">
                             <div class="subSet">
                                 <div class="left searchControl">
                                     <div class="global">
@@ -180,15 +181,15 @@
                                 </div>
                             </div>
                         </div>
-                        <br /><br />
+
                     </div>
                 </div>
             </div>
-            <div class="  footer">
+            <!--<div class="  footer">
                 <span>
                     mazik care
                 </span>
-            </div>
+            </div>-->
         </div>
     </div>
 

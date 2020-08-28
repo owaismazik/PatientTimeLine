@@ -7,11 +7,14 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     outline: 0 none;
     padding: 0;
     vertical-align: baseline;
-    font-family: arial;
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
 }
 
-
+body {
+    background: #fff;
+    overflow: hidden;
+}
 
 .subSet:before, .subSet:after {
     display: table;
@@ -124,7 +127,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
         font-size: 15px;
         border-radius: 5px;
         width: 250px;
-        
+        background-color: white;
         font-weight: 700;
     }
 
@@ -140,6 +143,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
         color: #656565;
         font-size: 16px;
         text-align: left;
+        max-height:250px;
+        overflow:auto;
     }
 
     .searchControl .checkboxEventList div {
@@ -439,7 +444,7 @@ button.ui-datepicker-trigger {
 /*** Asif ***/
 
 .container {
-    
+    background: #f1f0f0;
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1248px;
@@ -703,8 +708,8 @@ button.ui-datepicker-trigger {
     clear: both;
 }
 
-.mz-logo {
-    padding: 5px;
+.mz-logo {    
+    padding: 5px 42px;
     width: 290px;
     /* margin: 0 auto; */
     display: initial;
@@ -720,10 +725,8 @@ table {
 }
 
 /* Zebra striping */
-tr {
-    background: #e2e2e2;
-    margin: 0px 10px;
-    border-radius: 10px!important;
+tr:nth-of-type(odd) {
+    /*background: #f1f7fa;*/
 }
 
 th {
@@ -741,17 +744,17 @@ td {
     padding: 20px;
     text-align: left;
     font-size: 16px;
-    /* border-bottom: 2px solid #9a9a9a; */
-    color: #888888;
+    border-bottom: 2px solid #9a9a9a;
+    color: #000;
 }
 
 tr > td:first-child {
-    color: #ffffff;
+    color: #9a9a9a;
 }
 
 tr td strong {
-    color: #000000;
-    /* font-weight:bold; */
+    color: #000;
+    font-weight:bold;
 }
 
 /* 
@@ -766,6 +769,7 @@ and also iPads specifically.
     /* width: 96%; */
     margin: 0 auto;
     /*  margin: 5% auto; */
+    text-align:center;
 }
 
     .global ul {
@@ -822,41 +826,25 @@ and also iPads specifically.
         }
 
 
-@media screen and (max-width: 768px) {
-    .patientdetail {width:100% !important;}
-    .patietnTimeline {width:100% !important;}
-}
-
-@media screen and (max-width: 769px) {
-    .patientdetail {width:30%;}
-    .patietnTimeline {width:55%;}
-}
-
-		
 .patientdetail {
-
-width: 100%;
-padding: 20px -1px;
-   
-display: inline-block;
-   
-vertical-align: top;
-   
-max-height: 700px;
-   
-/* margin: 20px 0px; */
-   
-/* border-right: 1px solid #2493e7; */
+    width: 100%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    height: 370px;
+    max-height: 700px;
+    margin-bottom: 40px;
+    /* border-right: 1px solid #2493e7; */
 }
 
     .patientdetail table {
         width:100%;
-       
     }
 
 .patietnTimeline {
     /* padding: 20px; */
-    padding: 0 30px;
+    padding: 30px;
+    width: 100%;
     display: inline-block;
     vertical-align: top;
 }
@@ -866,7 +854,7 @@ max-height: 700px;
     display: inline-block;
     vertical-align: top;
     max-height: 600px;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 /* .footer {
@@ -905,9 +893,11 @@ max-height: 700px;
 }
 
 .patientdetailheading {
-    /* padding: 4px 20px; */
+    width: 100%;
+    padding: 5px 29px;
+    display: inline-block;
+    vertical-align: top;
     /* border-right: 1px solid; */
-    padding: 10px 0px;
 }
 .patietnTimelineheading {
     padding: 20px;
@@ -943,17 +933,13 @@ max-height: 700px;
     width: 100%;
   }
   .mzktable td, .mzktable th {
-    /* border: 1px solid #9a9a9a36; */
-    padding: 8px 10px;
-    font-weight: 500;
-    border-bottom: 6px solid #ffffff;
+    border: 1px solid #9a9a9a36;
+    padding: 18px;
 }
   
-  .mzktable tr:nth-child(even){/* background-color: #f2f2f2; */}
+  .mzktable tr:nth-child(even){background-color: #f2f2f2;}
   
-  .mzktable tr:hover {
-    background-color: #d8d8d8;
-}
+  .mzktable tr:hover {background-color: #ddd;}
   
   .customers th {
     padding-top: 12px;
@@ -1018,13 +1004,10 @@ max-height: 700px;
  
 
  .mzkheading {
-    font-weight: lighter;
-    color: #5c5c5c;
-    font-size: 0.9em;
-    font-family: arial;
-    text-transform: uppercase;
-    display: inline;
-    margin: 20px 0px;
+    font-weight: 700;
+    color: #70c1ff;
+    font-size: 2em;
+    margin: 0;
 }
 
 .timeline__post {
@@ -1061,24 +1044,12 @@ max-height: 700px;
         background-image:url('..src/images/bg.jpg');        
     } */
 
-    b, strong {
-        font-weight: 100!important;
-    }
-
-    /* .coverbg{
-        background-image: url('../images/bg.jpg');
+    .coverbg{
+        background-image: url('../images/bg.jpg'); 
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        margin: 10px 0px;
-    } */
-
-    body{
-        background-image: url('../images/bg.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 10px 0px;
+    
     }
 
     @media screen and (min-width: 641px)
@@ -1087,72 +1058,7 @@ max-height: 700px;
         padding-top: 35px!important;
     }
   
-    
 
-}
-
-
-
-
-.fa-user:before {
-    content: "\f007";
-    background: #ff8d0021;
-    border-radius: 79px;
-    padding: 5px 8px;
-    color: #ff8d00;
-}
-
-.fa-user-plus:before {
-    content: "\f234";
-    background: #ff8d0036;
-    border-radius: 79px;
-    padding: 7px 5px;
-    background: #00b9001a;
-    color: #00b900;
-}
-
-
-.fa-phone:before {
-    content: "\f095";
-    background: #00d0ff24;
-    border-radius: 79px;
-    padding: 6px 8px;
-    color: #00d0ffbf;
-}
-
-
-.fa-vcard-o:before, .fa-address-card-o:before {
-    content: "\f2bc";
-    background: #ff000c17;
-    color: #ff000cfa;
-    border-radius: 79px;
-    padding: 8px 6px;
-}
-
-.fa-transgender-alt:before {
-    content: "\f225";
-    background: #0014ff0d;
-    border-radius: 79px;
-    padding: 6px 7px;
-    color: #0014fff7;
-}
-
-
-.fa-calendar-minus-o:before {
-    content: "\f272";
-    background: #8500ff17;
-    color: #8500ff;
-    border-radius: 79px;
-    padding: 6px 7px;
-}
-
-
-
-
-
-
-
-tr td:first-child {/* background-color: #ffffff; */color: black;}
 
 /* hasan css end */
 
@@ -1200,51 +1106,3 @@ tr td:first-child {/* background-color: #ffffff; */color: black;}
             font-weight: bold;
         }
 } */
-
-/* Asif */
-
-
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-    .patientdetailheading {
-        padding: 25px 0px;
-    }
-    
-
-        .coverbg {
-            margin-top: 40px;
-        }
-
-        .global ul li {
-        
-            margin: 0 auto!important;
-            display: table!important;
-        }
-
-  }
-
-  @media (min-width: 320px) and (max-width: 480px) {
-
-    .patientdetailheading {
-        padding: 25px 0px!important;
-    }
-    
-    td {
-        font-size: 0.9em;}
-    
-        .coverbg {
-            margin-top: 40px;
-        }
-
-        .mzktable td, .mzktable th {
-            padding: 5px 5px;}
-
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-    .coverbg {
-        margin-top: 40px;
-    }
-}

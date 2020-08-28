@@ -262,6 +262,7 @@
                                             patientEncounter.RecordedDate = recordeddate;
                                             patientEncounter.PatientID = $("#CRMpatietid").val();
                                             patientEncounterGlobal = patientEncounter;
+                                            //
                                         }
                                     }
                                 }

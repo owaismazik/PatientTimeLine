@@ -770,7 +770,8 @@ and also iPads specifically.
 
     .global ul {
         background: transparent;
-        
+        margin: 0 auto;
+        display: table;
     }
 
         .global ul li {
@@ -856,6 +857,7 @@ max-height: 700px;
 
 .patietnTimeline {
     /* padding: 20px; */
+    width: 100%;
     padding: 0 30px;
     display: inline-block;
     vertical-align: top;

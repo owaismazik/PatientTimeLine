@@ -213,7 +213,7 @@
                             </div>
                         </div>
 
-                        <div class="timelinecontrolnew" style="display:none">
+                        <div class="timelinecontrolnew" id="dynaPage" style="display:none">
                             <div class="scrollbar" id="style-2">
                                 <div class="force-overflow">
                                     <div class="page">
@@ -308,7 +308,7 @@
         $(document).ready(function(){
 		    
            // $(".loader").show();
-			 $(' .timeline__group ').load(function() {
+			 $(' #dynaPage ').load(function() {
 			 alert("div loaded.");
 			//	$('.loader').hide();
 			  });

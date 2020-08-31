@@ -1252,6 +1252,12 @@ tr td:first-child {/* background-color: #ffffff; */color: black;}
 }
 
 /* Loading CSS */
+.grid {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap; }
+
 .loader {
   width: 50vw;
   height: 50vh;

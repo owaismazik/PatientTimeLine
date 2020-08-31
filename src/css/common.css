@@ -1261,19 +1261,19 @@ tr td:first-child {/* background-color: #ffffff; */color: black;}
 .loader {
   width: 50vw;
   height: 50vh;
-  border: 1px solid mistyrose;
+  /* border: 1px solid mistyrose; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-			top: 30%;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			margin: 0 auto;
-			z-index: 7;
-			}
+  top: 30%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 7;
+ }
 
 #ld1 {
   position: relative;

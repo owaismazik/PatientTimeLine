@@ -861,7 +861,12 @@ max-height: 700px;
     padding: 0 30px;
     display: inline-block;
     vertical-align: top;
+	
+}
+
+.loadPos {
 	position:relative;
+	
 }
 
 .timelinecontrolnew {    

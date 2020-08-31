@@ -306,9 +306,13 @@
         }
 
         $(document).ready(function(){
+		    
             $(".loader").show();
+			 $(' #patietnTime ').load(function() {
+				$('.loader').hide();
+			  });
 		//	$( ".loader" ).load( "header.html" );
-            setTimeout(function(){ $(".loader").hide(); }, 10000);
+         //   setTimeout(function(){ $(".loader").hide(); }, 10000);
           //  console.log("abc");
         });
 

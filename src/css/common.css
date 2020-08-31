@@ -865,7 +865,7 @@ max-height: 700px;
 }
 
 .loadPos {
-	position:relative;
+	position:relative !important;
 	
 }
 

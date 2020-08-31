@@ -709,7 +709,7 @@ button.ui-datepicker-trigger {
     /* margin: 0 auto; */
     display: initial;
     display: table;
-	float: left;
+	float: right;
 }
 
 table {

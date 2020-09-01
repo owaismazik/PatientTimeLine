@@ -367,7 +367,7 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 7000);                   
+                    }, 10);  //7000                 
 
                 });
 
@@ -1122,13 +1122,13 @@
                             $control.addClass('removeTranslate');
                             setTimeout(function () {
                                 $control.show();
-                            }, 300);
+                            }, 10);//300
                         } else {
                             $control.addClass('addTranslate');
                             $control.removeClass('removeTranslate');
                             setTimeout(function () {
                                 $control.hide();
-                            }, 300);
+                            }, 10);//300
                         }
                     });
         
@@ -1140,7 +1140,7 @@
         
                     $("._loader").hide();
         
-                }, 500);
+                }, 10); //500
             }
         
             function loadYearDropdown(array) {

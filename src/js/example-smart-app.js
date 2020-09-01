@@ -236,6 +236,21 @@
                                             patientProcedure.RecordedDate = recordeddate;
                                             patientProcedure.PatientID = $("#CRMpatietid").val();
                                             patientProcedureGlobal = patientProcedure;
+                                            var dataSet = patientProcedureGlobal[i];
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('ProcedureID')) {
+                                                item.id = dataSet.ProcedureID;
+                                            }
+                                            item.name = dataSet.Title;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 7;
+                                            item.entity = "Procedure";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -1065,6 +1080,7 @@
         
             function loadData(doSync) {
                 $("._loader").show();
+                $(".loader").show();
                 setTimeout(function () {
                     if (doSync) {
                         //loadUserDateFormat();
@@ -1087,9 +1103,9 @@
                         //if (checkedEvents.indexOf('12') > -1) {
                         //    Observation();
                         //}
-                        if (checkedEvents.indexOf('7') > -1) {
-                            Procedure();
-                        }
+                        //if (checkedEvents.indexOf('7') > -1) {
+                        //    Procedure();
+                        //}
                         if (checkedEvents.indexOf('13') > -1) {
                             ProcedureRequest();
                         }
@@ -1140,6 +1156,7 @@
                     });
         
                     $("._loader").hide();
+                    $(".loader").show();
         
                 }, 10); //500
             }
@@ -1403,67 +1420,67 @@
             //     });
             }
         
-            function Procedure() {
-                for (var i = 0; i < patientProcedureGlobal.length; i++) {
-                    var dataSet = patientProcedureGlobal[i];
-                    var item = {};
+            //function Procedure() {
+            //    for (var i = 0; i < patientProcedureGlobal.length; i++) {
+            //        var dataSet = patientProcedureGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('ProcedureID')) {
-                        item.id = dataSet.ProcedureID;
-                    }
-                    item.name = dataSet.Title;
+            //        if (dataSet.hasOwnProperty('ProcedureID')) {
+            //            item.id = dataSet.ProcedureID;
+            //        }
+            //        item.name = dataSet.Title;
 
-                    if (dataSet.hasOwnProperty('RecordedDate')) {
-                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 7;
-                    item.entity = "Procedure";
-                    list.push(item);
-                };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('RecordedDate')) {
+            //            item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 7;
+            //        item.entity = "Procedure";
+            //        list.push(item);
+            //    };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientProcedure",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientProcedure",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('ProcedureID')) {
-            //                     item.id = dataSet.ProcedureID;
-            //                 }
-            //                 item.name = dataSet.Title;
+            ////                 if (dataSet.hasOwnProperty('ProcedureID')) {
+            ////                     item.id = dataSet.ProcedureID;
+            ////                 }
+            ////                 item.name = dataSet.Title;
         
-            //                 if (dataSet.hasOwnProperty('RecordedDate')) {
-            //                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 7;
-            //                 item.entity = "Procedure";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('RecordedDate')) {
+            ////                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 7;
+            ////                 item.entity = "Procedure";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
         
             function ProcedureRequest() {
                 for (var i = 0; i < patientProcedureRequestGlobal.length; i++) {
@@ -1526,7 +1543,9 @@
             //         }
             //     });
             }
-        
+
+
+
             //function Condition() {    
                 
 

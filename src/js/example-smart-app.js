@@ -1079,7 +1079,7 @@
             // FUNCTIONS
         
             function loadData(doSync) {
-                $("._loader").show();
+                //$("._loader").show();
                 //$(".loader").show();
                 setTimeout(function () {
                     if (doSync) {
@@ -1155,7 +1155,7 @@
                         openForm(id, entity);
                     });
         
-                    $("._loader").hide();
+                    //$("._loader").hide();
                     //$(".loader").show();
         
                 }, 500); //500

@@ -1,4 +1,5 @@
 (function (window) {
+    var list = [];
     var patientConditionGlobal = [];
     var patientObservationGlobal = [];
     var patientCarePlanGlobal = [];
@@ -166,6 +167,23 @@
                                             patientCondition.RecordedDate = recordeddate;
                                             patientCondition.PatientID = $("#CRMpatietid").val();
                                             patientConditionGlobal[i] = patientCondition;
+
+                                            var dataSet = patientConditionGlobal[i];
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('ConditionID')) {
+                                                item.id = dataSet.ConditionID;
+                                            }
+                                            item.name = dataSet.Title;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 8;
+                                            item.entity = "Condition";
+                                            list.push(item);
+
                                         }
                                     }
                                 }
@@ -976,7 +994,7 @@
     // }
 
     function timeline() {
-            var list = [];
+   
             var YearList = [];
         
             var currentStartDate;

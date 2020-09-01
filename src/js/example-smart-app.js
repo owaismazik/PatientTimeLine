@@ -1080,7 +1080,7 @@
         
             function loadData(doSync) {
                 $("._loader").show();
-                $(".loader").show();
+                //$(".loader").show();
                 setTimeout(function () {
                     if (doSync) {
                         //loadUserDateFormat();
@@ -1156,7 +1156,7 @@
                     });
         
                     $("._loader").hide();
-                    $(".loader").show();
+                    //$(".loader").show();
         
                 }, 10); //500
             }

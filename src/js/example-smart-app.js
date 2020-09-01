@@ -1052,7 +1052,7 @@
                 setTimeout(function () {
                     if (doSync) {
                         //loadUserDateFormat();
-                        list = [];
+                        //list = [];
                         if (checkedEvents.indexOf('5') > -1) {
                             Device();
                         }

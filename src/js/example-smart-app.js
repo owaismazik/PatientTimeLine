@@ -382,7 +382,7 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 10);  //7000                 
+                    }, 1000);  //7000                 
 
                 });
 

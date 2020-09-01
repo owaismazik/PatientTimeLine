@@ -1202,8 +1202,8 @@
             }
         
             function LoadTimeline() {
-                $("#loading").show();
-                $(".loader").show();
+                //$("#loading").show();
+                //$(".loader").show();
                 $("#timelinecontrolnew").hide()
                 $("#timeline").html("");
         

@@ -104,6 +104,21 @@
                                         patientObservation.patientId = $("#CRMpatietid").val();
                                         patientObservation.IssuedDate = recordeddate;
                                         patientObservationGlobal[i] = patientObservation;
+                                        var dataSet = patientObservationGlobal[i];
+                                        var item = {};
+
+                                        if (dataSet.hasOwnProperty('ObservationID')) {
+                                            item.id = dataSet.ObservationID;
+                                        }
+                                        item.name = dataSet.Description;
+
+                                        if (dataSet.hasOwnProperty('IssuedDate')) {
+                                            item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
+                                            item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
+                                        }
+                                        item.type = 12;
+                                        item.entity = "Observation";
+                                        list.push(item);
                                     }
                                 }
                             }
@@ -1068,9 +1083,9 @@
                         if (checkedEvents.indexOf('11') > -1) {
                             Allergy();
                         }
-                        if (checkedEvents.indexOf('12') > -1) {
-                            Observation();
-                        }
+                        //if (checkedEvents.indexOf('12') > -1) {
+                        //    Observation();
+                        //}
                         if (checkedEvents.indexOf('7') > -1) {
                             Procedure();
                         }
@@ -1700,69 +1715,69 @@
         
             }
         
-            function Observation() {
-                // var patient = {}
-                // patient.patientId = pid;
-                // patient.startDate = currentStartDate;
-                // patient.endDate = currentEndDate;
+            //function Observation() {
+            //    // var patient = {}
+            //    // patient.patientId = pid;
+            //    // patient.startDate = currentStartDate;
+            //    // patient.endDate = currentEndDate;
 
-                for (var i = 0; i < patientObservationGlobal.length; i++) {
-                    var dataSet = patientObservationGlobal[i];
-                    var item = {};
+            //    for (var i = 0; i < patientObservationGlobal.length; i++) {
+            //        var dataSet = patientObservationGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('ObservationID')) {
-                        item.id = dataSet.ObservationID;
-                    }
-                    item.name = dataSet.Description;
+            //        if (dataSet.hasOwnProperty('ObservationID')) {
+            //            item.id = dataSet.ObservationID;
+            //        }
+            //        item.name = dataSet.Description;
 
-                    if (dataSet.hasOwnProperty('IssuedDate')) {
-                        item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 12;
-                    item.entity = "Observation";
-                    list.push(item);
-                };
-                // $.ajax({
-                //     url: $("#hdnPatientChartAPIURL").val() + "getPatientObservationCRM",
-                //     method: "POST",
-                //     async: false,
-                //     dataType: "json",
-                //     data: JSON.stringify(patient),
-                //     crossDomain: true,
-                //     contentType: "application/json; charset=utf-8",
-                //     cache: false,
-                //     beforeSend: function (xhr) {
-                //         /* Authorization header */
-                //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-                //     },
-                //     success: function (data) {
-                //         for (var i = 0; i < data.data.records.length; i++) {
-                //             var dataSet = data.data.records[i];
-                //             var item = {};
+            //        if (dataSet.hasOwnProperty('IssuedDate')) {
+            //            item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 12;
+            //        item.entity = "Observation";
+            //        list.push(item);
+            //    };
+            //    // $.ajax({
+            //    //     url: $("#hdnPatientChartAPIURL").val() + "getPatientObservationCRM",
+            //    //     method: "POST",
+            //    //     async: false,
+            //    //     dataType: "json",
+            //    //     data: JSON.stringify(patient),
+            //    //     crossDomain: true,
+            //    //     contentType: "application/json; charset=utf-8",
+            //    //     cache: false,
+            //    //     beforeSend: function (xhr) {
+            //    //         /* Authorization header */
+            //    //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            //    //     },
+            //    //     success: function (data) {
+            //    //         for (var i = 0; i < data.data.records.length; i++) {
+            //    //             var dataSet = data.data.records[i];
+            //    //             var item = {};
         
-                //             if (dataSet.hasOwnProperty('ObservationID')) {
-                //                 item.id = dataSet.ObservationID;
-                //             }
-                //             item.name = dataSet.Description;
+            //    //             if (dataSet.hasOwnProperty('ObservationID')) {
+            //    //                 item.id = dataSet.ObservationID;
+            //    //             }
+            //    //             item.name = dataSet.Description;
         
-                //             if (dataSet.hasOwnProperty('IssuedDate')) {
-                //                 item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
-                //                 item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
-                //             }
-                //             item.type = 12;
-                //             item.entity = "Observation";
-                //             list.push(item);
-                //         };
-                //         return Promise.resolve();
-                //     },
-                //     error: function () {
-                //         console.log("error");
-                //     }
-                // });
+            //    //             if (dataSet.hasOwnProperty('IssuedDate')) {
+            //    //                 item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
+            //    //                 item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
+            //    //             }
+            //    //             item.type = 12;
+            //    //             item.entity = "Observation";
+            //    //             list.push(item);
+            //    //         };
+            //    //         return Promise.resolve();
+            //    //     },
+            //    //     error: function () {
+            //    //         console.log("error");
+            //    //     }
+            //    // });
         
         
-            }
+            //}
         
         
             function Goal() {

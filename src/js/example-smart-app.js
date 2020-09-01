@@ -1158,7 +1158,7 @@
                     $("._loader").hide();
                     //$(".loader").show();
         
-                }, 10); //500
+                }, 500); //500
             }
         
             function loadYearDropdown(array) {

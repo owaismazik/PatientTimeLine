@@ -12,6 +12,7 @@
     var patientEncounterGlobal = [];
     var patientAllergyGlobal = [];
     window.extractData = function () {
+        debugger;
         var ret = $.Deferred();
 
         function onError() {

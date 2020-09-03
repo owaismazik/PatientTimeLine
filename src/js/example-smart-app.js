@@ -1126,10 +1126,11 @@
                         var date = new Date(list[i].date)
                         YearList.push(date.getFullYear());                
                     }
-        
-                    var YearListNew = (YearList) => YearList.filter((v, i) => YearList.indexOf(v) === i)
-                    YearList = YearListNew(YearList);
-                    checkedYears = YearList;
+
+                    //TODO undo this commented code
+                    //var YearListNew = (YearList) => YearList.filter((v, i) => YearList.indexOf(v) === i)
+                    //YearList = YearListNew(YearList);
+                    //checkedYears = YearList;
         
                     loadYearDropdown(YearList);
                     

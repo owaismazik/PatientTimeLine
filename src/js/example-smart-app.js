@@ -12,7 +12,6 @@
     var patientEncounterGlobal = [];
     var patientAllergyGlobal = [];
     window.extractData = function () {
-        debugger;
         var ret = $.Deferred();
 
         function onError() {
@@ -22,7 +21,6 @@
 
         function onReady(smart) {
             if (smart.hasOwnProperty('patient')) {
-                debugger;
                 var patient = smart.patient;
                 var pt = patient.read();
                 var obv = smart.patient.api.fetchAll({
@@ -40,7 +38,6 @@
 
                 $.when(pt, obv).done(function (patient, obv) {                    
                     $("#patietid").val(patient.id);
-                    debugger;
                     var byCodes = smart.byCodes(obv, 'code');
                     var gender = patient.gender;
 

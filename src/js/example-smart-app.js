@@ -242,7 +242,7 @@
                                             //if (dataSet.hasOwnProperty('ProcedureID')) {
                                             //    item.id = dataSet.ProcedureID;
                                             //}
-                                            item.name = dataSet.Title;
+                                            //item.name = dataSet.Title;
 
                                             if (dataSet.hasOwnProperty('RecordedDate')) {
                                                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');

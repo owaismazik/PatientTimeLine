@@ -52,17 +52,10 @@
           100% { transform: rotate(360deg); }
         }
 -->
-    </style>
-    <!--
-      Temporarily disable cerner-smart-embeddable-lib
-      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
-         <!--<input type="hidden" value="https://mazikcarewebapicrm.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
-    
+    </style>   
 </head>
 <body>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!--<input type="hidden" value="https://mazikcarewebapicrm.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
-    <!--<input type="hidden" value="http://localhost:9050/api/PatientChart/" id="hdnPatientChartAPIURL" />-->
     <input type="hidden" value="https://mazikcaremediccdsapi.azurewebsites.net/api/PatientChart/" id="hdnPatientChartAPIURL" />
     <input type="hidden" id="CRMpatietid" value="38f500ac-cb74-ea11-a811-000d3a5a1cf8" />
     <input type="hidden" id="patietid" value="" />
@@ -83,11 +76,7 @@
             <div class="bounce3"></div>
         </div>
 <div id='holder' style="width:100%; display:block;">
-        <!--<h2>Example-SMART-App</h2>-->
        <div class="container-fluid">
-        <!-- <div class="row mzknav">
-            <img src="./src/images/mazik_logo-mazikcare.png" alt='' class="mz-logo" />
-        </div> -->
        </div>
        <div class="container-fluid">
         <div class="row MainHeading">
@@ -137,9 +126,7 @@
                     </div>
                 </div>
                
-                <div class="col-md-8 loadPos">
-			<!--		<div class="loader"></div>  -->
-			
+                <div class="col-md-8 loadPos">		
 			<div class="loader" >
         <div id="ld4">
           <div>
@@ -227,11 +214,6 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="  footer">
-                <span>
-                    mazik care
-                </span>
-            </div>-->
         </div>
     </div>
 
@@ -247,22 +229,19 @@
 
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
-
-    <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
-    <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <!-- timeline javascript-->
     <script src='./src/js/timeline.js'></script>
     <script>
         extractData().then(
             //Display Patient Demographics and Observations if extractData was success
-            function (p) {
+        function (p) {
+            debugger;
                 drawVisualization(p);
             },
 
             //Display 'Failed to call FHIR Service' if extractData failed
-            function () {
+        function () {
                 $('#loading').hide();
                 $('#errors').html('<p> Failed to call FHIR Service </p>');
             }

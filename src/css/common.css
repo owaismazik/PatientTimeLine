@@ -1098,58 +1098,57 @@ max-height: 700px;
 
 
 
-
 .fa-user:before {
     content: "\f007";
-    background: #ff8d0021;
+    background: #eed8bd;
     border-radius: 79px;
     padding: 5px 8px;
-    color: #ff8d00;
+    color: #fd9524;
 }
 
 .fa-user-plus:before {
     content: "\f234";
-    background: #ff8d0036;
+    background: #c9ddcb;
     border-radius: 79px;
     padding: 7px 5px;
-    background: #00b9001a;
-    color: #00b900;
+    color: #01b82a;
 }
 
 
 .fa-phone:before {
     content: "\f095";
-    background: #00d0ff24;
+    background: #d1edf8;
     border-radius: 79px;
     padding: 6px 8px;
-    color: #00d0ffbf;
+    color: #4fcad9;
 }
 
 
 .fa-vcard-o:before, .fa-address-card-o:before {
     content: "\f2bc";
-    background: #ff000c17;
-    color: #ff000cfa;
+    background: #fdd9db;
+    color: #ef0836;
     border-radius: 79px;
     padding: 8px 6px;
 }
 
 .fa-transgender-alt:before {
     content: "\f225";
-    background: #0014ff0d;
+    background: #e8e7f5;
     border-radius: 79px;
     padding: 6px 7px;
-    color: #0014fff7;
+    color: #382ad5;
 }
 
 
 .fa-calendar-minus-o:before {
     content: "\f272";
-    background: #8500ff17;
-    color: #8500ff;
+    background: #f4dde3;
+    color: #630bf5;
     border-radius: 79px;
     padding: 6px 7px;
 }
+
 
 
 

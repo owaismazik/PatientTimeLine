@@ -537,8 +537,8 @@
 
     window.drawVisualization = function (p) {
         $('#holder').show();
-        //$('#loading').hide();
-        //$(".loader").hide();
+        $('#loading').hide();
+        $(".loader").hide();
         $('#fname').html(p.fname);
         $('#lname').html(p.lname);
         $('#phone').html(p.phone);
@@ -1292,8 +1292,8 @@
                     }
                 });
         
-                //$("#loading").hide();
-                //$(".loader").hide();
+                $("#loading").hide();
+                $(".loader").hide();
                 $("#timelinecontrolnew").show();
             }
         

@@ -244,13 +244,13 @@
                                             //}
                                             //item.name = dataSet.Title;
 
-                                            if (dataSet.hasOwnProperty('RecordedDate')) {
-                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                                            }
-                                            item.type = 7;
-                                            item.entity = "Procedure";
-                                            list.push(item);
+                                            //if (dataSet.hasOwnProperty('RecordedDate')) {
+                                            //    item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                            //    item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            //}
+                                            //item.type = 7;
+                                            //item.entity = "Procedure";
+                                            //list.push(item);
                                         }
                                     }
                                 }

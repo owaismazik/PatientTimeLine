@@ -239,18 +239,18 @@
                                             var item = {};
 
                                             //TODO commented for testing
-                                            //if (dataSet.hasOwnProperty('ProcedureID')) {
-                                            //    item.id = dataSet.ProcedureID;
-                                            //}
-                                            //item.name = dataSet.Title;
+                                            if (dataSet.hasOwnProperty('ProcedureID')) {
+                                                item.id = dataSet.ProcedureID;
+                                            }
+                                            item.name = dataSet.Title;
 
-                                            //if (dataSet.hasOwnProperty('RecordedDate')) {
-                                            //    item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                                            //    item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                                            //}
-                                            //item.type = 7;
-                                            //item.entity = "Procedure";
-                                            //list.push(item);
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 7;
+                                            item.entity = "Procedure";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -1126,9 +1126,9 @@
                     }
 
                     //TODO undo this commented code
-                    //var YearListNew = (YearList) => YearList.filter((v, i) => YearList.indexOf(v) === i)
-                    //YearList = YearListNew(YearList);
-                    //checkedYears = YearList;
+                    var YearListNew = (YearList) => YearList.filter((v, i) => YearList.indexOf(v) === i)
+                    YearList = YearListNew(YearList);
+                    checkedYears = YearList;
         
                     loadYearDropdown(YearList);
                     

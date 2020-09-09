@@ -337,10 +337,10 @@
                                         if (encounter[i] != undefined) {
                                             var title = encounter[i].type[0].text;
                                             var recordeddate = "";
-                                            if (encounter[i].hasOwnProperty('period') {
+                                            if (encounter[i].hasOwnProperty('period')) {
                                                 recordeddate = encounter[i].period.start;
                                             }
-                                            else if (encounter[i].hasOwnProperty('meta') {
+                                            else if (encounter[i].hasOwnProperty('meta')) {
                                                 recordeddate = encounter[i].meta.lastUpdated;
                                             }
                                             //recordeddate = encounter[i].meta.lastUpdated;

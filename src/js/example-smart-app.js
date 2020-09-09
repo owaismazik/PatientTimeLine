@@ -310,7 +310,23 @@
                                             patientEncounter.RecordedDate = recordeddate;
                                             patientEncounter.PatientID = $("#CRMpatietid").val();
                                             patientEncounterGlobal = patientEncounter;
-                                            //
+                                            for (var i = 0; i < patientEncounterGlobal.length; i++) {
+                                                var dataSet = patientEncounterGlobal[i];
+                                                var item = {};
+
+                                                if (dataSet.hasOwnProperty('EncounterId')) {
+                                                    item.id = dataSet.EncounterId;
+                                                }
+                                                item.name = dataSet.Title;
+
+                                                if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                    item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                    item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                                }
+                                                item.type = 6;
+                                                item.entity = "Encounter";
+                                                list.push(item);
+                                            };
                                         }
                                     }
                                 }
@@ -1088,9 +1104,9 @@
                         if (checkedEvents.indexOf('5') > -1) {
                             Device();
                         }
-                        if (checkedEvents.indexOf('6') > -1) {
-                            Encounter();
-                        }                
+                        //if (checkedEvents.indexOf('6') > -1) {
+                        //    Encounter();
+                        //}                
                         //if (checkedEvents.indexOf('8') > -1) {
                         //    Condition();
                         //}
@@ -1359,67 +1375,67 @@
             //     });
             }
         
-            function Encounter() {
-                for (var i = 0; i < patientEncounterGlobal.length; i++) {
-                    var dataSet = patientEncounterGlobal[i];
-                    var item = {};
+            //function Encounter() {
+            //    for (var i = 0; i < patientEncounterGlobal.length; i++) {
+            //        var dataSet = patientEncounterGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('EncounterId')) {
-                        item.id = dataSet.EncounterId;
-                    }
-                    item.name = dataSet.Title;
+            //        if (dataSet.hasOwnProperty('EncounterId')) {
+            //            item.id = dataSet.EncounterId;
+            //        }
+            //        item.name = dataSet.Title;
 
-                    if (dataSet.hasOwnProperty('RecordedDate')) {
-                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 6;
-                    item.entity = "Encounter";
-                    list.push(item);
-                };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('RecordedDate')) {
+            //            item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 6;
+            //        item.entity = "Encounter";
+            //        list.push(item);
+            //    };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientEncounter",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientEncounter",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('EncounterId')) {
-            //                     item.id = dataSet.EncounterId;
-            //                 }
-            //                 item.name = dataSet.Title;
+            ////                 if (dataSet.hasOwnProperty('EncounterId')) {
+            ////                     item.id = dataSet.EncounterId;
+            ////                 }
+            ////                 item.name = dataSet.Title;
         
-            //                 if (dataSet.hasOwnProperty('RecordedDate')) {
-            //                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 6;
-            //                 item.entity = "Encounter";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('RecordedDate')) {
+            ////                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 6;
+            ////                 item.entity = "Encounter";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
         
             //function Procedure() {
             //    for (var i = 0; i < patientProcedureGlobal.length; i++) {

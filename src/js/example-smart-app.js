@@ -300,8 +300,8 @@
                                     if (encounter[i] != null) {
                                         if (encounter[i] != undefined) {
                                             var title = encounter[i].type[0].text;
-                                            // var recordeddate = encounter[i].period.start;
-                                            var recordeddate = encounter[i].meta.lastUpdated;
+                                            var recordeddate = encounter[i].period.start;
+                                            //var recordeddate = encounter[i].meta.lastUpdated;
                                             //CreateEncounter(encounter[i].id, $("#CRMpatietid").val(), "Encounter - " + title, recordeddate);
                                             var patientEncounter = {}
                                             patientEncounter.Externalemrid = encounter[i].id;

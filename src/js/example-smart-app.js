@@ -1,16 +1,16 @@
 (function (window) {
     var list = [];
-    var patientConditionGlobal = [];
-    var patientObservationGlobal = [];
-    var patientCarePlanGlobal = [];
-    var patientDeviceGlobal = [];
-    var patientProcedureGlobal = [];
-    var patientProcedureRequestGlobal = [];
-    var patientAppointmentGlobal = [];
-    var patientMedicationGlobal = [];
-    var patientGoalGlobal = [];
-    var patientEncounterGlobal = [];
-    var patientAllergyGlobal = [];
+    //var patientConditionGlobal = [];
+    //var patientObservationGlobal = [];
+    //var patientCarePlanGlobal = [];
+    //var patientDeviceGlobal = [];
+    //var patientProcedureGlobal = [];
+    //var patientProcedureRequestGlobal = [];
+    //var patientAppointmentGlobal = [];
+    //var patientMedicationGlobal = [];
+    //var patientGoalGlobal = [];
+    //var patientEncounterGlobal = [];
+    //var patientAllergyGlobal = [];
     window.extractData = function () {
         var ret = $.Deferred();
 
@@ -102,8 +102,8 @@
                                         patientObservation.description = "Observation - " + title;
                                         patientObservation.patientId = $("#CRMpatietid").val();
                                         patientObservation.IssuedDate = recordeddate;
-                                        patientObservationGlobal[i] = patientObservation;
-                                        var dataSet = patientObservationGlobal[i];
+                                        //patientObservationGlobal[i] = patientObservation;
+                                        var dataSet = patientObservation;
                                         var item = {};
 
                                         if (dataSet.hasOwnProperty('ObservationID')) {
@@ -147,7 +147,22 @@
                                             patientAllergy.name = "Allergy - " + title;
                                             patientAllergy.patientId = $("#CRMpatietid").val();
                                             patientAllergy.RecordedDate = recordeddate;
-                                            patientAllergyGlobal = patientAllergy;
+                                            //patientAllergyGlobal = patientAllergy;
+                                            var dataSet = patientAllergy;
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('Id')) {
+                                                item.id = dataSet.Id;
+                                            }
+                                            item.name = dataSet.name;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 11;
+                                            item.entity = "Allergy Intolerance";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -180,16 +195,13 @@
                                             patientCondition.Title = "Condition - " + title;
                                             patientCondition.RecordedDate = recordeddate;
                                             patientCondition.PatientID = $("#CRMpatietid").val();
-                                            patientConditionGlobal[i] = patientCondition;
-
-                                            var dataSet = patientConditionGlobal[i];
+                                            //patientConditionGlobal[i] = patientCondition;
+                                            var dataSet = patientCondition;
                                             var item = {};
-
                                             if (dataSet.hasOwnProperty('ConditionID')) {
                                                 item.id = dataSet.ConditionID;
                                             }
                                             item.name = dataSet.Title;
-
                                             if (dataSet.hasOwnProperty('RecordedDate')) {
                                                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
@@ -197,7 +209,6 @@
                                             item.type = 8;
                                             item.entity = "Condition";
                                             list.push(item);
-
                                         }
                                     }
                                 }
@@ -288,7 +299,22 @@
                                             patientProcedure.Title = "procedureRequest - " + title;
                                             patientProcedure.RecordedDate = recordeddate;
                                             patientProcedure.PatientID = $("#CRMpatietid").val();
-                                            patientProcedureRequestGlobal = patientProcedure;
+                                            //patientProcedureRequestGlobal = patientProcedure;
+                                            var dataSet = patientProcedure;
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('ProcedureRequestID')) {
+                                                item.id = dataSet.ProcedureRequestID;
+                                            }
+                                            item.name = dataSet.Title;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 13;
+                                            item.entity = "ProcedureRequest";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -362,7 +388,22 @@
                                             patientDevice.Title = "Device - " + title;
                                             patientDevice.RecordedDate = recordeddate;
                                             patientDevice.PatientID = $("#CRMpatietid").val();
-                                            patientDeviceGlobal = patientDevice;
+                                            //patientDeviceGlobal = patientDevice;
+                                            var dataSet = patientDevice;
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('DeviceID')) {
+                                                item.id = dataSet.DeviceID;
+                                            }
+                                            item.name = dataSet.Title;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 5;
+                                            item.entity = "Device";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -388,12 +429,25 @@
                                             //id, patientid, title, desc, startdate, enddate
                                             var patientCarePlan = {}
                                             patientCarePlan.Externalemrid = careplan[i].id;
-                                            patientCarePlan.Title =  fname + " " + lname + " Care Plan";
+                                            patientCarePlan.Title = fname + " " + lname + " Care Plan";
                                             patientCarePlan.Description = fname + " " + lname + " Care Plan";
                                             patientCarePlan.STartDate = careplan[i].period.start;
                                             patientCarePlan.EndDate = careplan[i].period.start;
                                             patientCarePlan.PatientID = $("#CRMpatietid").val();
-                                            patientCarePlanGlobal = patientCarePlan;
+                                            //patientCarePlanGlobal = patientCarePlan;
+                                            var dataSet = patientCarePlan;
+                                            var item = {};
+                                            if (dataSet.hasOwnProperty('CarePlanID')) {
+                                                item.id = dataSet.CarePlanID;
+                                            }
+                                            item.name = dataSet.Title;
+                                            if (dataSet.hasOwnProperty('STartDate')) {
+                                                item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 9;
+                                            item.entity = "Care Plan";
+                                            list.push(item);
                                         }
                                     }
                                 }
@@ -462,7 +516,22 @@
                                         Goal.TargetDate = targetdate;
                                         Goal.Category = category;
                                         Goal.Description = description;
-                                        patientGoalGlobal = Goal;
+                                        //patientGoalGlobal = Goal;
+                                        var dataSet = Goal;
+                                        var item = {};
+
+                                        if (dataSet.hasOwnProperty('GoalId')) {
+                                            item.id = dataSet.GoalId;
+                                        }
+                                        item.name = dataSet.Category;
+
+                                        if (dataSet.hasOwnProperty('Startdate')) {
+                                            item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
+                                            item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+                                        }
+                                        item.type = 10;
+                                        item.entity = "Goal";
+                                        list.push(item);
                                     }
                                 }
                             }
@@ -1320,67 +1389,67 @@
                 $("#timelinecontrolnew").show();
             }
         
-            function Device() {
-                for (var i = 0; i < patientDeviceGlobal.length; i++) {
-                    var dataSet = patientDeviceGlobal[i];
-                    var item = {};
+            //function Device() {
+            //    for (var i = 0; i < patientDeviceGlobal.length; i++) {
+            //        var dataSet = patientDeviceGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('DeviceID')) {
-                        item.id = dataSet.DeviceID;
-                    }
-                    item.name = dataSet.Title;
+            //        if (dataSet.hasOwnProperty('DeviceID')) {
+            //            item.id = dataSet.DeviceID;
+            //        }
+            //        item.name = dataSet.Title;
 
-                    if (dataSet.hasOwnProperty('RecordedDate')) {
-                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 5;
-                    item.entity = "Device";
-                    list.push(item);
-                };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('RecordedDate')) {
+            //            item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 5;
+            //        item.entity = "Device";
+            //        list.push(item);
+            //    };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientDevice",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientDevice",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('DeviceID')) {
-            //                     item.id = dataSet.DeviceID;
-            //                 }
-            //                 item.name = dataSet.Title;
+            ////                 if (dataSet.hasOwnProperty('DeviceID')) {
+            ////                     item.id = dataSet.DeviceID;
+            ////                 }
+            ////                 item.name = dataSet.Title;
         
-            //                 if (dataSet.hasOwnProperty('RecordedDate')) {
-            //                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 5;
-            //                 item.entity = "Device";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('RecordedDate')) {
+            ////                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 5;
+            ////                 item.entity = "Device";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
         
             //function Encounter() {
             //    for (var i = 0; i < patientEncounterGlobal.length; i++) {
@@ -1506,67 +1575,67 @@
             ////     });
             //}
         
-            function ProcedureRequest() {
-                for (var i = 0; i < patientProcedureRequestGlobal.length; i++) {
-                    var dataSet = patientProcedureRequestGlobal[i];
-                    var item = {};
+            //function ProcedureRequest() {
+            //    for (var i = 0; i < patientProcedureRequestGlobal.length; i++) {
+            //        var dataSet = patientProcedureRequestGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('ProcedureRequestID')) {
-                        item.id = dataSet.ProcedureRequestID;
-                    }
-                    item.name = dataSet.Title;
+            //        if (dataSet.hasOwnProperty('ProcedureRequestID')) {
+            //            item.id = dataSet.ProcedureRequestID;
+            //        }
+            //        item.name = dataSet.Title;
 
-                    if (dataSet.hasOwnProperty('RecordedDate')) {
-                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 13;
-                    item.entity = "ProcedureRequest";
-                    list.push(item);
-                };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('RecordedDate')) {
+            //            item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 13;
+            //        item.entity = "ProcedureRequest";
+            //        list.push(item);
+            //    };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientProcedureRequest",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientProcedureRequest",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('ProcedureRequestID')) {
-            //                     item.id = dataSet.ProcedureRequestID;
-            //                 }
-            //                 item.name = dataSet.Title;
+            ////                 if (dataSet.hasOwnProperty('ProcedureRequestID')) {
+            ////                     item.id = dataSet.ProcedureRequestID;
+            ////                 }
+            ////                 item.name = dataSet.Title;
         
-            //                 if (dataSet.hasOwnProperty('RecordedDate')) {
-            //                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 13;
-            //                 item.entity = "ProcedureRequest";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('RecordedDate')) {
+            ////                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 13;
+            ////                 item.entity = "ProcedureRequest";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
 
 
 
@@ -1635,131 +1704,131 @@
             //    // });
             //}
         
-            function CarePlan() {
-                                        for (var i = 0; i < patientCarePlanGlobal.length; i++) {
-                            var dataSet = patientCarePlanGlobal[i];
-                            var item = {};
+            //function CarePlan() {
+            //                            for (var i = 0; i < patientCarePlanGlobal.length; i++) {
+            //                var dataSet = patientCarePlanGlobal[i];
+            //                var item = {};
         
-                            if (dataSet.hasOwnProperty('CarePlanID')) {
-                                item.id = dataSet.CarePlanID;
-                            }
-                            item.name = dataSet.Title;
+            //                if (dataSet.hasOwnProperty('CarePlanID')) {
+            //                    item.id = dataSet.CarePlanID;
+            //                }
+            //                item.name = dataSet.Title;
         
-                            if (dataSet.hasOwnProperty('STartDate')) {
-                                item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
-                                item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
-                            }
-                            item.type = 9;
-                            item.entity = "Care Plan";
-                            list.push(item);
-                        };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //                if (dataSet.hasOwnProperty('STartDate')) {
+            //                    item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
+            //                    item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
+            //                }
+            //                item.type = 9;
+            //                item.entity = "Care Plan";
+            //                list.push(item);
+            //            };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientCarePlans",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientCarePlans",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('CarePlanID')) {
-            //                     item.id = dataSet.CarePlanID;
-            //                 }
-            //                 item.name = dataSet.Title;
+            ////                 if (dataSet.hasOwnProperty('CarePlanID')) {
+            ////                     item.id = dataSet.CarePlanID;
+            ////                 }
+            ////                 item.name = dataSet.Title;
         
-            //                 if (dataSet.hasOwnProperty('STartDate')) {
-            //                     item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 9;
-            //                 item.entity = "Care Plan";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('STartDate')) {
+            ////                     item.date = moment.utc(dataSet.STartDate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 9;
+            ////                 item.entity = "Care Plan";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
         
-            function Allergy() {
-                for (var i = 0; i < patientAllergyGlobal.length; i++) {
-                    var dataSet = patientAllergyGlobal[i];
-                    var item = {};
+            //function Allergy() {
+            //    for (var i = 0; i < patientAllergyGlobal.length; i++) {
+            //        var dataSet = patientAllergyGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('Id')) {
-                        item.id = dataSet.Id;
-                    }
-                    item.name = dataSet.name;
+            //        if (dataSet.hasOwnProperty('Id')) {
+            //            item.id = dataSet.Id;
+            //        }
+            //        item.name = dataSet.name;
 
-                    if (dataSet.hasOwnProperty('RecordedDate')) {
-                        item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 11;
-                    item.entity = "Allergy Intolerance";
-                    list.push(item);
-                };
-                // var patient = {}
-                // patient.patientId = pid;
-                // patient.startDate = currentStartDate;
-                // patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('RecordedDate')) {
+            //            item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 11;
+            //        item.entity = "Allergy Intolerance";
+            //        list.push(item);
+            //    };
+            //    // var patient = {}
+            //    // patient.patientId = pid;
+            //    // patient.startDate = currentStartDate;
+            //    // patient.endDate = currentEndDate;
         
-                // $.ajax({
-                //     url: $("#hdnPatientChartAPIURL").val() + "getPatientAllergiesCRM",
-                //     method: "POST",
-                //     async: false,
-                //     dataType: "json",
-                //     data: JSON.stringify(patient),
-                //     crossDomain: true,
-                //     contentType: "application/json; charset=utf-8",
-                //     cache: false,
-                //     beforeSend: function (xhr) {
-                //         /* Authorization header */
-                //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-                //     },
-                //     success: function (data) {
-                //         for (var i = 0; i < data.data.records.length; i++) {
-                //             var dataSet = data.data.records[i];
-                //             var item = {};
+            //    // $.ajax({
+            //    //     url: $("#hdnPatientChartAPIURL").val() + "getPatientAllergiesCRM",
+            //    //     method: "POST",
+            //    //     async: false,
+            //    //     dataType: "json",
+            //    //     data: JSON.stringify(patient),
+            //    //     crossDomain: true,
+            //    //     contentType: "application/json; charset=utf-8",
+            //    //     cache: false,
+            //    //     beforeSend: function (xhr) {
+            //    //         /* Authorization header */
+            //    //         xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            //    //     },
+            //    //     success: function (data) {
+            //    //         for (var i = 0; i < data.data.records.length; i++) {
+            //    //             var dataSet = data.data.records[i];
+            //    //             var item = {};
         
-                //             if (dataSet.hasOwnProperty('Id')) {
-                //                 item.id = dataSet.Id;
-                //             }
-                //             item.name = dataSet.name;
+            //    //             if (dataSet.hasOwnProperty('Id')) {
+            //    //                 item.id = dataSet.Id;
+            //    //             }
+            //    //             item.name = dataSet.name;
         
-                //             if (dataSet.hasOwnProperty('RecordedDate')) {
-                //                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                //                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                //             }
-                //             item.type = 11;
-                //             item.entity = "Allergy Intolerance";
-                //             list.push(item);
-                //         };
-                //         return Promise.resolve();
-                //     },
-                //     error: function () {
-                //         console.log("error");
-                //     }
-                // });
+            //    //             if (dataSet.hasOwnProperty('RecordedDate')) {
+            //    //                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+            //    //                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+            //    //             }
+            //    //             item.type = 11;
+            //    //             item.entity = "Allergy Intolerance";
+            //    //             list.push(item);
+            //    //         };
+            //    //         return Promise.resolve();
+            //    //     },
+            //    //     error: function () {
+            //    //         console.log("error");
+            //    //     }
+            //    // });
         
         
-            }
+            //}
         
             //function Observation() {
             //    // var patient = {}
@@ -1826,67 +1895,67 @@
             //}
         
         
-            function Goal() {
-                for (var i = 0; i < patientGoalGlobal.length; i++) {
-                    var dataSet = patientGoalGlobal[i];
-                    var item = {};
+            //function Goal() {
+            //    for (var i = 0; i < patientGoalGlobal.length; i++) {
+            //        var dataSet = patientGoalGlobal[i];
+            //        var item = {};
 
-                    if (dataSet.hasOwnProperty('GoalId')) {
-                        item.id = dataSet.GoalId;
-                    }
-                    item.name = dataSet.Category;
+            //        if (dataSet.hasOwnProperty('GoalId')) {
+            //            item.id = dataSet.GoalId;
+            //        }
+            //        item.name = dataSet.Category;
 
-                    if (dataSet.hasOwnProperty('Startdate')) {
-                        item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
-                        item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
-                    }
-                    item.type = 10;
-                    item.entity = "Goal";
-                    list.push(item);
-                };
-            //     var patient = {}
-            //     patient.patientId = pid;
-            //     patient.startDate = currentStartDate;
-            //     patient.endDate = currentEndDate;
+            //        if (dataSet.hasOwnProperty('Startdate')) {
+            //            item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
+            //            item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+            //        }
+            //        item.type = 10;
+            //        item.entity = "Goal";
+            //        list.push(item);
+            //    };
+            ////     var patient = {}
+            ////     patient.patientId = pid;
+            ////     patient.startDate = currentStartDate;
+            ////     patient.endDate = currentEndDate;
         
-            //     $.ajax({
-            //         url: $("#hdnPatientChartAPIURL").val() + "getPatientGoalCRM",
-            //         method: "POST",
-            //         async: false,
-            //         dataType: "json",
-            //         data: JSON.stringify(patient),
-            //         crossDomain: true,
-            //         contentType: "application/json; charset=utf-8",
-            //         cache: false,
-            //         beforeSend: function (xhr) {
-            //             /* Authorization header */
-            //             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //         },
-            //         success: function (data) {
-            //             for (var i = 0; i < data.data.records.length; i++) {
-            //                 var dataSet = data.data.records[i];
-            //                 var item = {};
+            ////     $.ajax({
+            ////         url: $("#hdnPatientChartAPIURL").val() + "getPatientGoalCRM",
+            ////         method: "POST",
+            ////         async: false,
+            ////         dataType: "json",
+            ////         data: JSON.stringify(patient),
+            ////         crossDomain: true,
+            ////         contentType: "application/json; charset=utf-8",
+            ////         cache: false,
+            ////         beforeSend: function (xhr) {
+            ////             /* Authorization header */
+            ////             xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            ////         },
+            ////         success: function (data) {
+            ////             for (var i = 0; i < data.data.records.length; i++) {
+            ////                 var dataSet = data.data.records[i];
+            ////                 var item = {};
         
-            //                 if (dataSet.hasOwnProperty('GoalId')) {
-            //                     item.id = dataSet.GoalId;
-            //                 }
-            //                 item.name = dataSet.Category;
+            ////                 if (dataSet.hasOwnProperty('GoalId')) {
+            ////                     item.id = dataSet.GoalId;
+            ////                 }
+            ////                 item.name = dataSet.Category;
         
-            //                 if (dataSet.hasOwnProperty('Startdate')) {
-            //                     item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
-            //                     item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
-            //                 }
-            //                 item.type = 10;
-            //                 item.entity = "Goal";
-            //                 list.push(item);
-            //             };
-            //             return Promise.resolve();
-            //         },
-            //         error: function () {
-            //             console.log("error");
-            //         }
-            //     });
-            }
+            ////                 if (dataSet.hasOwnProperty('Startdate')) {
+            ////                     item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
+            ////                     item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+            ////                 }
+            ////                 item.type = 10;
+            ////                 item.entity = "Goal";
+            ////                 list.push(item);
+            ////             };
+            ////             return Promise.resolve();
+            ////         },
+            ////         error: function () {
+            ////             console.log("error");
+            ////         }
+            ////     });
+            //}
         
             // function RelatedPerson() {
             //     var patient = {}

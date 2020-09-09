@@ -313,9 +313,9 @@
                                                 var dataSet = patientEncounterGlobal[i];
                                                 var item = {};
 
-                                                if (dataSet.hasOwnProperty('EncounterId')) {
-                                                    item.id = dataSet.EncounterId;
-                                                }
+                                                //if (dataSet.hasOwnProperty('EncounterId')) {
+                                                //    item.id = dataSet.EncounterId;
+                                                //}
                                                 item.name = dataSet.Title;
 
                                                 if (dataSet.hasOwnProperty('RecordedDate')) {

@@ -224,8 +224,13 @@
                                             if (procedure[i].hasOwnProperty("performedDateTime")) {
                                                 recordeddate = procedure[i].performedDateTime;
                                             }
-                                            if (procedure[i].hasOwnProperty("performedPeriod")) {
+                                            else if (procedure[i].hasOwnProperty("performedPeriod")) {
                                                 recordeddate = procedure[i].performedPeriod.start;
+                                            }
+                                            else if (procedure[i].hasOwnProperty("meta")) {
+                                                if (procedure[i].meta.lastUpdated != "undefined") {
+                                                    recordeddate = procedure[i].meta.lastUpdated;
+                                                }
                                             }
 
                                             //CreateProcedure(procedure[i].id, $("#CRMpatietid").val(), "Procedure - " + title, recordeddate);

@@ -234,8 +234,8 @@
                                             patientProcedure.Title = "Procedure - " + title;
                                             patientProcedure.RecordedDate = recordeddate;
                                             patientProcedure.PatientID = $("#CRMpatietid").val();
-                                            patientProcedureGlobal = patientProcedure;
-                                            var dataSet = patientProcedureGlobal[i];
+                                            //patientProcedureGlobal = patientProcedure;
+                                            var dataSet = patientProcedure;
                                             var item = {};
 
                                             //if (dataSet.hasOwnProperty('ProcedureID')) {

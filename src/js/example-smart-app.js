@@ -310,7 +310,6 @@
                                             patientEncounter.RecordedDate = recordeddate;
                                             patientEncounter.PatientID = $("#CRMpatietid").val();
                                             patientEncounterGlobal = patientEncounter;
-                                            for (var i = 0; i < patientEncounterGlobal.length; i++) {
                                                 var dataSet = patientEncounterGlobal[i];
                                                 var item = {};
 
@@ -326,7 +325,6 @@
                                                 item.type = 6;
                                                 item.entity = "Encounter";
                                                 list.push(item);
-                                            };
                                         }
                                     }
                                 }

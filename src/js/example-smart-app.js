@@ -308,8 +308,8 @@
                                             patientEncounter.Title = "Encounter - " + title;
                                             patientEncounter.RecordedDate = recordeddate;
                                             patientEncounter.PatientID = $("#CRMpatietid").val();
-                                            patientEncounterGlobal = patientEncounter;
-                                                var dataSet = patientEncounterGlobal[i];
+                                            //patientEncounterGlobal = patientEncounter;
+                                            var dataSet = patientEncounter;
                                                 var item = {};
 
                                                 //if (dataSet.hasOwnProperty('EncounterId')) {

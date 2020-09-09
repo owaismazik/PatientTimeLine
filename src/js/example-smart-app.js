@@ -232,6 +232,11 @@
                                                     recordeddate = procedure[i].meta.lastUpdated;
                                                 }
                                             }
+                                            if (recordeddate.length == 4) {
+                                                if (procedure[i].meta.lastUpdated != "undefined") {
+                                                    recordeddate = procedure[i].meta.lastUpdated;
+                                                }
+                                            }
 
                                             //CreateProcedure(procedure[i].id, $("#CRMpatietid").val(), "Procedure - " + title, recordeddate);
                                             var patientProcedure = {}

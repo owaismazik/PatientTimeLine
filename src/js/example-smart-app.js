@@ -238,10 +238,9 @@
                                             var dataSet = patientProcedureGlobal[i];
                                             var item = {};
 
-                                            //TODO commented for testing
-                                            if (dataSet.hasOwnProperty('ProcedureID')) {
-                                                item.id = dataSet.ProcedureID;
-                                            }
+                                            //if (dataSet.hasOwnProperty('ProcedureID')) {
+                                            //    item.id = dataSet.ProcedureID;
+                                            //}
                                             item.name = dataSet.Title;
 
                                             if (dataSet.hasOwnProperty('RecordedDate')) {

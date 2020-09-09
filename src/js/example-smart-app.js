@@ -1183,36 +1183,36 @@
                     if (doSync) {
                         //loadUserDateFormat();
                         //list = [];
-                        if (checkedEvents.indexOf('5') > -1) {
-                            Device();
-                        }
+                        //if (checkedEvents.indexOf('5') > -1) {
+                        //    Device();
+                        //}
                         //if (checkedEvents.indexOf('6') > -1) {
                         //    Encounter();
                         //}                
                         //if (checkedEvents.indexOf('8') > -1) {
                         //    Condition();
                         //}
-                        if (checkedEvents.indexOf('9') > -1) {
-                            CarePlan();
-                        }
-                        if (checkedEvents.indexOf('11') > -1) {
-                            Allergy();
-                        }
+                        //if (checkedEvents.indexOf('9') > -1) {
+                        //    CarePlan();
+                        //}
+                        //if (checkedEvents.indexOf('11') > -1) {
+                        //    Allergy();
+                        //}
                         //if (checkedEvents.indexOf('12') > -1) {
                         //    Observation();
                         //}
                         //if (checkedEvents.indexOf('7') > -1) {
                         //    Procedure();
                         //}
-                        if (checkedEvents.indexOf('13') > -1) {
-                            ProcedureRequest();
-                        }
-                        if (checkedEvents.indexOf('10') > -1) {
-                            Goal();
-                        }
-                        if (checkedEvents.indexOf('14') > -1) {
-                            RelatedPerson();
-                        }
+                        //if (checkedEvents.indexOf('13') > -1) {
+                        //    ProcedureRequest();
+                        //}
+                        //if (checkedEvents.indexOf('10') > -1) {
+                        //    Goal();
+                        //}
+                        //if (checkedEvents.indexOf('14') > -1) {
+                        //    RelatedPerson();
+                        //}
                     }
         
                     //event = $('select').val() == null ? '' : $('select').val();

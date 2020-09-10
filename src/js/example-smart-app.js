@@ -232,7 +232,7 @@
                                     if (MedicationOrder[i] != null) {
                                         if (MedicationOrder[i] != undefined) {
                                             var title = "";
-                                            if (MedicationOrder[i].code.coding != undefined) {
+                                            if (MedicationOrder[i].medicationCodeableConcept != undefined) {
                                                 title = MedicationOrder[i].medicationCodeableConcept.coding[0].display;
                                             }
                                             var recordeddate = MedicationOrder[i].dateWritten;

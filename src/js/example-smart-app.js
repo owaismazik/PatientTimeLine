@@ -233,28 +233,26 @@
                                         if (MedicationOrder[i] != undefined) {
                                             var title = "";
                                             if (MedicationOrder[i].code.coding != undefined) {
-                                                title = MedicationOrder[i].code.coding[0].display;
+                                                title = MedicationOrder[i].medicationCodeableConcept.coding[0].display;
                                             }
-                                            var recordeddate = condition[i].onsetDateTime;
-                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
-                                            var patientCondition = {}
-                                            patientCondition.Externalemrid = condition[i].id;
-                                            patientCondition.Title = "Condition - " + title;
-                                            patientCondition.RecordedDate = recordeddate;
-                                            patientCondition.PatientID = $("#CRMpatietid").val();
-                                            //patientConditionGlobal[i] = patientCondition;
-                                            var dataSet = patientCondition;
+                                            var recordeddate = MedicationOrder[i].dateWritten;
+                                            var patientMedicationOrder = {}
+                                            patientMedicationOrder.Externalemrid = MedicationOrder[i].id;
+                                            patientMedicationOrder.Title = "MedicationOrder - " + title;
+                                            patientMedicationOrder.RecordedDate = recordeddate;
+                                            patientMedicationOrder.PatientID = $("#CRMpatietid").val();
+                                            var dataSet = patientMedicationOrder;
                                             var item = {};
-                                            if (dataSet.hasOwnProperty('ConditionID')) {
-                                                item.id = dataSet.ConditionID;
-                                            }
+                                            //if (dataSet.hasOwnProperty('MedicationOrderID')) {
+                                            //    item.id = dataSet.MedicationOrderID;
+                                            //}
                                             item.name = dataSet.Title;
                                             if (dataSet.hasOwnProperty('RecordedDate')) {
                                                 item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 8;
-                                            item.entity = "Condition";
+                                            item.entity = "MedicationOrder";
                                             list.push(item);
                                         }
                                     }

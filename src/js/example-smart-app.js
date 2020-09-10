@@ -214,7 +214,54 @@
                                 }
                             }
                         }
-                    });                    
+                    });  
+
+                    var MedOrder = smart.patient.api.fetchAll({
+                        type: 'MedicationOrder',
+                        query: {
+                            patient: patient.id
+                        }
+                    });
+
+                    $.when(MedOrder).done(function (MedicationOrder) {
+
+                        if (MedicationOrder != null) {
+                            debugger
+                            if (MedicationOrder.length > 0) {
+                                for (var i = 0; i <= MedicationOrder.length; i++) {
+                                    if (MedicationOrder[i] != null) {
+                                        if (MedicationOrder[i] != undefined) {
+                                            var title = "";
+                                            if (MedicationOrder[i].code.coding != undefined) {
+                                                title = MedicationOrder[i].code.coding[0].display;
+                                            }
+                                            var recordeddate = condition[i].onsetDateTime;
+                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
+                                            var patientCondition = {}
+                                            patientCondition.Externalemrid = condition[i].id;
+                                            patientCondition.Title = "Condition - " + title;
+                                            patientCondition.RecordedDate = recordeddate;
+                                            patientCondition.PatientID = $("#CRMpatietid").val();
+                                            //patientConditionGlobal[i] = patientCondition;
+                                            var dataSet = patientCondition;
+                                            var item = {};
+                                            if (dataSet.hasOwnProperty('ConditionID')) {
+                                                item.id = dataSet.ConditionID;
+                                            }
+                                            item.name = dataSet.Title;
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 8;
+                                            item.entity = "Condition";
+                                            list.push(item);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });  
 
                     var proc = smart.patient.api.fetchAll({
                         type: 'Procedure',

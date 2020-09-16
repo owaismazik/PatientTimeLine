@@ -86,13 +86,11 @@
                                         var patientObservation = {};
                                         var title = obv[i].code.coding[0].display;
                                         var recordeddate = obv[i].issued;
-                                        //CreateObservation(obv[i].id, $("#CRMpatietid").val(), "Observation - " + title, recordeddate);
                                         patientObservation.Externalemrid = obv[i].id;
                                         patientObservation.Description = obv[i].code.text;
                                         patientObservation.description = "Observation - " + title;
                                         patientObservation.patientId = $("#CRMpatietid").val();
                                         patientObservation.IssuedDate = recordeddate;
-                                        //patientObservationGlobal[i] = patientObservation;
                                         var dataSet = patientObservation;
                                         var item = {};
 
@@ -378,27 +376,22 @@
                                             else if (encounter[i].hasOwnProperty('meta')) {
                                                 recordeddate = encounter[i].meta.lastUpdated;
                                             }
-                                            //recordeddate = encounter[i].meta.lastUpdated;
-                                            //CreateEncounter(encounter[i].id, $("#CRMpatietid").val(), "Encounter - " + title, recordeddate);
                                             var patientEncounter = {}
-                                            patientEncounter.Externalemrid = encounter[i].id;
+                                            patientEncounter.encounterID = encounter[i].id;
                                             patientEncounter.Title = "Encounter - " + title;
                                             patientEncounter.RecordedDate = recordeddate;
                                             patientEncounter.PatientID = $("#CRMpatietid").val();
-                                            //patientEncounterGlobal = patientEncounter;
                                             var dataSet = patientEncounter;
                                                 var item = {};
 
-                                                //if (dataSet.hasOwnProperty('EncounterId')) {
-                                                //    item.id = dataSet.EncounterId;
-                                                //}
                                                 item.name = dataSet.Title;
 
                                                 if (dataSet.hasOwnProperty('RecordedDate')) {
                                                     item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
                                                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                                 }
-                                                item.type = 6;
+                                            item.type = 6;
+                                            item.encounterID = dataSet.encounterID;
                                                 item.entity = "Encounter";
                                                 list.push(item);
                                         }

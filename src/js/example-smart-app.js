@@ -1030,6 +1030,6 @@
             $('#changeOrder').val(true);
             LoadTimeline();
         }
-    }
+    });
 
 })(window);

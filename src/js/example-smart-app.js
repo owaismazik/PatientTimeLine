@@ -363,6 +363,9 @@
                                             }
                                             item.type = 13;
                                             item.id = dataSet.procedureRequestID;
+                                            if (procedureRequest[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = procedureRequest[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "ProcedureRequest";
                                             list.push(item);
                                         }
@@ -454,6 +457,9 @@
                                             }
                                             item.type = 5;
                                             item.id = dataSet.deviceID;
+                                            if (device[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = device[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "Device";
                                             list.push(item);
                                         }
@@ -499,6 +505,9 @@
                                             }
                                             item.type = 9;
                                             item.id = dataSet.careplanID;
+                                            if (careplan[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = careplan[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "Care Plan";
                                             list.push(item);
                                         }
@@ -548,6 +557,9 @@
                                             if (dataSet.hasOwnProperty('Startdate')) {
                                                 item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
                                                 item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            if (Goal[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = Goal[i].encounter.reference.split('/')[1];
                                             }
                                             item.type = 10;
                                             item.entity = "Goal";

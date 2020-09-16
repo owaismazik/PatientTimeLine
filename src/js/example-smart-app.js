@@ -855,6 +855,9 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
+                                                '<span class="mzkicon">' +
+                                                    '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '</span>' +
                                                 '</div></div></div>';
                                         }
                                         else {
@@ -865,6 +868,9 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
+                                                '<span class="mzkicon">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '</span>' +
                                                 '</div></div></div>';
                                         }
                                     }
@@ -876,6 +882,9 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
+                                            '<span class="mzkicon">' +
+                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                            '</span>' +
                                             '</div></div></div>';
                                     }
                                 }
@@ -887,6 +896,9 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
+                                        '<span class="mzkicon">' +
+                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                        '</span>' +
                                         '</div></div></div>';
                                 }
                             }
@@ -926,6 +938,9 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
+                                                '<span class="mzkicon">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '</span>' +
                                                 '</div></div></div>';
                                         }
                                         else {
@@ -936,6 +951,9 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
+                                                '<span class="mzkicon">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '</span>' +
                                                 '</div></div></div>';
                                         }
                                     }
@@ -947,6 +965,9 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
+                                            '<span class="mzkicon">' +
+                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                            '</span>' +
                                             '</div></div></div>';
                                     }
                                 }
@@ -958,6 +979,9 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                         '<p> ' + name + '</p>' +
+                                        '<span class="mzkicon">' +
+                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                        '</span>' +
                                         '</div></div></div>';
                                 }
                             }

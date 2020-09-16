@@ -1022,13 +1022,13 @@
 
     $(".changeOrderClass").on("click", function () {
         var value = $('#changeOrder').val();
-        if (value == true) {
+        if (value == "true") {
             $('#changeOrder').val(false);
-            LoadTimeline();
+            timeline();
         }
         else {
             $('#changeOrder').val(true);
-            LoadTimeline();
+            timeline();
         }
     });
 

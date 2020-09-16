@@ -790,7 +790,7 @@
         
                 var html = "";
 
-                if (value) {
+                if (value == "true") {
                     for (var j = 0; j < checkedYears.length; j++) {
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';

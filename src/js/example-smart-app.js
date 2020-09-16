@@ -86,7 +86,7 @@
                                         var patientObservation = {};
                                         var title = obv[i].code.coding[0].display;
                                         var recordeddate = obv[i].issued;
-                                        patientObservation.Externalemrid = obv[i].id;
+                                        patientObservation.obvID = obv[i].id;
                                         patientObservation.Description = obv[i].code.text;
                                         patientObservation.description = "Observation - " + title;
                                         patientObservation.patientId = $("#CRMpatietid").val();
@@ -97,13 +97,15 @@
                                         if (dataSet.hasOwnProperty('ObservationID')) {
                                             item.id = dataSet.ObservationID;
                                         }
-                                        item.name = dataSet.Description;
+                                        item.name = "Observation - " + title;
 
                                         if (dataSet.hasOwnProperty('IssuedDate')) {
-                                            item.date = moment.utc(dataSet.IssuedDate).format('MM/DD/YYYY');
-                                            item.dateTime = moment.utc(dataSet.IssuedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            item.date = moment.utc(recordeddate).format('MM/DD/YYYY');
+                                            item.dateTime = moment.utc(recordeddate).format('YYYY-MM-DD HH:mm:ss');
                                         }
                                         item.type = 12;
+                                        item.id = obv[i].id;
+                                        item.encounterID = obv[i].encounter.reference.split('/')[1];
                                         item.entity = "Observation";
                                         list.push(item);
                                     }

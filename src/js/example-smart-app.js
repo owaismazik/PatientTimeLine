@@ -824,7 +824,7 @@
                                             html = '<div class="timeline__box">' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -834,7 +834,7 @@
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -845,7 +845,7 @@
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                             '<div class="timeline__post">' +
                                             '<div class="timeline__content"> ' +
-                                            '<span class="timelineentity">' + entity + '</span>' +
+                                            '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '</div></div></div>';
                                     }
@@ -856,7 +856,7 @@
                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                         '<div class="timeline__post">' +
                                         '<div class="timeline__content"> ' +
-                                        '<span class="timelineentity">' + entity + '</span>' +
+                                        '<span id="' + id + '" class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
                                         '</div></div></div>';
                                 }

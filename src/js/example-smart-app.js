@@ -129,13 +129,11 @@
                                         if (Allergy[i] != undefined) {
                                             var title = Allergy[i].substance.text;
                                             var recordeddate = Allergy[i].recordedDate;
-                                            //CreateAllergy(Allergy[i].id, $("#CRMpatietid").val(), "Allergy - " + title, recordeddate);
                                             var patientAllergy = {}
-                                            patientAllergy.Externalemrid = Allergy[i].id;
+                                            patientAllergy.AllergyID = Allergy[i].id;
                                             patientAllergy.name = "Allergy - " + title;
                                             patientAllergy.patientId = $("#CRMpatietid").val();
                                             patientAllergy.RecordedDate = recordeddate;
-                                            //patientAllergyGlobal = patientAllergy;
                                             var dataSet = patientAllergy;
                                             var item = {};
 
@@ -149,6 +147,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 11;
+                                            item.id = dataSet.AllergyID;
                                             item.entity = "Allergy Intolerance";
                                             list.push(item);
                                         }
@@ -177,13 +176,11 @@
                                                 title = condition[i].code.coding[0].display;
                                             }
                                             var recordeddate = condition[i].onsetDateTime;
-                                            //CreateCondition(condition[i].id, $("#CRMpatietid").val(), "Condition - " + title, recordeddate);
                                             var patientCondition = {}
-                                            patientCondition.Externalemrid = condition[i].id;
+                                            patientCondition.conditionID = condition[i].id;
                                             patientCondition.Title = "Condition - " + title;
                                             patientCondition.RecordedDate = recordeddate;
                                             patientCondition.PatientID = $("#CRMpatietid").val();
-                                            //patientConditionGlobal[i] = patientCondition;
                                             var dataSet = patientCondition;
                                             var item = {};
                                             if (dataSet.hasOwnProperty('ConditionID')) {
@@ -195,6 +192,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 8;
+                                            item.id = dataSet.conditionID;
                                             item.entity = "Condition";
                                             list.push(item);
                                         }
@@ -225,7 +223,7 @@
                                             }
                                             var recordeddate = MedicationOrder[i].dateWritten;
                                             var patientMedicationOrder = {}
-                                            patientMedicationOrder.Externalemrid = MedicationOrder[i].id;
+                                            patientMedicationOrder.MedicationOrderID = MedicationOrder[i].id;
                                             patientMedicationOrder.Title = "MedicationOrder - " + title;
                                             patientMedicationOrder.RecordedDate = recordeddate;
                                             patientMedicationOrder.PatientID = $("#CRMpatietid").val();
@@ -240,6 +238,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 8;
+                                            item.id = dataSet.MedicationOrderID;
                                             item.entity = "MedicationOrder";
                                             list.push(item);
                                         }
@@ -284,7 +283,7 @@
 
                                             //CreateProcedure(procedure[i].id, $("#CRMpatietid").val(), "Procedure - " + title, recordeddate);
                                             var patientProcedure = {}
-                                            patientProcedure.Externalemrid = procedure[i].id;
+                                            patientProcedure.procedureID = procedure[i].id;
                                             patientProcedure.Title = "Procedure - " + title;
                                             patientProcedure.RecordedDate = recordeddate;
                                             patientProcedure.PatientID = $("#CRMpatietid").val();
@@ -302,6 +301,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 7;
+                                            item.id = dataSet.procedureID;
                                             item.entity = "Procedure";
                                             list.push(item);
                                         }
@@ -328,7 +328,7 @@
                                             var recordeddate = procedureRequest[i].scheduledDateTime;                                            
                                             //CreateProcedureRequest(procedureRequest[i].id, $("#CRMpatietid").val(), "procedureRequest - " + title, recordeddate);
                                             var patientProcedure = {}
-                                            patientProcedure.Externalemrid = procedureRequest[i].id;
+                                            patientProcedure.procedureRequestID = procedureRequest[i].id;
                                             patientProcedure.Title = "procedureRequest - " + title;
                                             patientProcedure.RecordedDate = recordeddate;
                                             patientProcedure.PatientID = $("#CRMpatietid").val();
@@ -346,6 +346,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 13;
+                                            item.id = dataSet.procedureRequestID;
                                             item.entity = "ProcedureRequest";
                                             list.push(item);
                                         }
@@ -391,7 +392,7 @@
                                                     item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                                 }
                                             item.type = 6;
-                                            item.encounterID = dataSet.encounterID;
+                                            item.id = dataSet.encounterID;
                                                 item.entity = "Encounter";
                                                 list.push(item);
                                         }
@@ -418,7 +419,7 @@
                                             var recordeddate = device[i].meta.lastUpdated;
                                             //CreateDevice(device[i].id, $("#CRMpatietid").val(), "Device - " + title, recordeddate);
                                             var patientDevice = {}
-                                            patientDevice.Externalemrid = device[i].id;
+                                            patientDevice.deviceID = device[i].id;
                                             patientDevice.Title = "Device - " + title;
                                             patientDevice.RecordedDate = recordeddate;
                                             patientDevice.PatientID = $("#CRMpatietid").val();
@@ -436,6 +437,7 @@
                                                 item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 5;
+                                            item.id = dataSet.deviceID;
                                             item.entity = "Device";
                                             list.push(item);
                                         }
@@ -462,7 +464,7 @@
                                             //CreateCarePlan(careplan[i].id, $("#CRMpatietid").val(), fname + " " + lname + " Care Plan", fname + " " + lname + " Care Plan", careplan[i].period.start, careplan[i].period.start);
                                             //id, patientid, title, desc, startdate, enddate
                                             var patientCarePlan = {}
-                                            patientCarePlan.Externalemrid = careplan[i].id;
+                                            patientCarePlan.careplanID = careplan[i].id;
                                             patientCarePlan.Title = fname + " " + lname + " Care Plan";
                                             patientCarePlan.Description = fname + " " + lname + " Care Plan";
                                             patientCarePlan.STartDate = careplan[i].period.start;
@@ -480,7 +482,59 @@
                                                 item.dateTime = moment.utc(dataSet.STartDate).format('YYYY-MM-DD HH:mm:ss');
                                             }
                                             item.type = 9;
+                                            item.id = dataSet.careplanID;
                                             item.entity = "Care Plan";
+                                            list.push(item);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    var goal = smart.patient.api.fetchAll({
+                        type: 'Goal',
+                        query: {
+                            patient: patient.id
+                        }
+                    });
+
+                    $.when(goal).done(function (Goal) {
+
+                        if (Goal != null) {
+                            if (Goal.length > 0) {
+                                for (var i = 0; i <= Goal.length; i++) {
+                                    if (Goal[i] != null) {
+                                        if (Goal[i] != undefined) {
+
+                                            var externalEmrId = Goal[i].id;
+                                            var startdate = Goal[i].startDate;
+                                            var targetdate = Goal[i].targetDate;
+                                            var category = Goal[i].category[0].text;
+                                            var description = Goal[i].description;
+                                            //CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
+                                            var Goal = {}
+                                            Goal.Externalemrid = externalEmrId;
+                                            Goal.Patientid = $("#CRMpatietid").val();
+                                            Goal.Startdate = startdate;
+                                            Goal.TargetDate = targetdate;
+                                            Goal.Category = category;
+                                            Goal.Description = description;
+                                            //patientGoalGlobal = Goal;
+                                            var dataSet = Goal;
+                                            var item = {};
+
+                                            if (dataSet.hasOwnProperty('GoalId')) {
+                                                item.id = dataSet.GoalId;
+                                            }
+                                            item.name = dataSet.Category;
+
+                                            if (dataSet.hasOwnProperty('Startdate')) {
+                                                item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 10;
+                                            item.entity = "Goal";
                                             list.push(item);
                                         }
                                     }
@@ -507,56 +561,6 @@
 
                 });
 
-                var goal = smart.patient.api.fetchAll({
-                    type: 'Goal',
-                    query: {
-                        patient: patient.id
-                    }
-                });
-
-                $.when(goal).done(function (Goal) {
-
-                    if (Goal != null) {
-                        if (Goal.length > 0) {
-                            for (var i = 0; i <= Goal.length; i++) {
-                                if (Goal[i] != null) {
-                                    if (Goal[i] != undefined) {
-
-                                        var externalEmrId = Goal[i].id;
-                                        var startdate = Goal[i].startDate;
-                                        var targetdate = Goal[i].targetDate;
-                                        var category = Goal[i].category[0].text;
-                                        var description = Goal[i].description;
-                                        //CreateGoal(externalEmrId, $("#CRMpatietid").val(), startdate, targetdate, category, description);
-                                        var Goal = {}
-                                        Goal.Externalemrid = externalEmrId;
-                                        Goal.Patientid = $("#CRMpatietid").val();
-                                        Goal.Startdate = startdate;
-                                        Goal.TargetDate = targetdate;
-                                        Goal.Category = category;
-                                        Goal.Description = description;
-                                        //patientGoalGlobal = Goal;
-                                        var dataSet = Goal;
-                                        var item = {};
-
-                                        if (dataSet.hasOwnProperty('GoalId')) {
-                                            item.id = dataSet.GoalId;
-                                        }
-                                        item.name = dataSet.Category;
-
-                                        if (dataSet.hasOwnProperty('Startdate')) {
-                                            item.date = moment.utc(dataSet.Startdate).format('MM/DD/YYYY');
-                                            item.dateTime = moment.utc(dataSet.Startdate).format('YYYY-MM-DD HH:mm:ss');
-                                        }
-                                        item.type = 10;
-                                        item.entity = "Goal";
-                                        list.push(item);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
             } else {
                 onError();
             }

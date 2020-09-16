@@ -66,7 +66,7 @@
             color: white;
             padding: 10px 15px;
             position: absolute;
-            right: 6em;
+            top: 15px;
         }
 
  
@@ -173,7 +173,7 @@
                                             <li>
                                                 <!-- event selection control -->
                                                 <input value="true" id="changeOrder" style="display:none" />
-                                                <button type="button" class="changeOrderClass mzksortbutton"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+                                               <!-- <button type="button" class="changeOrderClass mzksortbutton"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>-->
                                                 <!--<button type="button" class="changeOrderClass">Change Order</button>-->
                                                 <div style="cursor:pointer;" id="eventSelect" class="eventSelect" onclick="javascript:showCheckboxOptions()">All Events <span style="text-align: right;">▼</span></div>
                                                 <div id="checkboxEventList" class="checkboxEventList" style="display:none">
@@ -218,6 +218,9 @@
                                                 <div style="cursor:pointer;" class="eventSelect" id="yearSelect" onclick="javascript:showyearOptions()">All Years ▼</div>
                                                 <div id="yearEventList" class="checkboxEventList" style="display:none"></div>
                                                 <!-- end event selection control -->
+                                            </li>
+                                            <li>
+                                                <button type="button" class="changeOrderClass mzksortbutton"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
                                             </li>
                                         </ul>
                                     </div>

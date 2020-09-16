@@ -510,7 +510,7 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 10); 
+                    }, 5010); 
 
                 });
 

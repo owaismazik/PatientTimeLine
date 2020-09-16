@@ -1007,8 +1007,20 @@
         
     }
 
-    //functiontest
-    function functiontest() {
+    ////functiontest
+    //function functiontest() {
+    //    var value = $('#changeOrder').val();
+    //    if (value == true) {
+    //        $('#changeOrder').val(false);
+    //        LoadTimeline();
+    //    }
+    //    else {
+    //        $('#changeOrder').val(true);
+    //        LoadTimeline();
+    //    }
+    //}
+
+    $(".changeOrderClass").on("click", function () {
         var value = $('#changeOrder').val();
         if (value == true) {
             $('#changeOrder').val(false);

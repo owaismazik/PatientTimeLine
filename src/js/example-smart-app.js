@@ -947,18 +947,6 @@
                 $(".loader").hide();
                 $("#timelinecontrolnew").show();
             }
-
-        function functiontest() {
-            var value = $('#changeOrder').val();
-            if (value == true) {
-                $('#changeOrder').val(false);
-                LoadTimeline();
-            }
-            else {
-                $('#changeOrder').val(true);
-                LoadTimeline();
-            }
-        }
                         
             function getTypeImageName(a) {
                 switch (a) {
@@ -1017,6 +1005,19 @@
                 return 0;
             };
         
+    }
+
+    //functiontest
+    function functiontest() {
+        var value = $('#changeOrder').val();
+        if (value == true) {
+            $('#changeOrder').val(false);
+            LoadTimeline();
         }
+        else {
+            $('#changeOrder').val(true);
+            LoadTimeline();
+        }
+    }
 
 })(window);

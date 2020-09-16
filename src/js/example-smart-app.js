@@ -504,13 +504,13 @@
 
                     setTimeout(function () {
                         $("#timeline").hide();
-                        timeline();
+                        //timeline();
                     }, 5000); 
 
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 5010); 
+                    }, 5100); 
 
                 });
 

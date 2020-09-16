@@ -812,6 +812,7 @@
                             var year = date.getFullYear();
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
+                            var encounterID = filterdata[i].encounterID;
 
                             if (year == item) {
                                 var yeardivcount = $("#" + year).length;
@@ -826,7 +827,7 @@
                                             html = '<div class="timeline__box">' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -836,7 +837,7 @@
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -847,7 +848,7 @@
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                             '<div class="timeline__post">' +
                                             '<div class="timeline__content"> ' +
-                                            '<span id="' + id + '" class="timelineentity">' + entity + '</span>' +
+                                            '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '</div></div></div>';
                                     }
@@ -858,7 +859,7 @@
                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                         '<div class="timeline__post">' +
                                         '<div class="timeline__content"> ' +
-                                        '<span id="' + id + '" class="timelineentity" > ' + entity + '</span > ' +
+                                        '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
                                         '</div></div></div>';
                                 }
@@ -897,7 +898,7 @@
                                             html = '<div class="timeline__box">' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -907,7 +908,7 @@
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '</div></div></div>';
                                         }
@@ -918,7 +919,7 @@
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                             '<div class="timeline__post">' +
                                             '<div class="timeline__content"> ' +
-                                            '<span class="timelineentity">' + entity + '</span>' +
+                                            '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '</div></div></div>';
                                     }
@@ -929,7 +930,7 @@
                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                         '<div class="timeline__post">' +
                                         '<div class="timeline__content"> ' +
-                                        '<span class="timelineentity">' + entity + '</span>' +
+                                        '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                         '<p> ' + name + '</p>' +
                                         '</div></div></div>';
                                 }

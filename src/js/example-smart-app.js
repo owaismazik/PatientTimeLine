@@ -105,7 +105,9 @@
                                         }
                                         item.type = 12;
                                         item.id = obv[i].id;
-                                        item.encounterID = obv[i].encounter.reference.split('/')[1];
+                                        if (obv[i].hasOwnProperty("encounter")) {
+                                            item.encounterID = obv[i].encounter.reference.split('/')[1];
+                                        }
                                         item.entity = "Observation";
                                         list.push(item);
                                     }
@@ -150,6 +152,9 @@
                                             }
                                             item.type = 11;
                                             item.id = dataSet.AllergyID;
+                                            if (Allergy[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = Allergy[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "Allergy Intolerance";
                                             list.push(item);
                                         }
@@ -195,6 +200,9 @@
                                             }
                                             item.type = 8;
                                             item.id = dataSet.conditionID;
+                                            if (ondition[i].hasOwnProperty(encounter)) {
+                                                item.encounterID = condition[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "Condition";
                                             list.push(item);
                                         }
@@ -241,6 +249,9 @@
                                             }
                                             item.type = 8;
                                             item.id = dataSet.MedicationOrderID;
+                                            if (MedicationOrder[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = MedicationOrder[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "MedicationOrder";
                                             list.push(item);
                                         }
@@ -304,6 +315,9 @@
                                             }
                                             item.type = 7;
                                             item.id = dataSet.procedureID;
+                                            if (procedure[i].hasOwnProperty("encounter")) {
+                                                item.encounterID = procedure[i].encounter.reference.split('/')[1];
+                                            }
                                             item.entity = "Procedure";
                                             list.push(item);
                                         }

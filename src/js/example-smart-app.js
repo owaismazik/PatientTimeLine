@@ -652,7 +652,7 @@
             } else {
                 $('.errorMessage').hide();
                 $('.timelinecontrolnew').show();
-                getPatientRegistrationDate();
+                //getPatientRegistrationDate();
                 loadData(true);
             }
         
@@ -884,42 +884,42 @@
                 $("#timelinecontrolnew").show();
             }
                 
-            function getPatientRegistrationDate() {
+            //function getPatientRegistrationDate() {
         
-                var patient = {}
+            //    var patient = {}
         
-                patient.patientId = pid;
-                patient.getDocuments = false;
-                patient.getAddresses = false;
-                patient.getRelationship = false;
+            //    patient.patientId = pid;
+            //    patient.getDocuments = false;
+            //    patient.getAddresses = false;
+            //    patient.getRelationship = false;
         
-                $.ajax({
-                    url: $("#hdnPatientChartAPIURL").val() + "getPatientDetails",
-                    method: "POST",
-                    async: false,
-                    dataType: "json",
-                    data: JSON.stringify(patient),
-                    crossDomain: true,
-                    contentType: "application/json; charset=utf-8",
-                    cache: false,
-                    beforeSend: function (xhr) {
-                        /* Authorization header */
-                        xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-                    },
-                    success: function (data) {
-                        var result = data.data.records;
+            //    $.ajax({
+            //        url: $("#hdnPatientChartAPIURL").val() + "getPatientDetails",
+            //        method: "POST",
+            //        async: false,
+            //        dataType: "json",
+            //        data: JSON.stringify(patient),
+            //        crossDomain: true,
+            //        contentType: "application/json; charset=utf-8",
+            //        cache: false,
+            //        beforeSend: function (xhr) {
+            //            /* Authorization header */
+            //            xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
+            //        },
+            //        success: function (data) {
+            //            var result = data.data.records;
         
-                        if (result.hasOwnProperty('dateOfBirth')) {
-                            if (result.dateOfBirth != null) {
-                                currentStartDate = moment(result.dateOfBirth).format('MM/DD/YYYY');
-                            }
-                        }                
-                    },
-                    error: function () {
-                        console.log("error");
-                    }
-                });
-            }
+            //            if (result.hasOwnProperty('dateOfBirth')) {
+            //                if (result.dateOfBirth != null) {
+            //                    currentStartDate = moment(result.dateOfBirth).format('MM/DD/YYYY');
+            //                }
+            //            }                
+            //        },
+            //        error: function () {
+            //            console.log("error");
+            //        }
+            //    });
+            //}
         
             function getTypeImageName(a) {
                 switch (a) {

@@ -799,7 +799,7 @@
         
                 var html = "";
         
-                for (var j = 0; j < checkedYears.length; j++) {
+                for (var j = checkedYears.length-1; j >= 0; j--) {
                     var item = checkedYears[j];
                     html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                     $("#timeline").append(html);

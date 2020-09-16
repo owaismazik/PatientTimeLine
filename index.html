@@ -58,6 +58,18 @@
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
+
+        .mzksortbutton {
+            border: none;
+            float: right;
+            background: #0d87e5;
+            color: white;
+            padding: 10px 15px;
+            position: absolute;
+            right: 6em;
+        }
+
+ 
 -->
     </style>   
 </head>
@@ -160,8 +172,9 @@
                                         <ul>
                                             <li>
                                                 <!-- event selection control -->
-                                                <input value="true" id="changeOrder"/>
-                                                <button type="button" class="changeOrderClass">Change Order</button>
+                                                <input value="true" id="changeOrder" style="display:none" />
+                                                <button type="button" class="changeOrderClass mzksortbutton"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+                                                <!--<button type="button" class="changeOrderClass">Change Order</button>-->
                                                 <div style="cursor:pointer;" id="eventSelect" class="eventSelect" onclick="javascript:showCheckboxOptions()">All Events <span style="text-align: right;">▼</span></div>
                                                 <div id="checkboxEventList" class="checkboxEventList" style="display:none">
                                                     <div>

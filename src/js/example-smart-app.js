@@ -500,7 +500,17 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 1000);  //7000                 
+                    }, 1000);  //7000     
+
+                    setTimeout(function () {
+                        $("#timeline").hide();
+                        timeline();
+                    }, 5000); 
+
+                    setTimeout(function () {
+                        $("#timeline").show();
+                        timeline();
+                    }, 10); 
 
                 });
 

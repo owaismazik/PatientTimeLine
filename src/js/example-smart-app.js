@@ -1,16 +1,6 @@
 (function (window) {
     var list = [];
-    //var patientConditionGlobal = [];
-    //var patientObservationGlobal = [];
-    //var patientCarePlanGlobal = [];
-    //var patientDeviceGlobal = [];
-    //var patientProcedureGlobal = [];
-    //var patientProcedureRequestGlobal = [];
-    //var patientAppointmentGlobal = [];
-    //var patientMedicationGlobal = [];
-    //var patientGoalGlobal = [];
-    //var patientEncounterGlobal = [];
-    //var patientAllergyGlobal = [];
+
     window.extractData = function () {
         var ret = $.Deferred();
 
@@ -794,42 +784,55 @@
                 //$(".loader").show();
                 $("#timelinecontrolnew").hide()
                 $("#timeline").html("");
+                var value = $('#changeOrder').val();
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
         
                 var html = "";
-        
-                for (var j = checkedYears.length-1; j >= 0; j--) {
-                    var item = checkedYears[j];
-                    html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
-                    $("#timeline").append(html);
-                    for (var i = 0; i < filterdata.length; i++) {
-        
-                        var date = new Date(filterdata[i].date)
-                        var id = filterdata[i].id;
-                        var name = filterdata[i].name;
-                        var type = filterdata[i].type;
-                        var entity = filterdata[i].entity;
-                        var year = date.getFullYear();
-                        var month = monthNames[date.getMonth()];
-                        var day = date.getDate();
-        
-                        if (year == item) {
-                            var yeardivcount = $("#" + year).length;
-                            if (yeardivcount > 0) {
-                                var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
-                                if (thistimelineboxcount > 0) {
-        
-                                    var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
-                                    var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
-        
-                                    if (daydivcount > 0 && daydivmonth > 0) {
-                                        html = '<div class="timeline__box">' +
-                                            '<div class="timeline__post">' +
-                                            '<div class="timeline__content"> ' +
-                                            '<span class="timelineentity">' + entity + '</span>' +
-                                            '<p> ' + name + '</p>' +
-                                            '</div></div></div>';
+
+                if (value) {
+                    for (var j = 0; j < checkedYears.length; j++) {
+                        var item = checkedYears[j];
+                        html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
+                        $("#timeline").append(html);
+                        for (var i = 0; i < filterdata.length; i++) {
+
+                            var date = new Date(filterdata[i].date)
+                            var id = filterdata[i].id;
+                            var name = filterdata[i].name;
+                            var type = filterdata[i].type;
+                            var entity = filterdata[i].entity;
+                            var year = date.getFullYear();
+                            var month = monthNames[date.getMonth()];
+                            var day = date.getDate();
+
+                            if (year == item) {
+                                var yeardivcount = $("#" + year).length;
+                                if (yeardivcount > 0) {
+                                    var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
+                                    if (thistimelineboxcount > 0) {
+
+                                        var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
+                                        var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
+
+                                        if (daydivcount > 0 && daydivmonth > 0) {
+                                            html = '<div class="timeline__box">' +
+                                                '<div class="timeline__post">' +
+                                                '<div class="timeline__content"> ' +
+                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<p> ' + name + '</p>' +
+                                                '</div></div></div>';
+                                        }
+                                        else {
+                                            html = '<div class="timeline__box"><div class="timeline__date">' +
+                                                '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                                '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                                '<div class="timeline__post">' +
+                                                '<div class="timeline__content"> ' +
+                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<p> ' + name + '</p>' +
+                                                '</div></div></div>';
+                                        }
                                     }
                                     else {
                                         html = '<div class="timeline__box"><div class="timeline__date">' +
@@ -853,22 +856,83 @@
                                         '</div></div></div>';
                                 }
                             }
-                            else {
-                                html = '<div class="timeline__box"><div class="timeline__date">' +
-                                    '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                    '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                    '<div class="timeline__post">' +
-                                    '<div class="timeline__content"> ' +
-                                    '<span class="timelineentity">' + entity + '</span>' +
-                                    '<p> ' + name + '</p>' +
-                                    '</div></div></div>';
-                            }                    
+
+                            $("#" + year).append(html);
                         }
-        
-                        $("#" + year).append(html);
                     }
                 }
-        
+                else {
+                    for (var j = checkedYears.length - 1; j >= 0; j--) {
+                        var item = checkedYears[j];
+                        html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
+                        $("#timeline").append(html);
+                        for (var i = 0; i < filterdata.length; i++) {
+
+                            var date = new Date(filterdata[i].date)
+                            var id = filterdata[i].id;
+                            var name = filterdata[i].name;
+                            var type = filterdata[i].type;
+                            var entity = filterdata[i].entity;
+                            var year = date.getFullYear();
+                            var month = monthNames[date.getMonth()];
+                            var day = date.getDate();
+
+                            if (year == item) {
+                                var yeardivcount = $("#" + year).length;
+                                if (yeardivcount > 0) {
+                                    var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
+                                    if (thistimelineboxcount > 0) {
+
+                                        var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
+                                        var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
+
+                                        if (daydivcount > 0 && daydivmonth > 0) {
+                                            html = '<div class="timeline__box">' +
+                                                '<div class="timeline__post">' +
+                                                '<div class="timeline__content"> ' +
+                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<p> ' + name + '</p>' +
+                                                '</div></div></div>';
+                                        }
+                                        else {
+                                            html = '<div class="timeline__box"><div class="timeline__date">' +
+                                                '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                                '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                                '<div class="timeline__post">' +
+                                                '<div class="timeline__content"> ' +
+                                                '<span class="timelineentity">' + entity + '</span>' +
+                                                '<p> ' + name + '</p>' +
+                                                '</div></div></div>';
+                                        }
+                                    }
+                                    else {
+                                        html = '<div class="timeline__box"><div class="timeline__date">' +
+                                            '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                            '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                            '<div class="timeline__post">' +
+                                            '<div class="timeline__content"> ' +
+                                            '<span class="timelineentity">' + entity + '</span>' +
+                                            '<p> ' + name + '</p>' +
+                                            '</div></div></div>';
+                                    }
+                                }
+                                else {
+                                    html = '<div class="timeline__box"><div class="timeline__date">' +
+                                        '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                        '<div class="timeline__post">' +
+                                        '<div class="timeline__content"> ' +
+                                        '<span class="timelineentity">' + entity + '</span>' +
+                                        '<p> ' + name + '</p>' +
+                                        '</div></div></div>';
+                                }
+                            }
+
+                            $("#" + year).append(html);
+                        }
+                    }
+                }
+                
                 $(".timeline__group").each(function () {
                     var timelineboxcount = $(this).find(".timeline__box").length;
                     if (timelineboxcount <= 0) {
@@ -883,44 +947,19 @@
                 $(".loader").hide();
                 $("#timelinecontrolnew").show();
             }
-                
-            //function getPatientRegistrationDate() {
-        
-            //    var patient = {}
-        
-            //    patient.patientId = pid;
-            //    patient.getDocuments = false;
-            //    patient.getAddresses = false;
-            //    patient.getRelationship = false;
-        
-            //    $.ajax({
-            //        url: $("#hdnPatientChartAPIURL").val() + "getPatientDetails",
-            //        method: "POST",
-            //        async: false,
-            //        dataType: "json",
-            //        data: JSON.stringify(patient),
-            //        crossDomain: true,
-            //        contentType: "application/json; charset=utf-8",
-            //        cache: false,
-            //        beforeSend: function (xhr) {
-            //            /* Authorization header */
-            //            xhr.setRequestHeader("Authorization", $("#AuthorizationToken").val());
-            //        },
-            //        success: function (data) {
-            //            var result = data.data.records;
-        
-            //            if (result.hasOwnProperty('dateOfBirth')) {
-            //                if (result.dateOfBirth != null) {
-            //                    currentStartDate = moment(result.dateOfBirth).format('MM/DD/YYYY');
-            //                }
-            //            }                
-            //        },
-            //        error: function () {
-            //            console.log("error");
-            //        }
-            //    });
-            //}
-        
+
+        function functiontest() {
+            var value = $('#changeOrder').val();
+            if (value == true) {
+                $('#changeOrder').val(false);
+                LoadTimeline();
+            }
+            else {
+                $('#changeOrder').val(true);
+                LoadTimeline();
+            }
+        }
+                        
             function getTypeImageName(a) {
                 switch (a) {
                     case 1: return "../webresources/msemr_AppointmentsEMRSVG";
@@ -979,6 +1018,5 @@
             };
         
         }
-
 
 })(window);

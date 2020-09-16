@@ -626,9 +626,7 @@
     };
 
     function timeline() {
-   
-            var YearList = [];
-        
+            var YearList = [];      
             var currentStartDate;
             var currentEndDate = moment(new Date()).format('MM/DD/YYYY');
             var checkedEvents = ['5', '6', '7', '8', '9', '11', '12', '13','10',14];
@@ -1006,19 +1004,6 @@
             };
         
     }
-
-    ////functiontest
-    //function functiontest() {
-    //    var value = $('#changeOrder').val();
-    //    if (value == true) {
-    //        $('#changeOrder').val(false);
-    //        LoadTimeline();
-    //    }
-    //    else {
-    //        $('#changeOrder').val(true);
-    //        LoadTimeline();
-    //    }
-    //}
 
     $(".changeOrderClass").on("click", function () {
         var value = $('#changeOrder').val();

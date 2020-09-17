@@ -872,7 +872,6 @@
                                     break;
                                 default:
                                     imageName = "";
-                                    break;
                             }
 
                             if (year == item) {
@@ -992,7 +991,6 @@
                                     break;
                                 default:
                                     imageName = "";
-                                    break;
                             }
 
                             if (year == item) {

@@ -849,7 +849,7 @@
                                     break;
                                 case "Observation":
                                     imageName = "Observation.png";
-                                    backgroundColor = "#efd7c8";
+                                    backgroundColor = "#ecd8ab";
                                     width = '22px';
                                     margin = "8px 3px;";
                                     break;
@@ -896,9 +896,9 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
+                                                '<span class="mzkicon" style=background:' + backgroundColor + '>' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width: ' + width + ';  margin:'+margin+'">' +
+                                                '"style=width:' + width + ';margin:'+margin+'">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -912,7 +912,7 @@
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                                '"style=width:' + width + ';margin:' + margin + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -927,7 +927,7 @@
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                             '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                            '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                            '"style=width:' + width + ';margin:' + margin + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -942,7 +942,7 @@
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                         '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                        '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                        '"style=width:' + width + ';margin:' + margin + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }
@@ -977,7 +977,7 @@
                                     break;
                                 case "Observation":
                                     imageName = "Observation.png";
-                                    backgroundColor = "#efd7c8";
+                                    backgroundColor = "#ecd8ab";
                                     width = '22px';
                                     margin = "8px 3px;";
                                     break;
@@ -1026,7 +1026,7 @@
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                                '"style=width:' + width + ';margin:' + margin + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -1040,7 +1040,7 @@
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                                '"style=width:' + width + ';margin:' + margin + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -1055,7 +1055,7 @@
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                             '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                            '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                            '"style=width:' + width + ';margin:' + margin + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -1070,7 +1070,7 @@
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
                                         '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                        '"style=width: ' + width + ';  margin:' + margin + '">' +
+                                        '"style=width:' + width + ';margin:' + margin + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }

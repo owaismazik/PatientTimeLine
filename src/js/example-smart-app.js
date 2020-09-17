@@ -891,7 +891,7 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                                     '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/'+imageName+'">' +
                                                 '</span>' +
                                                 '</div></div></div>';
@@ -904,7 +904,7 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
@@ -918,7 +918,7 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                            '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                             '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
@@ -932,7 +932,7 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
-                                        '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                        '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                         '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';
@@ -966,7 +966,7 @@
                                     break;
                                 case "Observation":
                                     imageName = "Observation.png";
-                                    backgroundColor = '#efd7c8;';
+                                    backgroundColor = "#efd7c8";
                                     break;
                                 case "Condition":
                                     imageName = "conditon.png";
@@ -1011,7 +1011,7 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
@@ -1024,7 +1024,7 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                                '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
@@ -1038,7 +1038,7 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                            '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                             '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
@@ -1052,7 +1052,7 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                         '<p> ' + name + '</p>' +
-                                        '<span class="mzkicon" "style=background: "' + backgroundColor + '";">' +
+                                        '<span class="mzkicon" "style=background: "' + backgroundColor + '">' +
                                         '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';

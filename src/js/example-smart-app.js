@@ -913,7 +913,7 @@
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon" class="' + spanClass + '">' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                ' class"' + imgClass + '">' +
+                                                '" class"' + imgClass + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -927,7 +927,7 @@
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon" class="' + spanClass + '">' +
                                                 '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                ' class"' + imgClass + '">' +
+                                                '" class"' + imgClass + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -942,7 +942,7 @@
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon" class="' + spanClass + '">' +
                                             '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                            ' class"' + imgClass + '">' +
+                                            '" class"' + imgClass + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -957,7 +957,7 @@
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon" class="' + spanClass + '">' +
                                         '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                        ' class"' + imgClass + '">' +
+                                        '" class"' + imgClass + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }

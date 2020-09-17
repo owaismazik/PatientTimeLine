@@ -820,7 +820,7 @@
                 var value = $('#changeOrder').val();
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
-        
+
                 var html = "";
 
                 if (value == "true") {
@@ -839,6 +839,31 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
+                            var imageName = "";
+                            switch (entity) {
+                                case "Allergy Intolerance":
+                                    imageName = "allergy.png";
+                                case "Observation":
+                                    imageName = "Observation.png";
+                                case "Condition":
+                                    imageName = "conditon.png";
+                                case "MedicationOrder":
+                                    imageName = "MedicationOrder";
+                                case "Procedure":
+                                    imageName = "Procedure";
+                                case "ProcedureRequest":
+                                    imageName = "request.png";
+                                case "Encounter":
+                                    imageName = "encounter.png";
+                                case "Device":
+                                    imageName = "Device";
+                                case "Care Plan":
+                                    imageName = "Care Plan";
+                                case "Goal":
+                                    imageName = "Goal";
+                                default:
+                                    imageName = "";
+                            }
 
                             if (year == item) {
                                 var yeardivcount = $("#" + year).length;
@@ -856,7 +881,7 @@
                                                 '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon">' +
-                                                    '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                    '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/'+imageName+'">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -869,7 +894,7 @@
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon">' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -883,7 +908,7 @@
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon">' +
-                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -897,7 +922,7 @@
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon">' +
-                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }
@@ -922,6 +947,31 @@
                             var year = date.getFullYear();
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
+                            var imageName = "";
+                            switch (entity) {
+                                case "Allergy Intolerance":
+                                    imageName = "allergy.png";
+                                case "Observation":
+                                    imageName = "Observation.png";
+                                case "Condition":
+                                    imageName = "conditon.png";
+                                case "MedicationOrder":
+                                    imageName = "MedicationOrder";
+                                case "Procedure":
+                                    imageName = "Procedure";
+                                case "ProcedureRequest":
+                                    imageName = "request.png";
+                                case "Encounter":
+                                    imageName = "encounter.png";
+                                case "Device":
+                                    imageName = "Device";
+                                case "Care Plan":
+                                    imageName = "Care Plan";
+                                case "Goal":
+                                    imageName = "Goal";
+                                default:
+                                    imageName = "";
+                            }
 
                             if (year == item) {
                                 var yeardivcount = $("#" + year).length;
@@ -939,7 +989,7 @@
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon">' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -952,7 +1002,7 @@
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon">' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -966,7 +1016,7 @@
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon">' +
-                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -980,7 +1030,7 @@
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon">' +
-                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/conditon.png">' +
+                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }

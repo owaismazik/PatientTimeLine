@@ -850,10 +850,10 @@
                                     imageName = "conditon.png";
                                     break;
                                 case "MedicationOrder":
-                                    imageName = "MedicationOrder";
+                                    imageName = "MedicationOrder.png";
                                     break;
                                 case "Procedure":
-                                    imageName = "Procedure";
+                                    imageName = "procedure.png";
                                     break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";

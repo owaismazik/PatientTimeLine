@@ -979,43 +979,60 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
-                            var imageName = "";
-                            var width = "";
-                            var margin = "";
+                            var spanClass = "";
+                            var imgClass = "";
+
                             switch (entity) {
                                 case "Allergy Intolerance":
                                     imageName = "allergy.png";
+                                    spanClass = "mzkaleryspan";
+                                    imgClass = 'mzkalergyimg';
                                     break;
                                 case "Observation":
                                     imageName = "Observation.png";
-                                    backgroundColor = "#ecd8ab";
-                                    width = '22px';
-                                    margin = "8px 3px;";
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "Condition":
                                     imageName = "conditon.png";
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "MedicationOrder":
                                     imageName = "MedicationOrder.png";
+                                    spanClass = "mzkmedicationspan";
+                                    imgClass = 'mzkmedicationimg';
                                     break;
                                 case "Procedure":
-                                    imageName = "Procedure";
+                                    imageName = "procedure.png";
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";
+                                    spanClass = "mzkprocreqspan";
+                                    imgClass = 'mzkprocreqimg';
                                     break;
                                 case "Encounter":
                                     imageName = "encounter.png";
+                                    spanClass = "mzkencounterspan";
+                                    imgClass = 'mzkencounterimg';
                                     break;
-                                case "Device":
-                                    imageName = "Device";
-                                    break;
-                                case "Care Plan":
-                                    imageName = "Care Plan";
-                                    break;
-                                case "Goal":
-                                    imageName = "Goal";
-                                    break;
+                                //case "Device":
+                                //    imageName = "Device";
+                                //    spanClass = ".mzkobserspan";
+                                //    imgClass = '.mzkobserimg';
+                                //    break;
+                                //case "Care Plan":
+                                //    imageName = "Care Plan";
+                                //    spanClass = ".mzkobserspan";
+                                //    imgClass = '.mzkobserimg';
+                                //    break;
+                                //case "Goal":
+                                //    imageName = "Goal";
+                                //    spanClass = ".mzkobserspan";
+                                //    imgClass = '.mzkobserimg';
+                                //    break;
                                 default:
                                     imageName = "";
                             }
@@ -1035,9 +1052,8 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width:' + width + ';margin:' + margin + '">' +
+                                                '<span class="mzkicon ' + spanClass + '">' +
+                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -1049,9 +1065,8 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '"style=width:' + width + ';margin:' + margin + '">' +
+                                                '<span class="mzkicon ' + spanClass + '">' +
+                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -1064,9 +1079,8 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
-                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                            '"style=width:' + width + ';margin:' + margin + '">' +
+                                            '<span class="mzkicon ' + spanClass + '">' +
+                                            '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -1079,9 +1093,8 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                         '<p> ' + name + '</p>' +
-                                        '<span class="mzkicon" "style=background: ' + backgroundColor + '>' +
-                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                        '"style=width:' + width + ';margin:' + margin + '">' +
+                                        '<span class="mzkicon ' + spanClass + '">' +
+                                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }

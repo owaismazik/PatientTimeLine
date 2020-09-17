@@ -23,19 +23,32 @@
 
     <style>
 
+        .page {
+           
+            /* padding: 10rem 2rem 3rem; */
+            margin-left: auto;
+            margin-right: auto;
+            order: 1;
+        }
+
         .mzkicon {
+            width: 40px;
+            height: 40px;
             float: right;
             position: absolute;
             right: 0;
             bottom: 0px;
             background: #00800029;
-            border-radius: 50px;
+            border-radius: 45px;
             padding: 5px 7px;
         }
 
+
         img.mzkimg {
-            width: 25px;
+            width: 18px;
+            margin: 5px;
         }
+
 
         .timeline__content {
             position: relative;
@@ -79,14 +92,29 @@
         }
 
         .mzksortbutton {
+            background-size: contain;
+            background-image: url(https://owaismazik.github.io/PatientTimeLine/src/images/sort-icon.png);
+            font-size: 2rem;
             border: none;
             float: right;
-            background: #0d87e5;
-            color: white;
+            width: 41px;
+            height: 41px;
+            background-color: #0d87e5;
+            color: #0d87e5;
             padding: 10px 15px;
             position: absolute;
             top: 15px;
+            -webkit-box-shadow: 14px 13px 5px -3px rgba(0,0,0,0.12);
+            -moz-box-shadow: 14px 13px 5px -3px rgba(0,0,0,0.12);
+            box-shadow: 0px 2px 12px 4px rgba(0,0,0,0.12);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 78%;
         }
+
+            .mzksortbutton:focus {
+                outline: none;
+            }
 
  
 -->
@@ -120,7 +148,8 @@
         <div class="row MainHeading">
             <div class="col-md-12">
              <div class="patientdetailheading">
-                 <h1 class="mzkheading">
+                 <h1 class="
+                     ">
                      Patient Detail
                  </h1>
              </div>

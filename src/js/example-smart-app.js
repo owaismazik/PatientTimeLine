@@ -222,7 +222,6 @@
                     $.when(MedOrder).done(function (MedicationOrder) {
 
                         if (MedicationOrder != null) {
-                            debugger
                             if (MedicationOrder.length > 0) {
                                 for (var i = 0; i <= MedicationOrder.length; i++) {
                                     if (MedicationOrder[i] != null) {
@@ -843,26 +842,37 @@
                             switch (entity) {
                                 case "Allergy Intolerance":
                                     imageName = "allergy.png";
+                                    break;
                                 case "Observation":
                                     imageName = "Observation.png";
+                                    break;
                                 case "Condition":
                                     imageName = "conditon.png";
+                                    break;
                                 case "MedicationOrder":
                                     imageName = "MedicationOrder";
+                                    break;
                                 case "Procedure":
                                     imageName = "Procedure";
+                                    break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";
+                                    break;
                                 case "Encounter":
                                     imageName = "encounter.png";
+                                    break;
                                 case "Device":
                                     imageName = "Device";
+                                    break;
                                 case "Care Plan":
                                     imageName = "Care Plan";
+                                    break;
                                 case "Goal":
                                     imageName = "Goal";
+                                    break;
                                 default:
                                     imageName = "";
+                                    break;
                             }
 
                             if (year == item) {
@@ -947,30 +957,42 @@
                             var year = date.getFullYear();
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
+                            var encounterID = filterdata[i].encounterID;
                             var imageName = "";
                             switch (entity) {
                                 case "Allergy Intolerance":
                                     imageName = "allergy.png";
+                                    break;
                                 case "Observation":
                                     imageName = "Observation.png";
+                                    break;
                                 case "Condition":
                                     imageName = "conditon.png";
+                                    break;
                                 case "MedicationOrder":
                                     imageName = "MedicationOrder";
+                                    break;
                                 case "Procedure":
                                     imageName = "Procedure";
+                                    break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";
+                                    break;
                                 case "Encounter":
                                     imageName = "encounter.png";
+                                    break;
                                 case "Device":
                                     imageName = "Device";
+                                    break;
                                 case "Care Plan":
                                     imageName = "Care Plan";
+                                    break;
                                 case "Goal":
                                     imageName = "Goal";
+                                    break;
                                 default:
                                     imageName = "";
+                                    break;
                             }
 
                             if (year == item) {

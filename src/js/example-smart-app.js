@@ -844,38 +844,38 @@
                             switch (entity) {
                                 case "Allergy Intolerance":
                                     imageName = "allergy.png";
-                                    spanClass = ".mzkaleryspan";
-                                    imgClass = '.mzkalergyimg';
+                                    spanClass = "mzkaleryspan";
+                                    imgClass = 'mzkalergyimg';
                                     break;
                                 case "Observation":
                                     imageName = "Observation.png";
-                                    spanClass = ".mzkobserspan";
-                                    imgClass = '.mzkobserimg';
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "Condition":
                                     imageName = "conditon.png";
-                                    spanClass = ".mzkobserspan";
-                                    imgClass = '.mzkobserimg';
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "MedicationOrder":
                                     imageName = "MedicationOrder.png";
-                                    spanClass = ".mzkmedicationspan";
-                                    imgClass = '.mzkmedicationimg';
+                                    spanClass = "mzkmedicationspan";
+                                    imgClass = 'mzkmedicationimg';
                                     break;
                                 case "Procedure":
                                     imageName = "procedure.png";
-                                    spanClass = ".mzkobserspan";
-                                    imgClass = '.mzkobserimg';
+                                    spanClass = "mzkobserspan";
+                                    imgClass = 'mzkobserimg';
                                     break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";
-                                    spanClass = ".mzkprocreqspan";
-                                    imgClass = '.mzkprocreqimg';
+                                    spanClass = "mzkprocreqspan";
+                                    imgClass = 'mzkprocreqimg';
                                     break;
                                 case "Encounter":
                                     imageName = "encounter.png";
-                                    spanClass = ".mzkencounterspan";
-                                    imgClass = '.mzkencounterimg';
+                                    spanClass = "mzkencounterspan";
+                                    imgClass = 'mzkencounterimg';
                                     break;
                                 //case "Device":
                                 //    imageName = "Device";
@@ -911,9 +911,8 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID+'" class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" class="' + spanClass + '">' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '" class"' + imgClass + '">' +
+                                                '<span class="mzkicon ' + spanClass+'">' +
+                                                '<img class="mzkimg ' + imgClass+'" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +'">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -925,9 +924,8 @@
                                                 '<div class="timeline__content"> ' +
                                                 '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                                 '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon" class="' + spanClass + '">' +
-                                                '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                                '" class"' + imgClass + '">' +
+                                                '<span class="mzkicon ' + spanClass + '">' +
+                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
                                         }
@@ -940,9 +938,8 @@
                                             '<div class="timeline__content"> ' +
                                             '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
                                             '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon" class="' + spanClass + '">' +
-                                            '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                            '" class"' + imgClass + '">' +
+                                            '<span class="mzkicon ' + spanClass + '">' +
+                                            '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
                                     }
@@ -955,9 +952,8 @@
                                         '<div class="timeline__content"> ' +
                                         '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity" > ' + entity + '</span > ' +
                                         '<p> ' + name + '</p>' +
-                                        '<span class="mzkicon" class="' + spanClass + '">' +
-                                        '<img class="mzkimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +
-                                        '" class"' + imgClass + '">' +
+                                        '<span class="mzkicon ' + spanClass + '">' +
+                                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                         '</span>' +
                                         '</div></div></div>';
                                 }

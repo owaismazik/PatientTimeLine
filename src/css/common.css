@@ -1040,6 +1040,13 @@ max-height: 700px;
     margin: 20px 0px;
 }
 
+input[type=checkbox], input[type=radio] {
+    margin: 4px 6px;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+
+
 
 .timeline__post {
     padding: 1.5rem 2rem;

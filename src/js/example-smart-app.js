@@ -200,7 +200,7 @@
                                             }
                                             item.type = 8;
                                             item.id = dataSet.conditionID;
-                                            if (ondition[i].hasOwnProperty(encounter)) {
+                                            if (condition[i].hasOwnProperty(encounter)) {
                                                 item.encounterID = condition[i].encounter.reference.split('/')[1];
                                             }
                                             item.entity = "Condition";
@@ -958,7 +958,10 @@
                                         '</div></div></div>';
                                 }
                             }
-
+                            console.log("id: " + id);
+                            console.log("encounterID: " + encounterID);
+                            console.log("entity: " + entity);
+                            console.log("===============================================");
                             $("#" + year).append(html);
                         }
                     }

@@ -200,7 +200,7 @@
                                             }
                                             item.type = 8;
                                             item.id = dataSet.conditionID;
-                                            if (condition[i].hasOwnProperty(encounter)) {
+                                            if (condition[i].hasOwnProperty("encounter")) {
                                                 item.encounterID = condition[i].encounter.reference.split('/')[1];
                                             }
                                             item.entity = "Condition";

@@ -79,7 +79,7 @@
         }
 		
 		
-  input[type='checkbox'] { display: none; } .wrap-collabsible { margin: 1.2rem 0; } .lbl-toggle { display: block; font-weight: bold; font-family: monospace; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 1rem; color: #DDD; background: #fff; cursor: pointer; border-radius: 7px; transition: all 0.25s ease-out; } .lbl-toggle:hover { color: #FFF; } .lbl-toggle::before { content: ' '; display: inline-block; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid currentColor; vertical-align: middle; margin-right: .7rem; transform: translateY(-2px); transition: transform .2s ease-out; } .toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } .collapsible-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; } .toggle:checked + .lbl-toggle + .collapsible-content { max-height: 350px; } .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } .collapsible-content .content-inner { background: rgba(0, 105, 255, .2); border-bottom: 1px solid rgba(0, 105, 255, .45); border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; padding: .5rem 1rem; } .collapsible-content p { margin-bottom: 0; }
+  input[type='checkbox'] { display: none; } .wrap-collabsible { margin: 1.2rem 0; } .lbl-toggle { display: block; font-weight: bold; font-family: monospace; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 1rem; color: #DDD; background: #fff; cursor: pointer; border-radius: 7px; transition: all 0.25s ease-out; } .lbl-toggle:hover { color: #FFF; } .lbl-toggle::before { content: ' '; display: inline-block; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid currentColor; vertical-align: middle; margin-right: .7rem; transform: translateY(-2px); transition: transform .2s ease-out; } .toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } .collapsible-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; } .toggle:checked + .lbl-toggle + .collapsible-content { max-height: 350px; } .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } .collapsible-content .content-inner { padding: .5rem 1rem; } .collapsible-content p { margin-bottom: 0; }
 <!--
       
         
@@ -339,18 +339,18 @@
 											<input id="collapsible" class="toggle" type="checkbox"> 
 												<label for="collapsible" class="lbl-toggle timeline__post">
 													<div class="timeline__content">
-													<span>Encounter</span> <p>Encounter - Inpatient</p>
+													<span class="timelineentity">Encounter</span> <p>Encounter - Inpatient</p>
 													<span class="mzkicon mzkencounterspan"><img class="mzkimg mzkencounterimg" src="https://owaismazik.github.io/PatientTimeLine/src/images/encounter.png"></span>
 													</div>	
 												</label>
 													<div class="collapsible-content">
 														<div class="content-inner">
 														<div class="timeline__post">
-															<h3>Allergy Intolerance</h3>
+															<h3 class="timelineentity">Allergy Intolerance</h3>
 															<p> Allergy - penicillin</p>
 														</div>
 														<div class="timeline__post">
-															<h3>ProcedureRequest</h3>
+															<h3 class="timelineentity">ProcedureRequest</h3>
 															<p>  procedureRequest - Specialty Support Surface Evaluation</p>
 														</div>
 														

@@ -958,7 +958,10 @@
                                         '</div></div></div>';
                                 }
                             }
-
+                            console.log("id: " + id);
+                            console.log("encounterID: " + encounterID);
+                            console.log("entity: " + entity);
+                            console.log("===============================================");
                             $("#" + year).append(html);
                         }
                     }

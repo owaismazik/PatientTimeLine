@@ -914,10 +914,10 @@
                                         var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
 
                                         if (daydivcount > 0 && daydivmonth > 0) {
-                                            html = '<div class="timeline__box">' +
+                                            html = '<div class="timeline__box  mzkheight mzktimelinebox">' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id+ '</span>' +
+                                                '<span id="' + id + '_' +year+ '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id+ '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon ' + spanClass+'">' +
                                                 '<img class="mzkimg ' + imgClass+'" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName +'">' +
@@ -925,12 +925,12 @@
                                                 '</div></div></div>';
                                         }
                                         else {
-                                            html = '<div class="timeline__box"><div class="timeline__date">' +
+                                            html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                 '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
+                                                '<span id="' + id + '_' + year + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon ' + spanClass + '">' +
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
@@ -939,12 +939,12 @@
                                         }
                                     }
                                     else {
-                                        html = '<div class="timeline__box"><div class="timeline__date">' +
+                                        html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                             '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                             '<div class="timeline__post">' +
                                             '<div class="timeline__content"> ' +
-                                            '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
+                                            '<span id="' + id + '_' + year + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon ' + spanClass + '">' +
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
@@ -953,12 +953,12 @@
                                     }
                                 }
                                 else {
-                                    html = '<div class="timeline__box"><div class="timeline__date">' +
+                                    html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                         '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                         '<div class="timeline__post">' +
                                         '<div class="timeline__content"> ' +
-                                        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
+                                        '<span id="' + id + '_' + year + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
                                         '<p> ' + name + '</p>' +
                                         '<span class="mzkicon ' + spanClass + '">' +
                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +

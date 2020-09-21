@@ -23,30 +23,115 @@
 
     <style>
 
-		.toggle:checked + .lbl-toggle + .collapsible-content {
-    max-height: 228px!important;
-    margin-top: -5px!important;
-}
+        .mzktimelinebox {
+            width: 98%;
+            margin: 0.7em;
+        }
 
-	.collapsible-content .content-inner {
-    padding: 0.3rem 3rem!important;
-}
+        i.arrow.right {
+            position: absolute;
+            top: 5px;
+        }
 
-		.mzkdropdown {
 
-    right: 8px!important;
-    bottom: 8px!important;}
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
 
-		.timeline__post{
-				    margin: 5px 0px;
-					position:relative;
-			}
-			
-		.timelineentity{
-			    margin: 5px 0px;
-		}	
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .move {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .mzkheight_ {
+            height: 100% !important;
+        }
+
+
+        .ui-icon {
+            display: none !important;
+        }
+
+        /*      .timeline__post {
+            padding: 1.5rem 2rem!important;
+            width: 100%!important;
+            margin-left: 0em!important;
+            margin-bottom: 5px!important;
+        }*/
+
+
+
+        .timeline__box:not(:last-of-type) {
+            margin-bottom: 0px !important;
+        }
+
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+            color: #000;
+        }
+
+        .mzkpara:active {
+            color: #000 !important;
+        }
+
+        @media screen and (min-width: 641px) {
+            .timeline__box {
+                padding-left: 0px;
+            }
+        }
+
+        .timeline__post {
+            padding: 1.5rem 2rem;
+            width: 89%;
+            margin-left: 5em;
+        }
+
+        .ui-accordion .ui-accordion-content {
+            padding: 0.1em 2.2em;
+            border-top: 0;
+            overflow: auto;
+            border: navajowhite;
+            background-color: transparent;
+        }
+
+        .ui-accordion .ui-accordion-header {
+            display: block;
+            cursor: pointer;
+            background: transparent;
+            position: relative;
+            border: navajowhite;
+            margin: -5px 0 0 0;
+            /* padding: .5em .5em .5em .7em; */
+            font-size: 100%;
+        }
+
+        .time
+
+
+
+
+        button {
+            opacity: .8;
+            width: 95px;
+            height: 55px;
+            font-size: 18px;
+            background-color: #3b5998;
+            color: #fff;
+            outline: none;
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+
         .page {
-           
             /* padding: 10rem 2rem 3rem; */
             margin-left: auto;
             margin-right: auto;
@@ -87,11 +172,12 @@
         .mzkcontainer {
             width: 97%;
         }
-		
-		.loadPos {
-	position:relative !important;
-	height: 100vh;
-	}
+
+        .loadPos {
+            position: relative !important;
+            height: 100vh;
+        }
+
         .fa-arrows-v:before {
             content: "\f07d";
             border-radius: 79px;
@@ -442,6 +528,26 @@
             //$(".loader").show();
 			//setTimeout(function(){ $(".loader").hide(); }, 5000);
         });
+
+        $(function () {
+            $(".accordion").accordion({
+                animate: 400,
+                active: 2,
+                collapsible: true
+            });
+        });
+
+        var collapseAll = function () {
+            $(".accordion").accordion("option", "active", false);
+        }
+
+        $(document).ready(function () {
+            $(".accordion").click(function () {
+                $(".right").toggleClass("move");
+
+            });
+        });
+
 
     </script>
 </body>

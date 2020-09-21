@@ -968,152 +968,152 @@
                         }
                     }
                 }
-                else {
-                    // for desending
-                    for (var j = checkedYears.length - 1; j >= 0; j--) {
-                        var item = checkedYears[j];
-                        html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
-                        $("#timeline").append(html);
-                        for (var i = 0; i < filterdata.length; i++) {
+                //else {
+                //    // for desending
+                //    for (var j = checkedYears.length - 1; j >= 0; j--) {
+                //        var item = checkedYears[j];
+                //        html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
+                //        $("#timeline").append(html);
+                //        for (var i = 0; i < filterdata.length; i++) {
 
-                            var date = new Date(filterdata[i].date)
-                            var id = filterdata[i].id;
-                            var name = filterdata[i].name;
-                            var type = filterdata[i].type;
-                            var entity = filterdata[i].entity;
-                            var year = date.getFullYear();
-                            var month = monthNames[date.getMonth()];
-                            var day = date.getDate();
-                            var encounterID = filterdata[i].encounterID;
-                            console.log("id: " + id);
-                            console.log("encounterID: " + encounterID);
-                            console.log("entity: " + entity);
-                            console.log("counter: " + ++counter);
-                            console.log("===============================================");
-                            var spanClass = "";
-                            var imgClass = "";
+                //            var date = new Date(filterdata[i].date)
+                //            var id = filterdata[i].id;
+                //            var name = filterdata[i].name;
+                //            var type = filterdata[i].type;
+                //            var entity = filterdata[i].entity;
+                //            var year = date.getFullYear();
+                //            var month = monthNames[date.getMonth()];
+                //            var day = date.getDate();
+                //            var encounterID = filterdata[i].encounterID;
+                //            console.log("id: " + id);
+                //            console.log("encounterID: " + encounterID);
+                //            console.log("entity: " + entity);
+                //            console.log("counter: " + ++counter);
+                //            console.log("===============================================");
+                //            var spanClass = "";
+                //            var imgClass = "";
 
-                            switch (entity) {
-                                case "Allergy Intolerance":
-                                    imageName = "allergy.png";
-                                    spanClass = "mzkaleryspan";
-                                    imgClass = 'mzkalergyimg';
-                                    break;
-                                case "Observation":
-                                    imageName = "Observation.png";
-                                    spanClass = "mzkobserspan";
-                                    imgClass = 'mzkobserimg';
-                                    break;
-                                case "Condition":
-                                    imageName = "conditon.png";
-                                    spanClass = "mzkobserspan";
-                                    imgClass = 'mzkobserimg';
-                                    break;
-                                case "MedicationOrder":
-                                    imageName = "MedicationOrder.png";
-                                    spanClass = "mzkmedicationspan";
-                                    imgClass = 'mzkmedicationimg';
-                                    break;
-                                case "Procedure":
-                                    imageName = "procedure.png";
-                                    spanClass = "mzkprocspan";
-                                    imgClass = 'mzkprocimg';
-                                    break;
-                                case "ProcedureRequest":
-                                    imageName = "request.png";
-                                    spanClass = "mzkprocreqspan";
-                                    imgClass = 'mzkprocreqimg';
-                                    break;
-                                case "Encounter":
-                                    imageName = "encounter.png";
-                                    spanClass = "mzkencounterspan";
-                                    imgClass = 'mzkencounterimg';
-                                    break;
-                                //case "Device":
-                                //    imageName = "Device";
-                                //    spanClass = ".mzkobserspan";
-                                //    imgClass = '.mzkobserimg';
-                                //    break;
-                                //case "Care Plan":
-                                //    imageName = "Care Plan";
-                                //    spanClass = ".mzkobserspan";
-                                //    imgClass = '.mzkobserimg';
-                                //    break;
-                                //case "Goal":
-                                //    imageName = "Goal";
-                                //    spanClass = ".mzkobserspan";
-                                //    imgClass = '.mzkobserimg';
-                                //    break;
-                                default:
-                                    imageName = "";
-                            }
+                //            switch (entity) {
+                //                case "Allergy Intolerance":
+                //                    imageName = "allergy.png";
+                //                    spanClass = "mzkaleryspan";
+                //                    imgClass = 'mzkalergyimg';
+                //                    break;
+                //                case "Observation":
+                //                    imageName = "Observation.png";
+                //                    spanClass = "mzkobserspan";
+                //                    imgClass = 'mzkobserimg';
+                //                    break;
+                //                case "Condition":
+                //                    imageName = "conditon.png";
+                //                    spanClass = "mzkobserspan";
+                //                    imgClass = 'mzkobserimg';
+                //                    break;
+                //                case "MedicationOrder":
+                //                    imageName = "MedicationOrder.png";
+                //                    spanClass = "mzkmedicationspan";
+                //                    imgClass = 'mzkmedicationimg';
+                //                    break;
+                //                case "Procedure":
+                //                    imageName = "procedure.png";
+                //                    spanClass = "mzkprocspan";
+                //                    imgClass = 'mzkprocimg';
+                //                    break;
+                //                case "ProcedureRequest":
+                //                    imageName = "request.png";
+                //                    spanClass = "mzkprocreqspan";
+                //                    imgClass = 'mzkprocreqimg';
+                //                    break;
+                //                case "Encounter":
+                //                    imageName = "encounter.png";
+                //                    spanClass = "mzkencounterspan";
+                //                    imgClass = 'mzkencounterimg';
+                //                    break;
+                //                //case "Device":
+                //                //    imageName = "Device";
+                //                //    spanClass = ".mzkobserspan";
+                //                //    imgClass = '.mzkobserimg';
+                //                //    break;
+                //                //case "Care Plan":
+                //                //    imageName = "Care Plan";
+                //                //    spanClass = ".mzkobserspan";
+                //                //    imgClass = '.mzkobserimg';
+                //                //    break;
+                //                //case "Goal":
+                //                //    imageName = "Goal";
+                //                //    spanClass = ".mzkobserspan";
+                //                //    imgClass = '.mzkobserimg';
+                //                //    break;
+                //                default:
+                //                    imageName = "";
+                //            }
 
-                            if (year == item) {
-                                var yeardivcount = $("#" + year).length;
-                                if (yeardivcount > 0) {
-                                    var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
-                                    if (thistimelineboxcount > 0) {
+                //            if (year == item) {
+                //                var yeardivcount = $("#" + year).length;
+                //                if (yeardivcount > 0) {
+                //                    var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
+                //                    if (thistimelineboxcount > 0) {
 
-                                        var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
-                                        var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
+                //                        var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
+                //                        var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
 
-                                        if (daydivcount > 0 && daydivmonth > 0) {
-                                            html = '<div class="timeline__box">' +
-                                                '<div class="timeline__post">' +
-                                                '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
-                                                '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon ' + spanClass + '">' +
-                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                '</span>' +
-                                                '</div></div></div>';
-                                        }
-                                        else {
-                                            html = '<div class="timeline__box"><div class="timeline__date">' +
-                                                '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                                '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                                '<div class="timeline__post">' +
-                                                '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
-                                                '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon ' + spanClass + '">' +
-                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                '</span>' +
-                                                '</div></div></div>';
-                                        }
-                                    }
-                                    else {
-                                        html = '<div class="timeline__box"><div class="timeline__date">' +
-                                            '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                            '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                            '<div class="timeline__post">' +
-                                            '<div class="timeline__content"> ' +
-                                            '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
-                                            '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon ' + spanClass + '">' +
-                                            '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                            '</span>' +
-                                            '</div></div></div>';
-                                    }
-                                }
-                                else {
-                                    html = '<div class="timeline__box"><div class="timeline__date">' +
-                                        '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                        '<div class="timeline__post">' +
-                                        '<div class="timeline__content"> ' +
-                                        '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
-                                        '<p> ' + name + '</p>' +
-                                        '<span class="mzkicon ' + spanClass + '">' +
-                                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                        '</span>' +
-                                        '</div></div></div>';
-                                }
-                            }
-                            $("#" + year).append(html);
-                        }
-                    }
-                }
+                //                        if (daydivcount > 0 && daydivmonth > 0) {
+                //                            html = '<div class="timeline__box">' +
+                //                                '<div class="timeline__post">' +
+                //                                '<div class="timeline__content"> ' +
+                //                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
+                //                                '<p> ' + name + '</p>' +
+                //                                '<span class="mzkicon ' + spanClass + '">' +
+                //                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                //                                '</span>' +
+                //                                '</div></div></div>';
+                //                        }
+                //                        else {
+                //                            html = '<div class="timeline__box"><div class="timeline__date">' +
+                //                                '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                //                                '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                //                                '<div class="timeline__post">' +
+                //                                '<div class="timeline__content"> ' +
+                //                                '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
+                //                                '<p> ' + name + '</p>' +
+                //                                '<span class="mzkicon ' + spanClass + '">' +
+                //                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                //                                '</span>' +
+                //                                '</div></div></div>';
+                //                        }
+                //                    }
+                //                    else {
+                //                        html = '<div class="timeline__box"><div class="timeline__date">' +
+                //                            '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                //                            '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                //                            '<div class="timeline__post">' +
+                //                            '<div class="timeline__content"> ' +
+                //                            '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
+                //                            '<p> ' + name + '</p>' +
+                //                            '<span class="mzkicon ' + spanClass + '">' +
+                //                            '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                //                            '</span>' +
+                //                            '</div></div></div>';
+                //                    }
+                //                }
+                //                else {
+                //                    html = '<div class="timeline__box"><div class="timeline__date">' +
+                //                        '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                //                        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                //                        '<div class="timeline__post">' +
+                //                        '<div class="timeline__content"> ' +
+                //                        '<span id="' + id + '" encounterID="' + encounterID +'"  class="timelineentity">' + entity + '</span>' +
+                //                        '<p> ' + name + '</p>' +
+                //                        '<span class="mzkicon ' + spanClass + '">' +
+                //                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                //                        '</span>' +
+                //                        '</div></div></div>';
+                //                }
+                //            }
+                //            $("#" + year).append(html);
+                //        }
+                //    }
+                //}
                 
                 $(".timeline__group").each(function () {
                     var timelineboxcount = $(this).find(".timeline__box").length;

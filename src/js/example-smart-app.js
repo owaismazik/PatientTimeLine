@@ -838,6 +838,10 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
+                            console.log("id: " + id);
+                            console.log("encounterID: " + encounterID);
+                            console.log("entity: " + entity);
+                            console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";
 
@@ -958,10 +962,6 @@
                                         '</div></div></div>';
                                 }
                             }
-                            console.log("id: " + id);
-                            console.log("encounterID: " + encounterID);
-                            console.log("entity: " + entity);
-                            console.log("===============================================");
                             $("#" + year).append(html);
                         }
                     }
@@ -983,6 +983,10 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
+                            console.log("id: " + id);
+                            console.log("encounterID: " + encounterID);
+                            console.log("entity: " + entity);
+                            console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";
 
@@ -1103,7 +1107,6 @@
                                         '</div></div></div>';
                                 }
                             }
-
                             $("#" + year).append(html);
                         }
                     }

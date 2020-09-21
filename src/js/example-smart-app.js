@@ -839,6 +839,7 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
+                            console.log("year: " + year);
                             console.log("id: " + id);
                             console.log("encounterID: " + encounterID);
                             console.log("entity: " + entity);

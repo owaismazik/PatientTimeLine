@@ -840,6 +840,7 @@
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
                             console.log("year: " + year);
+                            console.log("item: " + item);
                             console.log("id: " + id);
                             console.log("encounterID: " + encounterID);
                             console.log("entity: " + entity);

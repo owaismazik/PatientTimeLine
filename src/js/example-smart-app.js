@@ -817,6 +817,7 @@
                 $("#timelinecontrolnew").hide()
                 $("#timeline").html("");
                 var value = $('#changeOrder').val();
+                var counter = 0;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 
@@ -841,6 +842,7 @@
                             console.log("id: " + id);
                             console.log("encounterID: " + encounterID);
                             console.log("entity: " + entity);
+                            console.log("counter: " + ++counter);
                             console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";
@@ -986,6 +988,7 @@
                             console.log("id: " + id);
                             console.log("encounterID: " + encounterID);
                             console.log("entity: " + entity);
+                            console.log("counter: " + ++counter);
                             console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";

@@ -926,7 +926,7 @@
                                                     '</div></div></div>';
                                             }
                                             else {
-                                                html = '<div class="accordion"><div class="timeline__box  mzkheight mzktimelinebox">' +
+                                                html = '<div class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist"><div class="timeline__box  mzkheight mzktimelinebox ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons">' +
                                                     '<div class="timeline__post">' +
                                                     '<div class="timeline__content"> ' +
                                                     '<span id="' + id + '_' + year + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
@@ -952,7 +952,7 @@
                                                     '</div></div></div>';
                                             }
                                             else {
-                                                html = '<div class="accordion"><div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                                html = '<div class="accordion  ui-accordion ui-widget ui-helper-reset" role="tablist"><div class="timeline__box  mzkheight mzktimelinebox  ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons"><div class="timeline__date">' +
                                                     '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                     '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                     '<div class="timeline__post">' +

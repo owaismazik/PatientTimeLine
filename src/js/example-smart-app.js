@@ -955,7 +955,7 @@
                                         var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
 
                                         if (daydivcount > 0 && daydivmonth > 0) {
-                                            if (encounterID != undefined) {
+                                            if (encounterID != undefined && entity != "Encounter") {
                                                 html = '<div class="timeline__box mzkheight mzktimelinebox">' +
                                                     '<div class="timeline__post">' +
                                                     '<div class="timeline__content"> ' +
@@ -965,9 +965,11 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
-                                                var id = '#' + encounterID;
-                                                $(id).parent().parent().parent().parent().append(html);
-                                                html = "";
+                                                if (entity == "Encounter") {
+                                                    var id = '#' + encounterID;
+                                                    $(id).parent().parent().parent().parent().append(html);
+                                                    html = "";
+                                                }
                                             }
                                             else {
                                                 html = '<div class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist"><div class="timeline__box  mzkheight mzktimelinebox ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons">' +
@@ -982,7 +984,7 @@
                                             }
                                         }
                                         else {
-                                            if (encounterID != undefined) {
+                                            if (encounterID != undefined && entity != "Encounter") {
                                                 html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                     '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                     '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
@@ -994,9 +996,11 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
-                                                var id = '#' + encounterID;
-                                                $(id).parent().parent().parent().parent().append(html);
-                                                html = "";
+                                                if (entity == "Encounter") {
+                                                    var id = '#' + encounterID;
+                                                    $(id).parent().parent().parent().parent().append(html);
+                                                    html = "";
+                                                }
                                             }
                                             else {
                                                 html = '<div class="accordion><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
@@ -1014,7 +1018,7 @@
                                         }
                                     }
                                     else {
-                                        if (encounterID != undefined) {
+                                        if (encounterID != undefined && entity != "Encounter") {
                                             html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                 '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
@@ -1026,9 +1030,11 @@
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
-                                            var id = '#' + encounterID;
-                                            $(id).parent().parent().parent().parent().append(html);
-                                            html = "";
+                                            if (entity == "Encounter") {
+                                                var id = '#' + encounterID;
+                                                $(id).parent().parent().parent().parent().append(html);
+                                                html = "";
+                                            }
                                         }
                                         else {
                                             html = '<div class="accordion><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
@@ -1046,7 +1052,7 @@
                                     }
                                 }
                                 else {
-                                    if (encounterID != undefined) {
+                                    if (encounterID != undefined && entity != "Encounter") {
                                         html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                             '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
@@ -1058,9 +1064,11 @@
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
-                                        var id = '#' + encounterID;
-                                        $(id).parent().parent().parent().parent().append(html);
-                                        html = "";
+                                        if (entity == "Encounter") {
+                                            var id = '#' + encounterID;
+                                            $(id).parent().parent().parent().parent().append(html);
+                                            html = "";
+                                        }
                                     }
                                     else {
                                         html = '<div class="accordion><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +

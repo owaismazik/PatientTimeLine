@@ -1276,14 +1276,6 @@
         }
     });
 
-    $(function () {
-        $(".accordion").accordion({
-            animate: 400,
-            active: 2,
-            collapsible: true
-        });
-    });
-
     var collapseAll = function () {
         $(".accordion").accordion("option", "active", false);
     }

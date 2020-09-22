@@ -869,7 +869,7 @@
                 if (value == "true") {
                     for (var j = 0; j < checkedYears.length; j++) {
                         ++loopBreaker;
-                        if (loopBreaker == 4) {
+                        if (j == 4) {
                             break;
                         }
                         var item = checkedYears[j];

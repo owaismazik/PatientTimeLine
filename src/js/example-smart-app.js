@@ -965,6 +965,9 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
+                                                var id = '#' + encounterID + '_' + year;
+                                                $(id).parent().parent().parent().parent().append(html);
+                                                html = "";
                                             }
                                             else {
                                                 html = '<div class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist"><div class="timeline__box  mzkheight mzktimelinebox ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons">' +
@@ -991,6 +994,9 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
+                                                var id = '#' + encounterID + '_' + year;
+                                                $(id).parent().parent().parent().parent().append(html);
+                                                html = "";
                                             }
                                             else {
                                                 html = '<div class="accordion  ui-accordion ui-widget ui-helper-reset" role="tablist"><div class="timeline__box  mzkheight mzktimelinebox  ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons"><div class="timeline__date">' +

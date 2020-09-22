@@ -966,11 +966,9 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
-                                                if (entity == "Encounter") {
                                                     var id = '#' + encounterID;
                                                     $(id).parent().parent().parent().parent().append(html);
                                                     html = "";
-                                                }
                                             }
                                             else {
                                                 html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox">' +
@@ -997,11 +995,9 @@
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
                                                     '</div></div></div>';
-                                                if (entity == "Encounter") {
-                                                    var id = '#' + encounterID;
-                                                    $(id).parent().parent().parent().parent().append(html);
-                                                    html = "";
-                                                }
+                                                var id = '#' + encounterID;
+                                                $(id).parent().parent().parent().parent().append(html);
+                                                html = "";
                                             }
                                             else {
                                                 html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
@@ -1031,11 +1027,9 @@
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
-                                            if (entity == "Encounter") {
-                                                var id = '#' + encounterID;
-                                                $(id).parent().parent().parent().parent().append(html);
-                                                html = "";
-                                            }
+                                            var id = '#' + encounterID;
+                                            $(id).parent().parent().parent().parent().append(html);
+                                            html = "";
                                         }
                                         else {
                                             html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
@@ -1065,11 +1059,9 @@
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
-                                        if (entity == "Encounter") {
-                                            var id = '#' + encounterID;
-                                            $(id).parent().parent().parent().parent().append(html);
-                                            html = "";
-                                        }
+                                        var id = '#' + encounterID;
+                                        $(id).parent().parent().parent().parent().append(html);
+                                        html = "";
                                     }
                                     else {
                                         html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +

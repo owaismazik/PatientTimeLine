@@ -1268,7 +1268,15 @@
                 if (s > e) return 1;
                 if (s < e) return -1;
                 return 0;
-            };
+        };
+
+                $(function () {
+            $(".accordion").accordion({
+                animate: 400,
+                active: 2,
+                collapsible: true
+            });
+        });
         
     }
 

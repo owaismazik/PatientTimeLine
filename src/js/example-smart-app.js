@@ -1203,6 +1203,14 @@
                 $("#loading").hide();
                 $(".loader").hide();
                 $("#timelinecontrolnew").show();
+
+                $(function () {
+                    $(".accordion").accordion({
+                        animate: 400,
+                        active: 2,
+                        collapsible: true
+                    });
+                });
             }
                         
             function getTypeImageName(a) {

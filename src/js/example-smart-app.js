@@ -1031,7 +1031,7 @@
                                             html = "";
                                         }
                                         else {
-                                            html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                            html = '<div class="accordion><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                 '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
@@ -1041,7 +1041,7 @@
                                                 '<span class="mzkicon ' + spanClass + '">' +
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
-                                                '</div></div></div></div>';
+                                                '</div></div></div></div></div>';
                                         }
                                     }
                                 }

@@ -76,6 +76,52 @@
 
                     ret.resolve(p);
 
+                    var enco = smart.patient.api.fetchAll({
+                        type: 'Encounter',
+                        query: {
+                            patient: patient.id
+                        }
+                    });
+
+                    $.when(enco).done(function (encounter) {
+                        if (encounter != null) {
+                            if (encounter.length > 0) {
+                                for (var i = 0; i <= encounter.length; i++) {
+                                    if (encounter[i] != null) {
+                                        if (encounter[i] != undefined) {
+                                            var title = encounter[i].type[0].text;
+                                            var recordeddate = "";
+                                            if (encounter[i].hasOwnProperty('period')) {
+                                                recordeddate = encounter[i].period.start;
+                                            }
+                                            else if (encounter[i].hasOwnProperty('meta')) {
+                                                recordeddate = encounter[i].meta.lastUpdated;
+                                            }
+                                            var patientEncounter = {}
+                                            patientEncounter.encounterID = encounter[i].id;
+                                            patientEncounter.Title = "Encounter - " + title;
+                                            patientEncounter.RecordedDate = recordeddate;
+                                            patientEncounter.PatientID = $("#CRMpatietid").val();
+                                            var dataSet = patientEncounter;
+                                            var item = {};
+
+                                            item.name = dataSet.Title;
+
+                                            if (dataSet.hasOwnProperty('RecordedDate')) {
+                                                item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
+                                                item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
+                                            }
+                                            item.type = 6;
+                                            item.id = dataSet.encounterID;
+                                            item.entity = "Encounter";
+                                            list.push(item);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+
                     //CreatePatient(patient.id);
 
                     if (obv != null) {
@@ -367,52 +413,6 @@
                                             }
                                             item.entity = "ProcedureRequest";
                                             list.push(item);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-
-                    var enco = smart.patient.api.fetchAll({
-                        type: 'Encounter',
-                        query: {
-                            patient: patient.id
-                        }
-                    });
-
-                    $.when(enco).done(function (encounter) {
-                        if (encounter != null) {
-                            if (encounter.length > 0) {
-                                for (var i = 0; i <= encounter.length; i++) {
-                                    if (encounter[i] != null) {
-                                        if (encounter[i] != undefined) {
-                                            var title = encounter[i].type[0].text;
-                                            var recordeddate = "";
-                                            if (encounter[i].hasOwnProperty('period')) {
-                                                recordeddate = encounter[i].period.start;
-                                            }
-                                            else if (encounter[i].hasOwnProperty('meta')) {
-                                                recordeddate = encounter[i].meta.lastUpdated;
-                                            }
-                                            var patientEncounter = {}
-                                            patientEncounter.encounterID = encounter[i].id;
-                                            patientEncounter.Title = "Encounter - " + title;
-                                            patientEncounter.RecordedDate = recordeddate;
-                                            patientEncounter.PatientID = $("#CRMpatietid").val();
-                                            var dataSet = patientEncounter;
-                                                var item = {};
-
-                                                item.name = dataSet.Title;
-
-                                                if (dataSet.hasOwnProperty('RecordedDate')) {
-                                                    item.date = moment.utc(dataSet.RecordedDate).format('MM/DD/YYYY');
-                                                    item.dateTime = moment.utc(dataSet.RecordedDate).format('YYYY-MM-DD HH:mm:ss');
-                                                }
-                                            item.type = 6;
-                                            item.id = dataSet.encounterID;
-                                                item.entity = "Encounter";
-                                                list.push(item);
                                         }
                                     }
                                 }

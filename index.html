@@ -524,6 +524,16 @@
         }
 
         $(document).ready(function () {	 
+
+            $(".accordion").click(function () {
+                $(".right").toggleClass("move");
+
+            });
+
+            var collapseAll = function () {
+                $(".accordion").accordion("option", "active", false);
+            }
+
             $(function () {
                 $(".accordion").accordion({
                     animate: 400,
@@ -532,18 +542,6 @@
                 });
             });
         });
-
-        var collapseAll = function () {
-            $(".accordion").accordion("option", "active", false);
-        }
-
-        $(document).ready(function () {
-            $(".accordion").click(function () {
-                $(".right").toggleClass("move");
-
-            });
-        });
-
 
     </script>
 </body>

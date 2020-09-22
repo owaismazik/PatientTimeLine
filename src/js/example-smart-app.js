@@ -819,6 +819,7 @@
                 $("#timeline").html("");
                 var value = $('#changeOrder').val();
                 var counter = 0;
+                var loopBreaker = 0;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 
@@ -867,6 +868,10 @@
 
                 if (value == "true") {
                     for (var j = 0; j < checkedYears.length; j++) {
+                        ++loopBreaker;
+                        if (loopBreaker == 4) {
+                            break;
+                        }
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);

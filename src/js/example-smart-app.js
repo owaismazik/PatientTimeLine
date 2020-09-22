@@ -951,6 +951,19 @@
                                                     '</span>' +
                                                     '</div></div></div>';
                                             }
+                                            else {
+                                                html = '<div class="accordion"><div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                                    '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                                    '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                                    '<div class="timeline__post">' +
+                                                    '<div class="timeline__content"> ' +
+                                                    '<span id="' + id + '_' + year + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + id + '</span>' +
+                                                    '<p> ' + name + '</p>' +
+                                                    '<span class="mzkicon ' + spanClass + '">' +
+                                                    '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                                    '</span>' +
+                                                    '</div></div></div></div>';
+                                            }
                                         }
                                     }
                                     else {

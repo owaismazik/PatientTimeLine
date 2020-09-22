@@ -959,18 +959,33 @@
 
                                         if (daydivcount > 0 && daydivmonth > 0) {
                                             if (encounterID != undefined && entity != "Encounter") {
-                                                html = '<div class="timeline__box mzkheight mzktimelinebox">' +
-                                                    '<div class="timeline__post">' +
-                                                    '<div class="timeline__content"> ' +
-                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '_' + id + ' encounterID=' + encounterID + '</span>' +
-                                                    '<p> ' + name + '</p>' +
-                                                    '<span class="mzkicon ' + spanClass + '">' +
-                                                    '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                    '</span>' +
-                                                    '</div></div></div>';
+                                                if ($(id).parent().parent().parent().siblings().children().length > 1) {
+                                                    html = '<div class="timeline__post">' +
+                                                        '<div class="timeline__content"> ' +
+                                                        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '_' + id + ' encounterID=' + encounterID + '</span>' +
+                                                        '<p> ' + name + '</p>' +
+                                                        '<span class="mzkicon ' + spanClass + '">' +
+                                                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                                        '</span>' +
+                                                        '</div></div>';
+                                                    var id = '#' + encounterID;
+                                                    $(id).parent().parent().parent().siblings().append(html);
+                                                    html = "";
+                                                }
+                                                else {
+                                                    html = '<div class="timeline__box mzkheight mzktimelinebox">' +
+                                                        '<div class="timeline__post">' +
+                                                        '<div class="timeline__content"> ' +
+                                                        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '_' + id + ' encounterID=' + encounterID + '</span>' +
+                                                        '<p> ' + name + '</p>' +
+                                                        '<span class="mzkicon ' + spanClass + '">' +
+                                                        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                                        '</span>' +
+                                                        '</div></div></div>';
                                                     var id = '#' + encounterID;
                                                     $(id).parent().parent().parent().parent().append(html);
                                                     html = "";
+                                                }
                                             }
                                             else {
                                                 html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox">' +

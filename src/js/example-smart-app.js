@@ -914,7 +914,7 @@
                                         var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
 
                                         if (daydivcount > 0 && daydivmonth > 0) {
-                                            if (encounterID != 'undefined') {
+                                            if (encounterID != undefined) {
                                                 html = '<div class="timeline__box  mzkheight mzktimelinebox">' +
                                                     '<div class="timeline__post">' +
                                                     '<div class="timeline__content"> ' +
@@ -927,7 +927,7 @@
                                             }
                                         }
                                         else {
-                                            if (encounterID != 'undefined') {
+                                            if (encounterID != undefined) {
                                                 html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                     '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                     '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
@@ -943,7 +943,7 @@
                                         }
                                     }
                                     else {
-                                        if (encounterID != 'undefined') {
+                                        if (encounterID != undefined) {
                                             html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                 '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
@@ -959,7 +959,7 @@
                                     }
                                 }
                                 else {
-                                    if (encounterID != 'undefined') {
+                                    if (encounterID != undefined) {
                                         html = '<div class="timeline__box  mzkheight mzktimelinebox"><div class="timeline__date">' +
                                             '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +

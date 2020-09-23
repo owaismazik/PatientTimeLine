@@ -818,7 +818,7 @@
                 $("#timelinecontrolnew").hide()
                 $("#timeline").html("");
                 var value = $('#changeOrder').val();
-                bool breaker = false;
+                var breaker = false;
                 var counter = 0;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);

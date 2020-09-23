@@ -1321,11 +1321,10 @@
                     });
                 });
                 var collapseAll = function () {
-                    $(".accordion").accordion("option", "active", false);
+                    $(".accordion").accordion("option", "active", true);
                 }
-                $(".accordion").click(function () {
-                    $(".right").toggleClass("move");
-
+                $(".timelineentity").on("click", function () {
+                    $(this.children).toggleClass("move")
                 });
             }
                         
@@ -1407,6 +1406,7 @@
             timeline();
         }
     });
+
 
     //var collapseAll = function () {
     //    $(".accordion").accordion("option", "active", false);

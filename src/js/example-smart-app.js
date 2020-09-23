@@ -575,7 +575,7 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 1000);  //7000     
+                    }, 3000);  //7000     
 
                     //setTimeout(function () {
                     //    $("#timeline").hide();
@@ -820,7 +820,7 @@
                 var value = $('#changeOrder').val();
                 var breaker = false;
                 var counter = 0;
-                var loopBreakingValue = 8;
+                var loopBreakingValue = 50;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 

@@ -1006,7 +1006,7 @@
                                         }
                                         else {
                                             if (encounterID != undefined && entity != "Encounter") {
-                                                if (($(id).parent().parent().parent().siblings().children().length > 1) {
+                                                if (($(id).parent().parent().parent().siblings().children().length > 1)) {
                                                     html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                         '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +

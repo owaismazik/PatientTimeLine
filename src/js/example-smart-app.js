@@ -975,8 +975,8 @@
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
                                                         '</div></div>';
-                                                    var id = '#' + encounterID;
-                                                    $(id).parent().parent().parent().siblings().append(html);
+                                                    var idEncounter = '#' + encounterID;
+                                                    $(idEncounter).parent().parent().parent().siblings().append(html);
                                                     html = "";
                                                 }
                                                 else {
@@ -989,8 +989,8 @@
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
                                                         '</div></div></div>';
-                                                    var id = '#' + encounterID;
-                                                    $(id).parent().parent().parent().parent().append(html);
+                                                    var idEncounter = '#' + encounterID;
+                                                    $(idEncounter).parent().parent().parent().parent().append(html);
                                                     html = "";
                                                 }
                                             }
@@ -1020,8 +1020,8 @@
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
                                                         '</div></div></div>';
-                                                    var id = '#' + encounterID;
-                                                    $(id).parent().parent().parent().siblings().append(html);
+                                                    var idEncounter = '#' + encounterID;
+                                                    $(idEncounter).parent().parent().parent().siblings().append(html);
                                                     html = "";
                                                 }
                                                 else {
@@ -1036,8 +1036,8 @@
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
                                                         '</div></div></div>';
-                                                    var id = '#' + encounterID;
-                                                    $(id).parent().parent().parent().parent().append(html);
+                                                    var idEncounter = '#' + encounterID;
+                                                    $(idEncounter).parent().parent().parent().parent().append(html);
                                                     html = "";
                                                 }
                                             }
@@ -1069,8 +1069,8 @@
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
                                                 '</div></div></div>';
-                                            var id = '#' + encounterID;
-                                            $(id).parent().parent().parent().parent().append(html);
+                                            var idEncounter = '#' + encounterID;
+                                            $(idEncounter).parent().parent().parent().parent().append(html);
                                             html = "";
                                         }
                                         else {
@@ -1101,8 +1101,8 @@
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
                                             '</div></div></div>';
-                                        var id = '#' + encounterID;
-                                        $(id).parent().parent().parent().parent().append(html);
+                                        var idEncounter = '#' + encounterID;
+                                        $(idEncounter).parent().parent().parent().parent().append(html);
                                         html = "";
                                     }
                                     else {

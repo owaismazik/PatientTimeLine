@@ -575,7 +575,7 @@
                     setTimeout(function () {
                         $("#timeline").show();
                         timeline();
-                    }, 3000);  //7000     
+                    }, 7000);  //7000     
 
                     //setTimeout(function () {
                     //    $("#timeline").hide();

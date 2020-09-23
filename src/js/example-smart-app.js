@@ -820,7 +820,7 @@
                 var value = $('#changeOrder').val();
                 var breaker = false;
                 var counter = 0;
-                var loopBreakingValue = 50;
+                var loopBreakingValue = 100;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 

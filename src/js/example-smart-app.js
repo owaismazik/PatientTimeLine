@@ -818,6 +818,7 @@
                 $("#timelinecontrolnew").hide()
                 $("#timeline").html("");
                 var value = $('#changeOrder').val();
+                bool breaker = false;
                 var counter = 0;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
@@ -867,11 +868,15 @@
 
                 if (value == "true") {
                     for (var j = 0; j < checkedYears.length; j++) {
+                        if (breaker == true) {
+                            break;
+                        }
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
                             if (i == 4) {
+                                breaker = true;
                                 break;
                             }
                             var date = new Date(filterdata[i].date)

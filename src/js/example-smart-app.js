@@ -820,7 +820,7 @@
                 var value = $('#changeOrder').val();
                 var breaker = false;
                 var counter = 0;
-                var loopBreakingValue = 50;
+                var loopBreakingValue = 5;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 
@@ -967,7 +967,7 @@
 
                                         if (daydivcount > 0 && daydivmonth > 0) {
                                             if (encounterID != undefined && entity != "Encounter") {
-                                                if ($(idEncounter).parent().parent().parent().siblings().children().length > 1) {
+                                                if ($(idEncounter).parent().parent().parent().siblings().children().length >= 1) {
                                                     html = '<div class="timeline__post">' +
                                                         '<div class="timeline__content"> ' +
                                                         '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '_' + id + ' encounterID=' + encounterID + '</span>' +
@@ -1007,7 +1007,7 @@
                                         }
                                         else {
                                             if (encounterID != undefined && entity != "Encounter") {
-                                                if (($(idEncounter).parent().parent().parent().siblings().children().length > 1)) {
+                                                if (($(idEncounter).parent().parent().parent().siblings().children().length >= 1)) {
                                                     html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
                                                         '<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                         '<span class="timeline__month ' + month + '">' + month + '</span></div>' +

@@ -869,18 +869,18 @@
 
                 if (value == "true") {
                     for (var j = 0; j < checkedYears.length; j++) {
-                        if (breaker == true) {
-                            break;
-                        }
+                        //if (breaker == true) {
+                        //    break;
+                        //}
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
                             console.log("j_i: " + j+'_'+i);
-                            if (i == loopBreakingValue) {
-                                breaker = true;
-                                break;
-                            }
+                            //if (i == loopBreakingValue) {
+                            //    breaker = true;
+                            //    break;
+                            //}
                             var date = new Date(filterdata[i].date)
                             var id = filterdata[i].id;
                             var name = filterdata[i].name;

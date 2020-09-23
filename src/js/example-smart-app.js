@@ -876,6 +876,7 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
+                            console.log("j_i: " + j+'_'+i);
                             if (i == loopBreakingValue) {
                                 breaker = true;
                                 break;
@@ -889,12 +890,12 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
-                            console.log("year: " + year);
-                            console.log("item: " + item);
-                            console.log("id: " + id);
-                            console.log("encounterID: " + encounterID);
-                            console.log("entity: " + entity);
-                            console.log("counter: " + ++counter);
+                            //console.log("year: " + year);
+                            //console.log("item: " + item);
+                            //console.log("id: " + id);
+                            //console.log("encounterID: " + encounterID);
+                            //console.log("entity: " + entity);
+                            //console.log("counter: " + ++counter);
                             console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";

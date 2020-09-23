@@ -1313,13 +1313,19 @@
                 $("#loading").hide();
                 $(".loader").hide();
                 $("#timelinecontrolnew").show();
-
                 $(function () {
                     $(".accordion").accordion({
                         animate: 400,
                         active: 2,
                         collapsible: true
                     });
+                });
+                var collapseAll = function () {
+                    $(".accordion").accordion("option", "active", false);
+                }
+                $(".accordion").click(function () {
+                    $(".right").toggleClass("move");
+
                 });
             }
                         
@@ -1380,13 +1386,13 @@
                 return 0;
         };
 
-                $(function () {
-            $(".accordion").accordion({
-                animate: 400,
-                active: 2,
-                collapsible: true
-            });
-        });
+        //        $(function () {
+        //    $(".accordion").accordion({
+        //        animate: 400,
+        //        active: 2,
+        //        collapsible: true
+        //    });
+        //});
         
     }
 
@@ -1402,16 +1408,16 @@
         }
     });
 
-    var collapseAll = function () {
-        $(".accordion").accordion("option", "active", false);
-    }
+    //var collapseAll = function () {
+    //    $(".accordion").accordion("option", "active", false);
+    //}
 
-    $(document).ready(function () {
-        $(".accordion").click(function () {
-            $(".right").toggleClass("move");
+    //$(document).ready(function () {
+    //    $(".accordion").click(function () {
+    //        $(".right").toggleClass("move");
 
-        });
-    });
+    //    });
+    //});
 
 
 })(window);

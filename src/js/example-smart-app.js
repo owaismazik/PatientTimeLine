@@ -1326,6 +1326,7 @@
                 $(".timelineentity").on("click", function () {
                     $(this.children).toggleClass("move")
                 });
+                $('.accordion .ui-accordion-content').show();
             }
                         
             function getTypeImageName(a) {

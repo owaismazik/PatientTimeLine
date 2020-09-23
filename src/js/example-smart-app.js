@@ -820,6 +820,7 @@
                 var value = $('#changeOrder').val();
                 var breaker = false;
                 var counter = 0;
+                var loopBreakingValue = 8;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 
@@ -875,7 +876,7 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
-                            if (i == 4) {
+                            if (i == loopBreakingValue) {
                                 breaker = true;
                                 break;
                             }

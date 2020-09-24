@@ -876,7 +876,6 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
-                            var arrow = "";
                             console.log("j_i: " + j+'_'+i);
                             //if (i == loopBreakingValue) {
                             //    breaker = true;
@@ -891,6 +890,10 @@
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
+                            var arrow = '';
+                            if (entity == "Encounter") {
+                                arrow = ' <i style="left:90px;" class="arrow right move"></i>';
+                            }
                             //console.log("year: " + year);
                             //console.log("item: " + item);
                             //console.log("id: " + id);
@@ -962,14 +965,9 @@
                                 if (yeardivcount > 0) {
                                     var thistimelineboxcount = $("#" + year).find(".timeline__box").length;
                                     if (thistimelineboxcount > 0) {
-
                                         var daydivcount = $("#" + year).find(".timeline__box").find("." + day).length;
                                         var daydivmonth = $("#" + year).find(".timeline__box").find("." + month).length;
-
                                         if (daydivcount > 0 && daydivmonth > 0) {
-                                            if (entity == "Encounter") {
-                                                arrow = ' <i style="left:90px;" class="arrow right move"></i>';
-                                            }
                                             if (encounterID != undefined && entity != "Encounter") {
                                                 if ($(idEncounter).parent().parent().parent().siblings().children().length >= 1) {
                                                     html = '<div class="timeline__post">' +

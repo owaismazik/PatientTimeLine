@@ -805,7 +805,7 @@
                         else
                             eventSelect.innerText = checkedYears.length + " out of " + ev.length + " events " + arrow
                     
-                    //LoadTimeline();
+                    LoadTimeline();
                 });
         
         

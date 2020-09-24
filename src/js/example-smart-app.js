@@ -695,8 +695,8 @@
                 for (var index = 0; index < ev.length; index++) {
                     if (ev[index].checked)
                         checkedEvents.push(ev[index].value);
-                }        
-        
+                }
+
                 var eventSelect = document.getElementById("eventSelect");
                 var arrow = eventSelect.innerText.slice(-1);
                 if (checkedEvents.length == 0)
@@ -706,8 +706,8 @@
                         eventSelect.innerText = "All Events " + arrow;
                     else
                         eventSelect.innerText = checkedEvents.length + " out of " + ev.length + " events " + arrow
-        
-                //LoadTimeline();
+
+                LoadTimeline();
             });
         
             // FUNCTIONS

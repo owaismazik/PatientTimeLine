@@ -1325,8 +1325,8 @@
                 var collapseAll = function () {
                     $(".accordion").accordion("option", "active", true);
                 }
-                $(".timelineentity").on("click", function () {
-                    $(this.children).toggleClass("move")
+                $(".timeline__content").on("click", function () {
+                    $(this.children[0].firstElementChild).toggleClass("move")
                 });
                 $('.accordion .ui-accordion-content').show();
             }

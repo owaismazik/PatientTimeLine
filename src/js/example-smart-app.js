@@ -1323,7 +1323,7 @@
                     });
                 });
                 var collapseAll = function () {
-                    $(".accordion").accordion("option", "active", true);
+                    $(".accordion").accordion("option", "active", false);
                 }
                 $(".timeline__content").on("click", function () {
                     $(this.children[0].firstElementChild).toggleClass("move")

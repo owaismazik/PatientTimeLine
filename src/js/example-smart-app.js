@@ -1315,16 +1315,16 @@
                 $("#loading").hide();
                 $(".loader").hide();
                 $("#timelinecontrolnew").show();
-                $(function () {
-                    $(".accordion").accordion({
-                        animate: 400,
-                        active: 2,
-                        collapsible: true
-                    });
-                });
-                var collapseAll = function () {
-                    $(".accordion").accordion("option", "active", false);
-                }
+                //$(function () {
+                //    $(".accordion").accordion({
+                //        animate: 400,
+                //        active: 2,
+                //        collapsible: true
+                //    });
+                //});
+                //var collapseAll = function () {
+                //    $(".accordion").accordion("option", "active", false);
+                //}
                 $(".timeline__content").on("click", function () {
                     $(this.children[0].firstElementChild).toggleClass("move")
                 });

@@ -892,7 +892,7 @@
                             var encounterID = filterdata[i].encounterID;
                             var collapseHTML = '';
                             if (entity == "Encounter") {
-                                collapseHTML = ' <i style="left:90px;" class="arrow right move"></i>';
+                                collapseHTML = ' <i style="left:90px;" class="arrow right"></i>';
                             }
                             //console.log("year: " + year);
                             //console.log("item: " + item);
@@ -1181,7 +1181,7 @@
                             var encounterID = filterdata[i].encounterID;
                             var collapseHTML = '';
                             if (entity == "Encounter") {
-                                collapseHTML = ' <i style="left:90px;" class="arrow right move"></i>';
+                                collapseHTML = ' <i style="left:90px;" class="arrow right"></i>';
                             }
                             //console.log("year: " + year);
                             //console.log("item: " + item);

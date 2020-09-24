@@ -1328,7 +1328,15 @@
                 $(".timeline__content").on("click", function () {
                     $(this.children[0].firstElementChild).toggleClass("move")
                 });
-                $('.accordion .ui-accordion-content').show();
+                $(function () {
+                    $(".accordion").accordion({
+                        collapsible: true
+                    });
+                });
+
+                var collapseAll = function () {
+                    $(".accordion").accordion("option");
+                }
             }
                         
             function getTypeImageName(a) {

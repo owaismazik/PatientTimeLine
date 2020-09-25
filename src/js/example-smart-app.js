@@ -927,8 +927,8 @@
                                     break;
                                 case "Procedure":
                                     imageName = "procedure.png";
-                                    spanClass = "mzkobserspan";
-                                    imgClass = 'mzkobserimg';
+                                    spanClass = "mzkprocedurerspan";
+                                    imgClass = 'mzkprocedureimg';
                                     break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";
@@ -1216,8 +1216,8 @@
                                     break;
                                 case "Procedure":
                                     imageName = "procedure.png";
-                                    spanClass = "mzkobserspan";
-                                    imgClass = 'mzkobserimg';
+                                    spanClass = "mzkprocedurerspan";
+                                    imgClass = 'mzkprocedureimg';
                                     break;
                                 case "ProcedureRequest":
                                     imageName = "request.png";

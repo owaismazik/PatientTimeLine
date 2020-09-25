@@ -52,7 +52,7 @@
     }
 
 .timeline__date {
-    min-width: 65px;
+    min-width: 40px;
     position: absolute;
     left: 0;
     box-sizing: border-box;
@@ -63,7 +63,7 @@
 }
 
 .timeline__day {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 700;
     display: block;
 }

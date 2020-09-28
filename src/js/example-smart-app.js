@@ -872,6 +872,7 @@
                         //if (breaker == true) {
                         //    break;
                         //}
+                        counter = 0;
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
@@ -957,11 +958,16 @@
                                 default:
                                     imageName = "";
                             }
-                            console.log("entity: " + entity);
-                            console.log("year: " + year);
-                            console.log("item: " + item);
+                            console.log("entity:year:item " + entity + ' - ' + year + ' - ' + item);
                             console.log("===============================================");
                             if (year == item) {
+                                if (entity == "MedicationOrder") {
+                                    console.log("===============================================");
+                                    console.log("entity: " + entity);
+                                    console.log("encounterID: " + encounterID);
+                                    console.log("id: " + id);
+                                    console.log("===============================================");
+                                }
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;
                                 if (yeardivcount > 0) {
@@ -1248,11 +1254,16 @@
                                 default:
                                     imageName = "";
                             }
-                            console.log("entity: " + entity);
-                            console.log("year: " + year);
-                            console.log("item: " + item);
+                            console.log("entity:year:item " + entity + ' - ' + year+' - '+item);
                             console.log("===============================================");
                             if (year == item) {
+                                if (entity == "MedicationOrder") {
+                                    console.log("===============================================");
+                                    console.log("entity: " + entity);
+                                    console.log("encounterID: " + encounterID);
+                                    console.log("id: " + id);
+                                    console.log("===============================================");
+                                }
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;
                                 if (yeardivcount > 0) {

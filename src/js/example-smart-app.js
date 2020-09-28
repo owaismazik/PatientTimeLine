@@ -876,7 +876,7 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
-                            console.log("j_i: " + j+'_'+i);
+                            //console.log("j_i: " + j+'_'+i);
                             //if (i == loopBreakingValue) {
                             //    breaker = true;
                             //    break;
@@ -900,7 +900,6 @@
                             //console.log("encounterID: " + encounterID);
                             //console.log("entity: " + entity);
                             //console.log("counter: " + ++counter);
-                            console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";
 
@@ -958,7 +957,10 @@
                                 default:
                                     imageName = "";
                             }
-
+                            console.log("entity: " + entity);
+                            console.log("year: " + year);
+                            console.log("item: " + item);
+                            console.log("===============================================");
                             if (year == item) {
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;
@@ -1165,7 +1167,7 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
-                            console.log("j_i: " + j + '_' + i);
+                            //console.log("j_i: " + j + '_' + i);
                             //if (i == loopBreakingValue) {
                             //    breaker = true;
                             //    break;
@@ -1189,7 +1191,6 @@
                             //console.log("encounterID: " + encounterID);
                             //console.log("entity: " + entity);
                             //console.log("counter: " + ++counter);
-                            console.log("===============================================");
                             var spanClass = "";
                             var imgClass = "";
 
@@ -1247,7 +1248,10 @@
                                 default:
                                     imageName = "";
                             }
-
+                            console.log("entity: " + entity);
+                            console.log("year: " + year);
+                            console.log("item: " + item);
+                            console.log("===============================================");
                             if (year == item) {
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;

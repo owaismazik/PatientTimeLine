@@ -832,7 +832,7 @@
                 var html = "";
 
                 if (value == "true") {
-                    //var newArray = filterdata.sort((a, b) => (a.type == 6) ? -1 : 1); // for encounter ascending
+                    var newArray = filterdata.sort((a, b) => (a.type == 6) ? -1 : 1); // for encounter ascending
                     for (var j = 0; j < checkedYears.length; j++) {
                         //if (breaker == true) {
                         //    break;
@@ -841,7 +841,7 @@
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
-                        for (var i = 0; i < filterdata.length; i++) {
+                        for (var i = 0; i < newArray.length; i++) {
                             //console.log("j_i: " + j+'_'+i);
                             //if (i == loopBreakingValue) {
                             //    breaker = true;
@@ -850,15 +850,15 @@
                             //if (filterdata[i].entity == "Encounter") {
                             //    continue;
                             //}
-                            var date = new Date(filterdata[i].date)
-                            var id = filterdata[i].id;
-                            var name = filterdata[i].name;
-                            var type = filterdata[i].type;
-                            var entity = filterdata[i].entity;
+                            var date = new Date(newArray[i].date)
+                            var id = newArray[i].id;
+                            var name = newArray[i].name;
+                            var type = newArray[i].type;
+                            var entity = newArray[i].entity;
                             var year = date.getFullYear();
                             var month = monthNames[date.getMonth()];
                             var day = date.getDate();
-                            var encounterID = filterdata[i].encounterID;
+                            var encounterID = newArray[i].encounterID;
                             var collapseHTML = '';
                             if (entity == "Encounter") {
                                 collapseHTML = ' <i style="left:90px;margin-left: 10px" class="arrow right"></i>';

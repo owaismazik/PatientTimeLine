@@ -1006,8 +1006,8 @@
                         //}
                         counter = 0;
                         var item = checkedYears[j];
-                        html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
-                        $("#timeline").append(html);
+                        //html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
+                        //$("#timeline").append(html);
                         for (var i = 0; i < filterdata.length; i++) {
                             //console.log("j_i: " + j+'_'+i);
                             //if (i == loopBreakingValue) {
@@ -1027,9 +1027,9 @@
                             var day = date.getDate();
                             var encounterID = filterdata[i].encounterID;
                             var collapseHTML = '';
-                            if (entity == "Encounter") {
-                                collapseHTML = ' <i style="left:90px;margin-left: 10px" class="arrow right"></i>';
-                            }
+                            //if (entity == "Encounter") {
+                            //    collapseHTML = ' <i style="left:90px;margin-left: 10px" class="arrow right"></i>';
+                            //}
                             //console.log("year: " + year);
                             //console.log("item: " + item);
                             //console.log("id: " + id);
@@ -1070,11 +1070,11 @@
                                     spanClass = "mzkprocreqspan";
                                     imgClass = 'mzkprocreqimg';
                                     break;
-                                case "Encounter":
-                                    imageName = "encounter.png";
-                                    spanClass = "mzkencounterspan";
-                                    imgClass = 'mzkencounterimg';
-                                    break;
+                                //case "Encounter":
+                                //    imageName = "encounter.png";
+                                //    spanClass = "mzkencounterspan";
+                                //    imgClass = 'mzkencounterimg';
+                                //    break;
                                 default:
                                     imageName = "";
                             }
@@ -1123,17 +1123,17 @@
                                                     html = "";
                                                 }
                                             }
-                                            else {
-                                                html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox">' +
-                                                    '<div class="timeline__post">' +
-                                                    '<div class="timeline__content"> ' +
-                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + collapseHTML + '</span>' +
-                                                    '<p> ' + name + '</p>' +
-                                                    '<span class="mzkicon ' + spanClass + '">' +
-                                                    '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                    '</span>' +
-                                                    '</div></div></div></div>';
-                                            }
+                                            //else {
+                                            //    html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox">' +
+                                            //        '<div class="timeline__post">' +
+                                            //        '<div class="timeline__content"> ' +
+                                            //        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + collapseHTML + '</span>' +
+                                            //        '<p> ' + name + '</p>' +
+                                            //        '<span class="mzkicon ' + spanClass + '">' +
+                                            //        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                            //        '</span>' +
+                                            //        '</div></div></div></div>';
+                                            //}
                                         }
                                         else {
                                             if (encounterID != undefined && entity != "Encounter") {
@@ -1168,19 +1168,19 @@
                                                     html = "";
                                                 }
                                             }
-                                            else {
-                                                html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
-                                                    '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                                    '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                                    '<div class="timeline__post">' +
-                                                    '<div class="timeline__content"> ' +
-                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
-                                                    '<p> ' + name + '</p>' +
-                                                    '<span class="mzkicon ' + spanClass + '">' +
-                                                    '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                    '</span>' +
-                                                    '</div></div></div></div>';
-                                            }
+                                            //else {
+                                            //    html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                            //        '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                            //        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                            //        '<div class="timeline__post">' +
+                                            //        '<div class="timeline__content"> ' +
+                                            //        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
+                                            //        '<p> ' + name + '</p>' +
+                                            //        '<span class="mzkicon ' + spanClass + '">' +
+                                            //        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                            //        '</span>' +
+                                            //        '</div></div></div></div>';
+                                            //}
                                         }
                                     }
                                     else {
@@ -1216,19 +1216,19 @@
                                                 html = "";
                                             }
                                         }
-                                        else {
-                                            html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
-                                                '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                                '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                                '<div class="timeline__post">' +
-                                                '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
-                                                '<p> ' + name + '</p>' +
-                                                '<span class="mzkicon ' + spanClass + '">' +
-                                                '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                                '</span>' +
-                                                '</div></div></div></div></div>';
-                                        }
+                                        //else {
+                                        //    html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                        //        '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                        //        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                        //        '<div class="timeline__post">' +
+                                        //        '<div class="timeline__content"> ' +
+                                        //        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
+                                        //        '<p> ' + name + '</p>' +
+                                        //        '<span class="mzkicon ' + spanClass + '">' +
+                                        //        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                        //        '</span>' +
+                                        //        '</div></div></div></div></div>';
+                                        //}
                                     }
                                 }
                                 else {
@@ -1264,19 +1264,19 @@
                                             html = "";
                                         }
                                     }
-                                    else {
-                                        html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
-                                            '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                            '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
-                                            '<div class="timeline__post">' +
-                                            '<div class="timeline__content"> ' +
-                                            '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
-                                            '<p> ' + name + '</p>' +
-                                            '<span class="mzkicon ' + spanClass + '">' +
-                                            '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
-                                            '</span>' +
-                                            '</div></div></div></div>';
-                                    }
+                                    //else {
+                                    //    html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date">' +
+                                    //        '<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                    //        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                    //        '<div class="timeline__post">' +
+                                    //        '<div class="timeline__content"> ' +
+                                    //        '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity +' '+ collapseHTML + '</span>' +
+                                    //        '<p> ' + name + '</p>' +
+                                    //        '<span class="mzkicon ' + spanClass + '">' +
+                                    //        '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
+                                    //        '</span>' +
+                                    //        '</div></div></div></div>';
+                                    //}
                                 }
                             }
                             $("#" + year).append(html);

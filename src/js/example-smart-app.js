@@ -912,6 +912,7 @@
                                     imageName = "";
                             }
                             console.log("entity:year:item " + entity + ' - ' + year + ' - ' + item);
+                            console.log("id " + id);
                             console.log("===============================================");
                             if (year == item) {
                                 //if (entity == "MedicationOrder") {

@@ -1116,7 +1116,7 @@
                             }
                             console.log(html);
                             $("#" + year).append(html);
-                            html == "";
+                            html = ""; 
                         }
                     }
                 }
@@ -1415,7 +1415,7 @@
                                 }
                             }
                             $("#" + year).append(html);
-                            html == "";
+                            html = "";
                         }
                     }
                 }

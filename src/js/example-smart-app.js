@@ -1414,6 +1414,7 @@
                                 }
                             }
                             $("#" + year).append(html);
+                            html == "";
                         }
                     }
                 }

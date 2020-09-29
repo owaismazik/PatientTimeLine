@@ -1116,6 +1116,7 @@
                             }
                             console.log(html);
                             $("#" + year).append(html);
+                            html == "";
                         }
                     }
                 }

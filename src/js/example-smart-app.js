@@ -920,7 +920,7 @@
                                 //    console.log("entity: " + entity);
                                 //    console.log("encounterID: " + encounterID);
                                 //    console.log("id: " + id);
-                                //    console.log("===============================================");
+                                console.log("=========== "+id+" ==========");
                                 //}
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;
@@ -1209,16 +1209,17 @@
                                 default:
                                     imageName = "";
                             }
-                            console.log("entity:year:item " + entity + ' - ' + year+' - '+item);
+                            console.log("entity:year:item " + entity + ' - ' + year + ' - ' + item);
+                            console.log("id: " + id);
                             console.log("===============================================");
                             if (year == item) {
-                                if (entity == "MedicationOrder") {
-                                    console.log("===============================================");
-                                    console.log("entity: " + entity);
-                                    console.log("encounterID: " + encounterID);
-                                    console.log("id: " + id);
-                                    console.log("===============================================");
-                                }
+                                //if (entity == "MedicationOrder") {
+                                //    console.log("===============================================");
+                                //    console.log("entity: " + entity);
+                                //    console.log("encounterID: " + encounterID);
+                                //    console.log("id: " + id);
+                                    console.log("=========== " + id + " ==========");
+                                //}
                                 var yeardivcount = $("#" + year).length;
                                 var idEncounter = '#' + encounterID;
                                 if (yeardivcount > 0) {

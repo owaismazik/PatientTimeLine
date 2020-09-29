@@ -1294,7 +1294,7 @@
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         filterdata.sort((a, b) => (a.type == 6) ? 1 : -1) // for encounter descending
-                        for (var i = 0; i < filterdata.length; i++) {
+                        for (var i = filterdata.length - 1; i >= 0; i--) {
                             //console.log("j_i: " + j + '_' + i);
                             //if (i == loopBreakingValue) {
                             //    breaker = true;

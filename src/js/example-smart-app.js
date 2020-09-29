@@ -961,7 +961,7 @@
                                                 html = '<div class="accordion"><div class="timeline__box mzkheight mzktimelinebox">' +
                                                     '<div class="timeline__post">' +
                                                     '<div class="timeline__content"> ' +
-                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + collapseHTML + ++counter + '</span>' +
+                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + collapseHTML + '</span>' +
                                                     '<p> ' + name + '</p>' +
                                                     '<span class="mzkicon ' + spanClass + '">' +
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
@@ -1008,7 +1008,7 @@
                                                     '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                     '<div class="timeline__post">' +
                                                     '<div class="timeline__content"> ' +
-                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + ++counter + '</span>' +
+                                                    '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + '</span>' +
                                                     '<p> ' + name + '</p>' +
                                                     '<span class="mzkicon ' + spanClass + '">' +
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
@@ -1056,7 +1056,7 @@
                                                 '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                 '<div class="timeline__post">' +
                                                 '<div class="timeline__content"> ' +
-                                                '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + ++counter + '</span>' +
+                                                '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + '</span>' +
                                                 '<p> ' + name + '</p>' +
                                                 '<span class="mzkicon ' + spanClass + '">' +
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
@@ -1104,7 +1104,7 @@
                                             '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                             '<div class="timeline__post">' +
                                             '<div class="timeline__content"> ' +
-                                            '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + ++counter + '</span>' +
+                                            '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + ' ' + collapseHTML + '</span>' +
                                             '<p> ' + name + '</p>' +
                                             '<span class="mzkicon ' + spanClass + '">' +
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +

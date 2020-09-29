@@ -832,7 +832,7 @@
                 var html = "";
 
                 if (value == "true") {
-                    filterdata.sort((a, b) => (a.type == 6) ? -1 : 1); // for encounter ascending
+                    //var newArray = filterdata.sort((a, b) => (a.type == 6) ? -1 : 1); // for encounter ascending
                     for (var j = 0; j < checkedYears.length; j++) {
                         //if (breaker == true) {
                         //    break;

@@ -1015,9 +1015,9 @@
                             //    breaker = true;
                             //    break;
                             //}
-                            if (filterdata[i].entity == "Encounter") {
-                                continue;
-                            }
+                            //if (filterdata[i].entity == "Encounter") {
+                            //    continue;
+                            //}
                             var date = new Date(filterdata[i].date)
                             var id = filterdata[i].id;
                             var name = filterdata[i].name;

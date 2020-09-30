@@ -14,8 +14,8 @@
                 var patient = smart.patient;
                 var pt = patient.read();
 
-                var enco = smart.patient.api.fetchAll({
-                    type: 'Encounter',
+                var obv = smart.patient.api.fetchAll({
+                    type: 'Observation',
                     query: {
                         code: {
                             $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
@@ -25,11 +25,11 @@
                     }
                 });
 
-                $.when(pt, enco).fail(onError);
+                $.when(pt, obv).fail(onError);
 
-                $.when(pt, enco).done(function (patient, enco) {                    
+                $.when(pt, obv).done(function (patient, obv) {                    
                     $("#patietid").val(patient.id);
-                    var byCodes = smart.byCodes(enco, 'code');
+                    var byCodes = smart.byCodes(obv, 'code');
                     var gender = patient.gender;
 
                     var fname = '';
@@ -77,8 +77,46 @@
 
                     ret.resolve(p);
 
-                    var obv = smart.patient.api.fetchAll({
-                        type: 'Observation',
+                    if (obv != null) {
+                        if (obv.length > 0) {
+                            for (var i = 0; i <= 10; i++) {
+                                if (obv[i] != null) {
+                                    if (obv[i] != undefined) {
+                                        var patientObservation = {};
+                                        var title = obv[i].code.coding[0].display;
+                                        var recordeddate = obv[i].issued;
+                                        patientObservation.obvID = obv[i].id;
+                                        patientObservation.Description = obv[i].code.text;
+                                        patientObservation.description = "Observation - " + title;
+                                        patientObservation.patientId = $("#CRMpatietid").val();
+                                        patientObservation.IssuedDate = recordeddate;
+                                        var dataSet = patientObservation;
+                                        var item = {};
+
+                                        if (dataSet.hasOwnProperty('ObservationID')) {
+                                            item.id = dataSet.ObservationID;
+                                        }
+                                        item.name = "Observation - " + title;
+
+                                        if (dataSet.hasOwnProperty('IssuedDate')) {
+                                            item.date = moment.utc(recordeddate).format('MM/DD/YYYY');
+                                            item.dateTime = moment.utc(recordeddate).format('YYYY-MM-DD HH:mm:ss');
+                                        }
+                                        item.type = 12;
+                                        item.id = obv[i].id;
+                                        if (obv[i].hasOwnProperty("encounter")) {
+                                            item.encounterID = obv[i].encounter.reference.split('/')[1];
+                                        }
+                                        item.entity = "Observation";
+                                        list.push(item);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    var enco = smart.patient.api.fetchAll({
+                        type: 'Encounter',
                         query: {
                             patient: patient.id
                         }
@@ -125,43 +163,7 @@
 
                     //CreatePatient(patient.id);
 
-                    if (obv != null) {
-                        if (obv.length > 0) {
-                            for (var i = 0; i <= 10; i++) {
-                                if (obv[i] != null) {
-                                    if (obv[i] != undefined) {
-                                        var patientObservation = {};
-                                        var title = obv[i].code.coding[0].display;
-                                        var recordeddate = obv[i].issued;
-                                        patientObservation.obvID = obv[i].id;
-                                        patientObservation.Description = obv[i].code.text;
-                                        patientObservation.description = "Observation - " + title;
-                                        patientObservation.patientId = $("#CRMpatietid").val();
-                                        patientObservation.IssuedDate = recordeddate;
-                                        var dataSet = patientObservation;
-                                        var item = {};
 
-                                        if (dataSet.hasOwnProperty('ObservationID')) {
-                                            item.id = dataSet.ObservationID;
-                                        }
-                                        item.name = "Observation - " + title;
-
-                                        if (dataSet.hasOwnProperty('IssuedDate')) {
-                                            item.date = moment.utc(recordeddate).format('MM/DD/YYYY');
-                                            item.dateTime = moment.utc(recordeddate).format('YYYY-MM-DD HH:mm:ss');
-                                        }
-                                        item.type = 12;
-                                        item.id = obv[i].id;
-                                        if (obv[i].hasOwnProperty("encounter")) {
-                                            item.encounterID = obv[i].encounter.reference.split('/')[1];
-                                        }
-                                        item.entity = "Observation";
-                                        list.push(item);
-                                    }
-                                }
-                            }
-                        }
-                    }
 
 
                     var alrgy = smart.patient.api.fetchAll({

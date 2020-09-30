@@ -572,15 +572,15 @@
                     });
 
 
-                    //setTimeout(function () {
-                    //    $("#timeline").show();
-                    //    timeline();
-                    //}, 2000);  //7000     
+                    setTimeout(function () {
+                        $("#timeline").show();
+                        timeline();
+                    }, 2000);  //7000     
 
-                    //setTimeout(function () {
-                    //    $("#timeline").hide();
-                    //    //timeline();
-                    //}, 7000); 
+                    setTimeout(function () {
+                        $("#timeline").hide();
+                        //timeline();
+                    }, 7000); 
 
                     setTimeout(function () {
                         $("#timeline").show();

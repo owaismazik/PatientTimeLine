@@ -1333,7 +1333,7 @@
                                                     '<span class="mzkicon ' + spanClass + '">' +
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
-                                                    '</div></div></div>';
+                                                    '</div></div></div></div>';
                                                 $(idEncounter).parent().parent().parent().siblings().append(html);
                                                 html = "";
                                             }
@@ -1348,7 +1348,7 @@
                                                     '<span class="mzkicon ' + spanClass + '">' +
                                                     '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                     '</span>' +
-                                                    '</div></div></div>';
+                                                    '</div></div></div></div>';
                                                 $(idEncounter).parent().parent().parent().parent().append(html);
                                                 html = "";
                                             }
@@ -1381,7 +1381,7 @@
                                                 '<span class="mzkicon ' + spanClass + '">' +
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
-                                                '</div></div></div>';
+                                                '</div></div></div></div>';
                                             $(idEncounter).parent().parent().parent().siblings().append(html);
                                             html = "";
                                         }
@@ -1396,7 +1396,7 @@
                                                 '<span class="mzkicon ' + spanClass + '">' +
                                                 '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                 '</span>' +
-                                                '</div></div></div>';
+                                                '</div></div></div></div>';
                                             $(idEncounter).parent().parent().parent().parent().append(html);
                                             html = "";
                                         }
@@ -1412,7 +1412,7 @@
                                             '<span class="mzkicon ' + spanClass + '">' +
                                             '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                             '</span>' +
-                                            '</div></div></div></div>';
+                                            '</div></div></div></div></div>';
                                     }
                                 }
                             }

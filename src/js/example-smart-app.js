@@ -1243,7 +1243,7 @@
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
                                                         '</div></div>';
-                                                    $(idEncounter).parent().parent().parent().siblings().append(html);
+                                                    $(idEncounter).parent().parent().parent().parent().children().append(html);
                                                     html = "";
                                                 }
                                                 else {

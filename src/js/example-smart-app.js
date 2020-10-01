@@ -990,9 +990,10 @@
                                                     html = "";
                                                 }
                                                 else {
-                                                    html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date mzkpanalchild">' +
-                                                        '<span class="timeline__day ' + day + '">' + day + '</span>' +
-                                                        '<span class="timeline__month ' + month + '">' + month + '</span></div>' +
+                                                    html = '<div class="timeline__box mzkheight mzktimelinebox">' +
+                                                        // TODO testing
+                                                        //'<span class="timeline__day ' + day + '">' + day + '</span>' +
+                                                        //'<span class="timeline__month ' + month + '">' + month + '</span></div>' +
                                                         '<div class="timeline__post">' +
                                                         '<div class="timeline__content"> ' +
                                                         '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '</span>' +

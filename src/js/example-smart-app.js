@@ -827,7 +827,7 @@
                 var value = $('#changeOrder').val();
                 var breaker = false;
                 var counter = 0;
-                var loopBreakingValue = 30;
+                var loopBreakingValue = 100;
         
                 var filterdata = list.filter(function (e) { return this.indexOf(e.type.toString()) > -1; }, checkedEvents);
 
@@ -1125,19 +1125,19 @@
                 else {
                     // for desending
                     for (var j = checkedYears.length - 1; j >= 0; j--) {
-                        if (breaker == true) {
-                            break;
-                        }
+                        //if (breaker == true) {
+                        //    break;
+                        //}
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
                         $("#timeline").append(html);
                         filterdata.sort((a, b) => (a.type == 6) ? 1 : -1) // for encounter descending
                         for (var i = filterdata.length - 1; i >= 0; i--) {
-                            console.log("j_i: " + j + '_' + i);
-                            if (i == loopBreakingValue) {
-                                breaker = true;
-                                break;
-                            }
+                            //console.log("j_i: " + j + '_' + i);
+                            //if (i == loopBreakingValue) {
+                            //    breaker = true;
+                            //    break;
+                            //}
                             var date = new Date(filterdata[i].date)
                             var id = filterdata[i].id;
                             var name = filterdata[i].name;

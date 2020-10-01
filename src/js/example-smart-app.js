@@ -1290,7 +1290,7 @@
                                                     html = "";
                                                 }
                                                 else {
-                                                    html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__date mzkpanalchild">' +
+                                                    html = '<div class="timeline__box mzkheight mzktimelinebox">' +
                                                         // testing comment TODO
                                                         //'<span class="timeline__day ' + day + '">' + day + '</span>' +
                                                         //'<span class="timeline__month ' + month + '">' + month + '</span></div>' +

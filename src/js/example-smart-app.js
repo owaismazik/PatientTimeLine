@@ -1235,14 +1235,14 @@
                                         if (daydivcount > 0 && daydivmonth > 0) {
                                             if (encounterID != undefined && entity != "Encounter") {
                                                 if ($(idEncounter).parent().parent().parent().siblings().children().length >= 1) {
-                                                    html = '<div class="timeline__box mzkheight mzktimelinebox"><div class="timeline__post">' +
+                                                    html = '<div class="timeline__post">' +
                                                         '<div class="timeline__content"> ' +
                                                         '<span id="' + id + '" encounterID="' + encounterID + '" class="timelineentity">' + entity + '</span>' +
                                                         '<p> ' + name + '</p>' +
                                                         '<span class="mzkicon ' + spanClass + '">' +
                                                         '<img class="mzkimg ' + imgClass + '" src="https://owaismazik.github.io/PatientTimeLine/src/images/' + imageName + '">' +
                                                         '</span>' +
-                                                        '</div></div></div>';
+                                                        '</div></div>';
                                                     $(idEncounter).parent().parent().parent().siblings().append(html);
                                                     html = "";
                                                 }

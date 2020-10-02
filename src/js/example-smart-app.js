@@ -704,6 +704,10 @@
                         checkedEvents.push(ev[index].value);
                 }
 
+                if (!checkedEvents.includes('6') && checkedEvents.length >= 1) {
+                    checkedEvents.push('6');
+                }
+
                 var eventSelect = document.getElementById("eventSelect");
                 var arrow = eventSelect.innerText.slice(-1);
                 if (checkedEvents.length == 0)

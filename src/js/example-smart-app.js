@@ -706,6 +706,7 @@
 
                 if (!checkedEvents.includes('6') && checkedEvents.length >= 1) {
                     checkedEvents.push('6');
+                    ev[1].checked = true;
                 }
 
                 var eventSelect = document.getElementById("eventSelect");

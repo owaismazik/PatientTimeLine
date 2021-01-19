@@ -489,7 +489,7 @@
                         type: 'CarePlan',
                         query: {
                             patient: patient.id
-                            //,category: 'assess-plan'
+                            ,category: 'assess-plan'
                         }
                     });
 

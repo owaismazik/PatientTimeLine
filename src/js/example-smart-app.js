@@ -849,13 +849,10 @@
                 if (value == "true") {
                     var newArray = filterdata.sort((a, b) => (a.type == 6) ? -1 : 1); // for encounter ascending
                     for (var j = 0; j < checkedYears.length; j++) {
-                        //if (breaker == true) {
-                        //    break;
-                        //}
                         counter = 0;
                         var item = checkedYears[j];
                         html = '<div class="timeline__group" id="' + item + '"><span class="timeline__year" >' + item + '</span></div>';
-                        console.log(html);
+
                         $("#timeline").append(html);
                         for (var i = 0; i < newArray.length; i++) {
                             var date = new Date(newArray[i].date)
@@ -884,7 +881,7 @@
                                 var daydivmonth;
                                 ({ yeardivcount, idEncounter, thistimelineboxcount, daydivcount, daydivmonth, html } = generatingHTML(year, encounterID, day, month, entity, html, id, name, spanClass, imgClass, collapseHTML));
                             }
-                            console.log(html);
+
                             $("#" + year).append(html);
                             html = ""; 
                         }

@@ -277,7 +277,13 @@
                                         if (MedicationOrder[i] != undefined) {
                                             var title = "";
                                             if (MedicationOrder[i].medicationCodeableConcept != undefined) {
-                                                title = MedicationOrder[i].medicationCodeableConcept.coding[0].display;
+                                                if (MedicationOrder[i].hasOwnProperty('medicationCodeableConcept')) {
+                                                    if (MedicationOrder[i].medicationCodeableConcept.hasOwnProperty('coding')) {
+                                                        if (MedicationOrder[1].medicationCodeableConcept.coding[0].hasOwnProperty('display')) {
+                                                            title = MedicationOrder[i].medicationCodeableConcept.coding[0].display;
+                                                        }
+                                                    }
+                                                }
                                             }
                                             var recordeddate = MedicationOrder[i].dateWritten;
                                             var patientMedicationOrder = {}

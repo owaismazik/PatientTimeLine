@@ -322,7 +322,15 @@
                                 for (var i = 0; i <= procedure.length; i++) {
                                     if (procedure[i] != null) {
                                         if (procedure[i] != undefined) {
-                                            var title = procedure[i].code.coding[0].display;
+                                            var title = '';
+                                            if (procedure[i].code.hasOwnProperty('coding')) {
+                                                if (procedure[i].code.coding.hasOwnProperty('display')) {
+                                                    title = procedure[i].code.coding[0].display;
+                                                }
+                                            }
+                                            else {
+                                                title = procedure[i].code;
+                                            }
                                             var recordeddate = '';
 
                                             if (procedure[i].hasOwnProperty("performedDateTime")) {
